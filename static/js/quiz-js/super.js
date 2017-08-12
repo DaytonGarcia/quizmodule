@@ -2,7 +2,6 @@ function submitLoad(controlador,funcion,params)
 {
   var retorno ="";
   pageload="https://"+document.domain+"/"+controlador+"/"+funcion+params;
-  alert(pageload);
   $.ajax({
   	url: pageload, 
   	async: true,
@@ -11,6 +10,7 @@ function submitLoad(controlador,funcion,params)
   		//jsonResult = JSON.parse(result);
       retorno=(result); 
    }});
+    alert(retorno);
  return(retorno);
   
 }
