@@ -8,7 +8,6 @@ function submitLoad(controlador,funcion,params)
   	success: function(result)
   	{
       //jsonResult = JSON.parse(result);
-      //return (result);
       retorno=(result); 
    }});
  return(retorno);
