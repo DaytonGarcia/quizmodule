@@ -43,7 +43,7 @@ def consult_quiz():
     a = r.keys(cadena)
     cuestionarios = a
     for cuestionario in cuestionarios:
-        print(cuestionario, end=" ")
+        print(cuestionario)
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
 def consultar_quiz():
