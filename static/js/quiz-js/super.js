@@ -30,6 +30,6 @@ function LlamarControlador(controlador,funcion,params)
 
    }});
 
- //return(retorno);
+ return(retorno);
   
 }
