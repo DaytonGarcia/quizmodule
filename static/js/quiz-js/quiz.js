@@ -18,6 +18,7 @@ function GruardarQuiz()
     {
         //alert("hay: "+preguntas.length+" preguntas registradas");
         var corr_quiz = submitLoad("quiz","obtenerQuiz",""); 
+        alert(corr_quiz);
         JsonCorretaltivo = JSON.parse(corr_quiz);
         //var JsonQuiz = '{"id":"'+JsonCorretaltivo.value+'", "curso": "curso","seccion": "A", "propietario":"auxiliar/catedratico", "preguntas":[ ';
         var JsonQuiz = '{[';
@@ -155,9 +156,9 @@ function GuardarPregunta(objeto)
             cabecera.childNodes[3].childNodes[0].setAttribute("disabled", true);
             break;
     }
-    alert("La pregunta es: "+jsonPregunta);
-    alert("Todas sus respuestas estan ingresadas");
-    alert("Hay "+preguntas.length+" registradas");
+    //alert("La pregunta es: "+jsonPregunta);
+    //alert("Todas sus respuestas estan ingresadas");
+    //alert("Hay "+preguntas.length+" registradas");
      
    }
    else
