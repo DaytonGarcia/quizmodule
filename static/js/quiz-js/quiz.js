@@ -13,7 +13,7 @@ function DeshabilitarPregunta(id)
 
 function GruardarQuiz()
 {
-    alert("Hola");
+
     if(preguntas.length>0)
     {
         //alert("hay: "+preguntas.length+" preguntas registradas");
@@ -155,9 +155,9 @@ function GuardarPregunta(objeto)
             cabecera.childNodes[3].childNodes[0].setAttribute("disabled", true);
             break;
     }
-    //alert("La pregunta es: "+jsonPregunta);
-    //alert("Todas sus respuestas estan ingresadas");
-    //alert("Hay "+preguntas.length+" registradas");
+    alert("La pregunta es: "+jsonPregunta);
+    alert("Todas sus respuestas estan ingresadas");
+    alert("Hay "+preguntas.length+" registradas");
      
    }
    else
