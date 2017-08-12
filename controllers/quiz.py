@@ -85,9 +85,9 @@ def obtenerQuiz():
 
 @auth.requires_login()
 def GuardarQuiz():
-    return "Hola"
     import redis
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0);
+    return "Hola"
     ide = request.vars['id']
     preguntas = request.vars['jsonquiz']
     curso = request.vars['project']
