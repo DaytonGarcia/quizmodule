@@ -1,5 +1,6 @@
 function submitLoad(controlador,funcion,params)
 {
+  alert("Si llego");
   var retorno ="";
   pageload="https://"+document.domain+"/cpfecys/"+controlador+"/"+funcion+params;
   $.ajax({
