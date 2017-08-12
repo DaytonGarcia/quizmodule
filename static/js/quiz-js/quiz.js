@@ -44,7 +44,7 @@ function GruardarQuiz()
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
         
-        window.location.href = "http://"+document.domain+":8000/cpfecys/quiz/home_quiz"+par;
+        window.location.href = "https://"+document.domain+":8000/cpfecys/quiz/home_quiz"+par;
     }
     else
     {
