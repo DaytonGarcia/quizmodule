@@ -18,7 +18,6 @@ function GruardarQuiz()
     {
         //alert("hay: "+preguntas.length+" preguntas registradas");
         var corr_quiz = submitLoad("quiz","obtenerQuiz",""); 
-        alert(corr_quiz);
         JsonCorretaltivo = JSON.parse(corr_quiz);
         //var JsonQuiz = '{"id":"'+JsonCorretaltivo.value+'", "curso": "curso","seccion": "A", "propietario":"auxiliar/catedratico", "preguntas":[ ';
         var JsonQuiz = '{[';
