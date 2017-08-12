@@ -42,7 +42,7 @@ def consult_quiz():
     r = redis.StrictRedis()
     a = r.keys(cadena)
     pCadenaTest = a
-    print pCadenaTest.remplace('[','')
+    print pCadenaTest.replace('[','')
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
 def consultar_quiz():
