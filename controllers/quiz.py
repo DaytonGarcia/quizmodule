@@ -91,13 +91,11 @@ def GuardarQuiz():
     preguntas = request.vars['jsonquiz']
     curso = request.vars['project']
     uid = request.vars['uid']
-    return "Hola"
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"perdidos",0);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"state",0);
-
     return a;
 
 def GetQuiz():
