@@ -21,7 +21,7 @@ function LlamarControlador(controlador,funcion,params)
   alert(pageload);
   $.ajax({
     url: pageload, 
-    async: true,
+    async: false,
     success: function(result)
     {
       //jsonResult = JSON.parse(result);
