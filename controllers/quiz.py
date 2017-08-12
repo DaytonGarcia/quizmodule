@@ -47,7 +47,7 @@ def consult_quiz():
         creador = db.executesql("select concat(first_name,' ',+last_name) as name from auth_user where id = "+cuestionario[1])
         curso = db.executesql("select name from project where project_id = '"+cuestionario[3]+"'")
         print(creador[0][0])
-        print(curso[0][name])
+        print(curso[0].name)
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
 def consultar_quiz():
