@@ -87,11 +87,11 @@ def obtenerQuiz():
 def GuardarQuiz():
     import redis
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0);
-    return "Hola"
     ide = request.vars['id']
     preguntas = request.vars['jsonquiz']
     curso = request.vars['project']
     uid = request.vars['uid']
+    return "Hola"
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0);
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0);
