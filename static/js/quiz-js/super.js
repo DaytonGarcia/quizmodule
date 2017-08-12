@@ -7,11 +7,11 @@ function submitLoad(controlador,funcion,params)
   	async: true,
   	success: function(result)
   	{
-  		//jsonResult = JSON.parse(result);
-  		retorno=(result); 
+  		jsonResult = JSON.parse(result);
+  		//retorno=(result); 
 
    }});
- alert(retorno);
+ alert(jsonResult);
  return(retorno);
   
 }
