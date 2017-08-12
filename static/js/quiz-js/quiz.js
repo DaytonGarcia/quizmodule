@@ -13,6 +13,7 @@ function DeshabilitarPregunta(id)
 
 function GruardarQuiz()
 {
+    alert("Hola");
     if(preguntas.length>0)
     {
         //alert("hay: "+preguntas.length+" preguntas registradas");
