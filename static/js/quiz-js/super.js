@@ -4,7 +4,7 @@ function submitLoad(controlador,funcion,params)
   pageload="https://"+document.domain+":8000/cpfecys/"+controlador+"/"+funcion+params;
   $.ajax({
   	url: pageload, 
-  	async: false,
+  	async: true,
   	success: function(result)
   	{
   		//jsonResult = JSON.parse(result);
