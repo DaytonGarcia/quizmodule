@@ -8,10 +8,8 @@ function submitLoad(controlador,funcion,params)
   	async: true,
   	success: function(result)
   	{
-  		jsonResult = JSON.parse(result);
-      //retorno=(result); 
-      alert(jsonResult);
-
+  		//jsonResult = JSON.parse(result);
+      retorno=(result); 
    }});
  return(retorno);
   
