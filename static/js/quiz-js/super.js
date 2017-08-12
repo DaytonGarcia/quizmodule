@@ -4,11 +4,11 @@ function submitLoad(controlador,funcion,params)
   pageload="https://"+document.domain+"/"+controlador+"/"+funcion+params;
   $.ajax({
   	url: pageload, 
-  	async: true,
+  	async: false,
   	success: function(result)
   	{
       //jsonResult = JSON.parse(result);
-      return (result);
+      //return (result);
       retorno=(result); 
    }});
  return(retorno);
