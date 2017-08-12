@@ -1,7 +1,7 @@
 function submitLoad(controlador,funcion,params)
 {
   var retorno ="";
-  pageload="https://"+document.domain+":8000/cpfecys/"+controlador+"/"+funcion+params;
+  pageload="https://"+document.domain+"/cpfecys/"+controlador+"/"+funcion+params;
   $.ajax({
   	url: pageload, 
   	async: true,
@@ -19,7 +19,7 @@ function submitLoad(controlador,funcion,params)
 function LlamarControlador(controlador,funcion,params)
 {
   var retorno ="";
-  pageload="https://"+document.domain+":8000/cpfecys/"+controlador+"/"+funcion+params;
+  pageload="https://"+document.domain+"/cpfecys/"+controlador+"/"+funcion+params;
   alert(pageload);
   $.ajax({
     url: pageload, 
