@@ -1988,6 +1988,23 @@ db.define_table('eps_tracking',
 #CERODAS:
 #--------------------------FIN EPS TABLES-----------------------------------------
 
+#----------------TABLAS PARA CONTROL DE QUIZES -----------------------------------
+db.define_table('tb_metadata_quiz',
+                Field('id_quiz', 'integer', notnull = True, required=True),
+                Field('nombre', 'string', notnull = True, required=True),
+                Field('fecha_creacion', 'date', notnull = True, required=True),
+                Field('creador', 'integer', notnull = True, required=True),
+                Field('curso', 'string', notnull = True, required=True)
+                )
+
+db.define_table('tb_quiz_actividad',
+                Field('id_quiz', 'integer', notnull = True, required=True),
+                Field('id_actividad', 'integer', notnull = True, required=True),
+                Field('inicio', 'datetime', notnull = True, required=True),
+                Field('fin', 'datetime', notnull = True, required=True),
+                Field('finalizado', 'integer', notnull = True, required=True)
+                )
+#-----------------FIN DE CONTROL DE QUIZES ---------------------------------------
 
 
 
