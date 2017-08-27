@@ -89,7 +89,9 @@ def GuardarQuiz():
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"perdidos",0)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"state",0)
+    db.tb_metadata_quiz.insert(id_quiz = a, nombre="Recuperar Nombre", fecha_creacion = lambda:datetime.now(), creador=uid, curso=curso)
     return a
+
 
 def GetQuiz():
     import redis
