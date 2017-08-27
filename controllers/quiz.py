@@ -43,7 +43,7 @@ def consult_quiz():
     a = r.keys(cadena)
     cuestionarios = a
 
-    lista = db('Select * from tb_metadata_quiz').select()
+    lista = db(db.tb_metadata_quiz.id == db.auth_user.id).select()
     print lista
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
@@ -56,7 +56,7 @@ def consultar_quiz():
     period = cpfecys.current_year_period()
     idperiodoc = request.vars['period']
     idproject = request.vars['project']
-    project = db(db.project.id==idproject).select().first()  
+    project = db(db.project.creador==idproject).select().first()  
     idPregunta = 1
     return dict(ecys_var = ecys_var, periodo = period, project=project)
 
