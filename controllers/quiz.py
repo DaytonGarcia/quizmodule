@@ -43,7 +43,7 @@ def consult_quiz():
     a = r.keys(cadena)
     cuestionarios = a
 
-    lista = db("Select * from tb_metadata_quiz").select()
+    lista = db('Select * from tb_metadata_quiz').select()
     print lista
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
