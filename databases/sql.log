@@ -755,3 +755,25 @@ faked!
 timestamp: 2016-12-09T20:16:19.575590
 ALTER TABLE course_report_exception ADD period_type INT, ADD INDEX period_type__idx (period_type), ADD FOREIGN KEY (period_type) REFERENCES period_type (id) ON DELETE CASCADE;
 faked!
+timestamp: 2017-08-14T05:11:35.254537
+CREATE TABLE tb_metadata_quiz(
+    id INT AUTO_INCREMENT NOT NULL,
+    id_quiz INT NOT NULL,
+    nombre VARCHAR(512) NOT NULL,
+    fecha_creacion DATE NOT NULL,
+    creador INT NOT NULL,
+    curso VARCHAR(512) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2017-08-14T05:11:35.257478
+CREATE TABLE tb_quiz_actividad(
+    id INT AUTO_INCREMENT NOT NULL,
+    id_quiz INT NOT NULL,
+    id_actividad INT NOT NULL,
+    inicio DATETIME NOT NULL,
+    fin DATETIME NOT NULL,
+    finalizado INT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
