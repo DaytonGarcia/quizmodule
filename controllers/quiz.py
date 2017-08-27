@@ -84,6 +84,7 @@ def GuardarQuiz():
     preguntas = request.vars['jsonquiz']
     curso = request.vars['project']
     uid = request.vars['uid']
+    title = request.vars['title']
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0)
@@ -91,7 +92,7 @@ def GuardarQuiz():
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"state",0)
     db.tb_metadata_quiz.insert(
         id_quiz = a, 
-        nombre="Recuperar Nombre", 
+        nombre= title, 
         fecha_creacion = datetime.datetime.now(), 
         creador=uid, 
         curso=curso)

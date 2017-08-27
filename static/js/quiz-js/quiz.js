@@ -39,8 +39,9 @@ function GruardarQuiz()
         projectid = document.getElementById("project_id").name;
         periodo_id = document.getElementById("period_id").name;
         idproject = document.getElementById("id_project").name;
+        title = document.getElementById("txtTitulo").value;
         JsonQuiz += ']}';
-        var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid;
+        var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
         submitLoad("quiz","GuardarQuiz",parametros);
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
