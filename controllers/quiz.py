@@ -34,6 +34,7 @@ def consult_quiz():
     period = cpfecys.current_year_period()
     idperiodoc = request.vars['period']
     idproject = request.vars['project']
+    print idproject
     project = db(db.project.id==idproject).select().first()  
     userid = auth.user.id
     cursoid = project.project_id
