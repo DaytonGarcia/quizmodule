@@ -42,7 +42,7 @@ def consult_quiz():
     r = redis.StrictRedis()
     a = r.keys(cadena)
     cuestionarios = a
-    lista = db().select(
+    lista = db(db.tb_metadata_quiz.id==9).select(
         db.tb_metadata_quiz.ALL, 
         db.auth_user.first_name, 
         db.auth_user.last_name, 
