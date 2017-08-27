@@ -130,15 +130,7 @@ function GetIDR()
 	</div>
 	<button id="btnContinuar" class="btn btn-large btn-primary" type="button"><i class="icon-circle-arrow-right icon-white"></i></button>
 
-	<div id="popup" style="display: none;">
-		<div class="content-popup">
-			<div class="close"><a href="#" id="close"><img src="images/close.png"/></a></div>
-			<div>
-			   <h2>Contenido POPUP</h2>
-			   ...
-			</div>
-		</div>
-	</div>
+
 	<!--div class="navbar" data-step=1 data-intro="Div para agregar preguntas" {{pass}} >
 			<div class="navbar-inner">
 				<a style="cursor:pointer;"><center><h4>Lester</h4></center></a>
@@ -150,4 +142,13 @@ function GetIDR()
 	</div-->
 
 
+</div>
+<div id="popup" style="display: none;">
+	<div class="content-popup">
+		<div class="close"><a href="#" id="close"><img src="{{=URL('static','js/quiz-js/quiz.js')}}"/></a></div>
+		<div>
+		   <h2>Contenido POPUP</h2>
+		   ...
+		</div>
+	</div>
 </div>
