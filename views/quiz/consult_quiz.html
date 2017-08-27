@@ -39,20 +39,22 @@ $(document).ready(
 	<table class="table">
 	<thead>
 		<tr>
-		<th><center>ID DE USUARIO</center></th>
 		<th><center>ID DE QUIZ</center></th>
+		<th><center>TITULO</center></th>
+		<th><center>CREADO POR</center></th>
 		<th><center>CURSO</center></th>
-		<th><center>ESTADO</center></th>
-		<th><center>ACTIVAR/DESACTIVAR</center></th>
+		<th><center>FECHA</center></th>
+		<th><center>ACTIVAR</center></th>
 		</tr>
 	</thead>
 	<tbody>
-	{{for quiz in a:}}
+	{{for quiz in lista:}}
 		<tr>
-		<td><center>{{=quiz.split(':',6)[1]}}</center></td>
-		<td><center>{{=quiz.split(':',6)[5]}}</center></td>
-		<td><center>{{=quiz.split(':',6)[3]}}<center></td>
-		<td><center>Inactivo</center></td>
+		<td><center>{{=quiz.split(',',6)[2]}}</center></td>
+		<td><center>{{=quiz.split(',',6)[3]}}</center></td>
+		<td><center>{{=quiz.split(',',6)[7]}}<center></td>
+		<td><center>{{=quiz.split(',',6)[9]}}</center></td>
+		<td><center>{{=quiz.split(',',6)[4]}}</center></td>
 		<td>
 		<center>
 			<button id="btActive" type="button" class="btn btn-success">Activar</button>
