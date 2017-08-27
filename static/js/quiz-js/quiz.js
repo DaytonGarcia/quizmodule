@@ -40,7 +40,6 @@ function GruardarQuiz()
         periodo_id = document.getElementById("period_id").name;
         idproject = document.getElementById("id_project").name;
         title = document.getElementById("txtTitulo").value;
-        alert(title);
         JsonQuiz += ']}';
         var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
         submitLoad("quiz","GuardarQuiz",parametros);
