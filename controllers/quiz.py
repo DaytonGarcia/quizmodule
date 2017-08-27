@@ -42,12 +42,9 @@ def consult_quiz():
     r = redis.StrictRedis()
     a = r.keys(cadena)
     cuestionarios = a
-    for cuestionario in cuestionarios:
-        cuestionario = cuestionario.split(':')
-        creador = db.executesql("select concat(first_name,' ',+last_name) as name from auth_user where id = "+cuestionario[1])
-        curso = db.executesql("select name from project where project_id = '"+cuestionario[3]+"'")
-        print(creador[0][0])
-        print(curso[0][0].encode('utf-8').strip())
+
+    lista = db(db.tb_metadata_quiz.select())
+    print lista
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
 
 def consultar_quiz():
