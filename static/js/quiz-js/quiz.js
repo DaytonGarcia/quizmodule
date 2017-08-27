@@ -43,6 +43,9 @@ function GruardarQuiz()
         JsonQuiz += ']}';
         var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
         submitLoad("quiz","GuardarQuiz",parametros);
+        $('#popup').fadeIn('slow');
+        $('.popup-overlay').fadeIn('slow');
+        $('.popup-overlay').height($(window).height());
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
         
@@ -331,6 +334,12 @@ $(document).ready(
 
     $("#btnContinuar").click(function(){
         GruardarQuiz();
+    });
+
+    $('#close').click(function(){
+        $('#popup').fadeOut('slow');
+        $('.popup-overlay').fadeOut('slow');
+        return false;
     });
 
 });
