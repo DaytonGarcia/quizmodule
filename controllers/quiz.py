@@ -42,7 +42,7 @@ def consult_quiz():
     r = redis.StrictRedis()
     a = r.keys(cadena)
     cuestionarios = a
-    lista = db().select(db.tb_metadata_quiz.ALL, db.auth_user.first_name, db.auth_user.last_name, join=db.auth_user.on(db.tb_metadata_quiz.creador == db.auth_user.id))
+    lista = db().select(db.tb_metadata_quiz.ALL, db.auth_user.first_name, db.auth_user.last_name, db.tb_metadata_quiz.name, join=db.auth_user.on(db.tb_metadata_quiz.creador == db.auth_user.id), join=db.project.on(db.project.id == db.tb_metadata_quiz.curso))
     #lista = db(db.tb_metadata_quiz.id == db.auth_user.id).select()
     print lista
     return dict(ecys_var = ecys_var, periodo = period, project=project, idperiodoc=idperiodoc, idproject=idproject,a=a)
