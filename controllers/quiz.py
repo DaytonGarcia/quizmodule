@@ -179,5 +179,5 @@ def getJsonQuiz():
     for quiz in lista:
         creador = quiz.creador
         curso = quiz.curso
-    cadenaRedis = 'uid:'+creador+':curso:'+curso+':quiz:'+ide
+    cadenaRedis = 'uid:'+str(creador)+':curso:'+str(curso)+':quiz:'+str(ide)
     return cadenaRedis
