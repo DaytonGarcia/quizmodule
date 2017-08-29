@@ -177,8 +177,8 @@ def getJsonQuiz():
     curso = 0
 
     for quiz in lista:
-        creador = quiz.tb_metadata_quiz.creador
-        curso = quiz.tb_metadata_quiz.curso
+        creador = quiz.creador
+        curso = quiz.curso
     print creador
     print curso
     return creador
