@@ -12,12 +12,12 @@ $(document).ready(
       
       function(){
 	
-	$('btVerQuiz').click(function(){
+	$('.btVerQuiz').click(function(){
         alert("QuieroVerlo");
     });
 
 
-    $('btActive').click(function(){
+    $('.btActive').click(function(){
 
         alert("El texto del botón es --> " + $("btActive").attr("id"));
     });
@@ -64,12 +64,12 @@ $(document).ready(
 		<td><center>{{=quiz.tb_metadata_quiz.fecha_creacion}}</center></td>
 		<td>
 		<center>
-			<button name="btVerQuiz" id={{=quiz.tb_metadata_quiz.id_quiz}} type="button" class="btn btn-info">Ver</button>
+			<button name="btVerQuiz" id={{=quiz.tb_metadata_quiz.id_quiz}} type="button" class="btn btn-info btVerQuiz">Ver</button>
 		</center>
 		</td>
 		<td>
 			<center>
-				<button name="btActive" id={{=quiz.tb_metadata_quiz.id_quiz}} type="button" class="btn btn-success">Ir a programacion</button>
+				<button name="btActive" id={{=quiz.tb_metadata_quiz.id_quiz}} type="button" class="btn btn-success btActive">Ir a programacion</button>
 			</center>
 			</td>
 		</tr>
