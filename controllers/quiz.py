@@ -168,6 +168,8 @@ def viewer_quiz3():
 
 @auth.requires_login()
 def getJsonQuiz():
-    
+    period = cpfecys.current_year_period()
+    periodo = '3'
+    project = '93'
     print 'hola'
     return dict(periodo = period, course=project, period=periodo)
