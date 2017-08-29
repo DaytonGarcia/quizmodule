@@ -169,5 +169,5 @@ def viewer_quiz3():
 @auth.requires_login()
 def getJsonQuiz():
     ide = request.vars['id']
-    print db.executesql('select creador, curso from tb_metadata_quiz where id_quiz='+ide+';')
-    return 'hola'
+    a= db.executesql('select creador, curso from tb_metadata_quiz where id_quiz='+ide+';')
+    return a
