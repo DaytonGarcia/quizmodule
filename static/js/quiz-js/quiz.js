@@ -337,9 +337,16 @@ $(document).ready(
         GruardarQuiz();
     });
 
-    $('#close').click(function(){
-        $('#popup').fadeOut('slow');
-        $('.popup-overlay').fadeOut('slow');
+    $('#btVerQuiz').click(function(){
+        alert("QuieroVerlo");
+        return false;
+    });
+
+
+    $('#btActive').click(function(){
+
+        alert("El texto del botón es --> " + $("#btActive").attr("name"));
+        
         return false;
     });
 
