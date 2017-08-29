@@ -172,5 +172,13 @@ def getJsonQuiz():
     lista = db(db.tb_metadata_quiz.id_quiz==ide).select(
         db.tb_metadata_quiz.creador, 
         db.tb_metadata_quiz.curso)
-    print lista
-    return lista
+
+    creador = 0
+    curso = 0
+
+    for quiz in lista:
+        creador = quiz.tb_metadata_quiz.creador
+        curso = tb_metadata_quiz.curso
+    print creador
+    print curso
+    return creador
