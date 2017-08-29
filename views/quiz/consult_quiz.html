@@ -44,7 +44,8 @@ $(document).ready(
 		<th><center>CREADO POR</center></th>
 		<th><center>CURSO</center></th>
 		<th><center>FECHA</center></th>
-		<th><center>ACTIVAR</center></th>
+		<th><center>VER</center></th>
+		<th><center>CREAR PROGRAMACION</center></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -57,9 +58,14 @@ $(document).ready(
 		<td><center>{{=quiz.tb_metadata_quiz.fecha_creacion}}</center></td>
 		<td>
 		<center>
-			<button id="btActive" type="button" class="btn btn-success">Activar</button>
+			<button id="btVerQuiz" type="button" class="btn btn-info">Ver</button>
 		</center>
 		</td>
+		<td>
+			<center>
+				<button id="btActive" type="button" class="btn btn-success">Ir a programacion</button>
+			</center>
+			</td>
 		</tr>
 	</tbody>
 	{{pass}}
