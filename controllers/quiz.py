@@ -165,3 +165,9 @@ def viewer_quiz3():
     project = '93'
     #project = db(db.project.id==idproject).select().first()  
     return dict(periodo = period, course=project, period=periodo)
+
+@auth.requires_login()
+def getJsonQuiz():
+    
+    print 'hola'
+    return dict(periodo = period, course=project, period=periodo)

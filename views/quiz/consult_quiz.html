@@ -6,20 +6,24 @@
     {{=e}}
     
 {{pass}}-->
-
+<script type="text/javascript" src="{{=URL('static','js/quiz-js/super.js')}}"></script>
 <script type="text/javascript">
 $(document).ready(
       
       function(){
 	
 	$('.btVerQuiz').click(function(){
-        alert("El texto del botón es --> " + $(this).attr("id"));
+
+		var idquiz = $(this).attr("id");
+        var parametros = "?id="+idquiz;
+        submitLoad("quiz","getJsonQuiz",parametros);
     });
 
 
     $('.btActive').click(function(){
-
-        alert("El texto del botón es --> " + $(this).attr("id"));
+		var idquiz = $(this).attr("id");
+        var parametros = "?id="+idquiz;
+        submitLoad("quiz","getJsonQuiz",parametros);
     });
 });
 
