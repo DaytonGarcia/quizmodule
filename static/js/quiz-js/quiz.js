@@ -336,18 +336,4 @@ $(document).ready(
     $("#btnContinuar").click(function(){
         GruardarQuiz();
     });
-
-    $('#btVerQuiz').click(function(){
-        alert("QuieroVerlo");
-        return false;
-    });
-
-
-    $('#btActive').click(function(){
-
-        alert("El texto del botón es --> " + $("#btActive").attr("name"));
-        
-        return false;
-    });
-
 });

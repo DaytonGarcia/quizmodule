@@ -11,9 +11,15 @@
 $(document).ready(
       
       function(){
+	
+	$('#btVerQuiz').click(function(){
+        alert("QuieroVerlo");
+    });
 
-	$("#btActive").click(function(){
-        alert("La evaluacion estara activa hasta que usted seleccione la opcion de descativar.");
+
+    $('#btActive').click(function(){
+
+        alert("El texto del botón es --> " + $("#btActive").attr("name"));
     });
 });
 
