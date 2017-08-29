@@ -182,5 +182,5 @@ def getJsonQuiz():
         creador = quiz.creador
         curso = quiz.curso
     cadenaRedis = 'uid:'+str(creador)+':curso:'+str(curso)+':quiz:'+str(ide)
-    r.hget(cadenaRedis)
+    r.hget(cadenaRedis,'preguntas')
     return r
