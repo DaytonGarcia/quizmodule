@@ -167,7 +167,7 @@ def viewer_quiz3():
     return dict(periodo = period, course=project, period=periodo)
 
 @auth.requires_login()
-def getJsonQuiz():
+def test():
     x = tuple(request.args)
     y = str(''.join(x))
     import redis
@@ -185,11 +185,5 @@ def getJsonQuiz():
         curso = quiz.curso
     cadenaRedis = 'uid:'+str(creador)+':curso:'+str(curso)+':quiz:'+str(ide)
     datos = r.hget(cadenaRedis,'preguntas')
-    print datos
-    return datos
-
-
-def test():
-    x = tuple(request.args)
-    print 'the test is '+str(x)
-    return dict(id=x)
+    #print datos
+    return dict(quiz = datos) 
