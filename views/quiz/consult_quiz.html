@@ -15,7 +15,7 @@ $(document).ready(
 	$('.btVerQuiz').click(function(){
 
 		var idquiz = $(this).attr("id");
-        var parametros = "?id="+idquiz;
+        var parametros = "/"+idquiz;
 		var result = submitLoad("quiz","getJsonQuiz",parametros);
 		alert(result);
     });
@@ -23,7 +23,7 @@ $(document).ready(
 
     $('.btActive').click(function(){
 		var idquiz = $(this).attr("id");
-        var parametros = "?id="+idquiz;
+        var parametros = "/"+idquiz;
 		var result =  submitLoad("quiz","getJsonQuiz",parametros);
 		alert(result);
     });
