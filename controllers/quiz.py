@@ -187,6 +187,6 @@ def getJsonQuiz():
     return datos
 
 
-def test():
-    print 'the test is '+str(id)
-    return dict(id=id)
+def test(self):
+    print 'the test is '+str(self)
+    return dict(id=self)
