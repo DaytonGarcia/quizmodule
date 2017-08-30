@@ -1,17 +1,11 @@
 {{extend 'template.html'}}
 {{ import json  }}
 {{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}
-{{=quiz.replace('{[','{"PREGUNTAS" : [')}}
-
-Hola
-
-adios
 
 
 {{=metada}}
 
 
 
-jajaja
 
 {{ = quizJson["PREGUNTAS"]}}
