@@ -185,3 +185,8 @@ def getJsonQuiz():
     datos = r.hget('uid:723:curso:0283A:quiz:20','preguntas')
     print datos
     return datos
+
+
+def test(id):
+    print 'the test is '+str(id)
+    return dict(id=id)
