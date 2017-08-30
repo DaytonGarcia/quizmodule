@@ -171,7 +171,7 @@ def getJsonQuiz():
     x = tuple(request.args)
     import redis
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
-    ide = x
+    ide = int(x)
     lista = db(db.tb_metadata_quiz.id_quiz==ide).select(
         db.tb_metadata_quiz.creador, 
         db.tb_metadata_quiz.curso)
