@@ -15,17 +15,19 @@ $(document).ready(
 	$('.btVerQuiz').click(function(){
 
 		var idquiz = $(this).attr("id");
-        var parametros = "/"+idquiz;
-		var result = submitLoad("quiz","test",parametros);
-		alert(result);
+		var parametros = "/"+idquiz;
+		window.location.href = "https://"+document.domain+"/quiz/test"+par;
+		//var result = submitLoad("quiz","test",parametros);
+		//alert(result);
     });
 
 
     $('.btActive').click(function(){
 		var idquiz = $(this).attr("id");
-        var parametros = "/"+idquiz;
-		var result =  submitLoad("quiz","test",parametros);
-		alert(result);
+		var parametros = "/"+idquiz;
+		window.location.href = "https://"+document.domain+"/quiz/test"+par;
+		//var result =  submitLoad("quiz","test",parametros);
+		//alert(result);
     });
 });
 
