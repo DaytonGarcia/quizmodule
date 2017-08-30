@@ -16,14 +16,16 @@ $(document).ready(
 
 		var idquiz = $(this).attr("id");
         var parametros = "?id="+idquiz;
-        submitLoad("quiz","getJsonQuiz",parametros);
+		var result = submitLoad("quiz","getJsonQuiz",parametros);
+		alert(result);
     });
 
 
     $('.btActive').click(function(){
 		var idquiz = $(this).attr("id");
         var parametros = "?id="+idquiz;
-        submitLoad("quiz","getJsonQuiz",parametros);
+		var result =  submitLoad("quiz","getJsonQuiz",parametros);
+		alert(result);
     });
 });
 
