@@ -1,5 +1,6 @@
 {{extend 'template.html'}}
 
+{{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}
 {{=quiz.replace('{[','{"PREGUNTAS" : [')}}
 
 
