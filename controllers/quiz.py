@@ -177,14 +177,14 @@ def getJsonQuiz():
         db.tb_metadata_quiz.creador, 
         db.tb_metadata_quiz.curso)
 
-    #creador = 0
-    #curso = 0
+    creador = 0
+    curso = 0
 
     for quiz in lista:
         creador = quiz.creador
         curso = quiz.curso
     cadenaRedis = 'uid:'+str(creador)+':curso:'+str(curso)+':quiz:'+str(ide)
-    datos = r.hget('uid:723:curso:0283A:quiz:20','preguntas')
+    datos = r.hget(cadenaRedis,'preguntas')
     print datos
     return datos
 
