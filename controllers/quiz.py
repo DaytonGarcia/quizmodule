@@ -180,10 +180,24 @@ def test():
     creador = 0
     curso = 0
 
+    #OBTENGO LA ESTRUCTUA JSON DEL QUIZ
     for quiz in lista:
         creador = quiz.creador
         curso = quiz.curso
     cadenaRedis = 'uid:'+str(creador)+':curso:'+str(curso)+':quiz:'+str(ide)
     datos = r.hget(cadenaRedis,'preguntas')
-    #print datos
-    return dict(quiz = datos) 
+
+    #OBTENGO LA METADA DEL QUIZ
+    lista = db(db.tb_metadata_quiz.id_quiz==ide).select(
+        db.tb_metadata_quiz.ALL, 
+        db.auth_user.first_name, 
+        db.auth_user.last_name, 
+        db.project.name, 
+        join=[
+            db.auth_user.on(
+                db.tb_metadata_quiz.creador == db.auth_user.id
+                ), 
+            db.project.on(
+                db.project.project_id == db.tb_metadata_quiz.curso)]
+                )
+    return dict(quiz = datos, metada = lista.first()) 
