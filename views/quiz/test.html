@@ -26,13 +26,22 @@
 <p><strong>Fecha de creacion: </strong>  {{=metadata.tb_metadata_quiz.fecha_creacion}}</p></p>
 </div>
 
+<br>
 {{ import json  }}
 {{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}
-{{=metadata}}
+<div class="navbar" data-step=1 data-intro="Div detalle del quiz">
+    <div class="navbar-inner">
+        <a style="cursor:pointer;"><center><h4>Detalle de la evalucacion</h4></center></a>
+    </div>
+</div>
+<div class="well" id="div_metainfo_quiz">
+    {{ for pregunta in  quizJson["PREGUNTAS"]: }}
+    
+    {{      = pregunta["id_pregunta"]}}
+    
+    {{pass}}
+</div>
 
 
-{{ for pregunta in  quizJson["PREGUNTAS"]: }}
 
-{{      = pregunta["id_pregunta"]}}
 
-{{pass}}
