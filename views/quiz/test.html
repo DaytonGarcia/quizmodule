@@ -42,6 +42,14 @@
             <h4>{{      = pregunta["value"]}}</h4>
             {{if (pregunta["tipo"]=="multiple") : }}
             <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
+            <p><strong>Respuestas: </strong></p>
+            <ol>
+                {{ for respuesta in pregunta["respuesta"] :}}
+                <li>
+                    {{ =respuesta["value"]}}
+                </li>
+                {{pass}}
+            </ol>
             {{pass}}
             {{if (pregunta["tipo"]=="veracidad") : }}
             <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
