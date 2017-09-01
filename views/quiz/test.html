@@ -35,11 +35,21 @@
     </div>
 </div>
 <div class="well" id="div_metainfo_quiz">
+    <ol>
     {{ for pregunta in  quizJson["PREGUNTAS"]: }}
-    
-    {{      = pregunta["id_pregunta"]}}
-    
+    <li>
+        <div>
+            <h4>{{      = pregunta["value"]}}</h4>
+            {{if (pregunta["tipo"]=="multiple") : }}
+            <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
+            {{pass}}
+            {{if (pregunta["tipo"]=="veracidad") : }}
+            <p><strong>Tipo: Pregunta de falso/verdadero</strong></p>
+            {{pass}}
+        <div>
+    </li>
     {{pass}}
+    <ol>
 </div>
 
 
