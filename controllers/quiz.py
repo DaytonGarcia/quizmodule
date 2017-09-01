@@ -200,4 +200,4 @@ def test():
             db.project.on(
                 db.project.project_id == db.tb_metadata_quiz.curso)]
                 )
-    return dict(quiz = datos, metada = lista.first()) 
+    return dict(quiz = datos, metadata = lista.first()) 
