@@ -53,9 +53,13 @@
                 </li>
                 {{pass}}
             </ol>
-            {{pass}}
-            {{if (pregunta["tipo"]=="veracidad") : }}
+            
+            {{elif (pregunta["tipo"]=="veracidad") : }}
             <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
+            <p><strong>Respuesta Correcta: </strong> {{      = pregunta["respuesta"]}}</p>
+
+            {{else:}}
+            <p><strong>Tipo: </strong> Repuesta Corta</p>
             <p><strong>Respuesta Correcta: </strong> {{      = pregunta["respuesta"]}}</p>
             {{pass}}
         <div>
