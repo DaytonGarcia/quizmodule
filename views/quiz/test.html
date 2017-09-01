@@ -17,7 +17,7 @@
 
 {{ import json  }}
 {{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}
-{{=metada}}
+{{=metadata}}
 
 
 {{ for pregunta in  quizJson["PREGUNTAS"]: }}
