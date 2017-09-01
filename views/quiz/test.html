@@ -47,6 +47,9 @@
                 {{ for respuesta in pregunta["respuesta"] :}}
                 <li>
                     {{ =respuesta["value"]}}
+                    {{ if (respuesta["correcta"]==true) : }}
+                    - Correcta
+                    {{pass}}
                 </li>
                 {{pass}}
             </ol>
