@@ -201,3 +201,27 @@ def test():
                 db.project.project_id == db.tb_metadata_quiz.curso)]
                 )
     return dict(quiz = datos, metadata = lista.first()) 
+
+    @auth.requires_login()
+def programacion_test():
+    x = tuple(request.args)
+    y = str(''.join(x))
+    ide = int(y)
+    lista = db(db.tb_metadata_quiz.id_quiz==ide).select(
+        db.tb_metadata_quiz.creador, 
+        db.tb_metadata_quiz.curso)
+
+    #OBTENGO LA METADA DEL QUIZ
+    lista = db(db.tb_metadata_quiz.id_quiz==ide).select(
+        db.tb_metadata_quiz.ALL, 
+        db.auth_user.first_name, 
+        db.auth_user.last_name, 
+        db.project.name, 
+        join=[
+            db.auth_user.on(
+                db.tb_metadata_quiz.creador == db.auth_user.id
+                ), 
+            db.project.on(
+                db.project.project_id == db.tb_metadata_quiz.curso)]
+                )
+    return dict(metadata = lista.first()) 
