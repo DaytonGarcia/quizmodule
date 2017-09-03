@@ -202,7 +202,7 @@ def test():
                 )
     return dict(quiz = datos, metadata = lista.first()) 
 
-    @auth.requires_login()
+@auth.requires_login()
 def programacion_test():
     x = tuple(request.args)
     y = str(''.join(x))
