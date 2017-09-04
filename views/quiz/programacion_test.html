@@ -1,4 +1,22 @@
 {{extend 'template.html'}}
+<script type="text/javascript" src="{{=URL('static','js/quiz-js/super.js')}}"></script>
+<script type="text/javascript">
+$(document).ready(
+      
+      function(){
+	
+	$('#cboCategoria').change(function(){
+
+		alert('Hola que tal');
+		//var parametros = "/"+idquiz;
+		//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+		//var result = submitLoad("quiz","test",parametros);
+		//alert(result);
+    });
+});
+
+
+</script>
 </head>
 <div class="row-fluid">
 	<center>
@@ -45,6 +63,7 @@
             </td>
             <td width="20%">
                     <p><strong>Seleccione una actividad:</strong></p>
+
             </td>
             <td width="30%">
                     <select id="cboActividad">
