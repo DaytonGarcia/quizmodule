@@ -225,6 +225,16 @@ def programacion_test():
                 db.project.project_id == db.tb_metadata_quiz.curso)]
                 )
 
-    #OBTENGO LA LISTA DE ACTIVIDADES DE ESTE CURSO EN ESTE PERIODO
-    
-    return dict(metadata = lista.first()) 
+    #OBTENGO LOS CODIGOS DE ACTIVIDADES QUE PERENECEN A UN QUIZ
+
+    actividades = db().select(
+        db.activity_category.id,
+        db.activity_category.category,
+        join=[
+            db.equivalencia_quiz_category.on(
+                db.equivalencia_quiz_category.categorie = db.activity_category.id
+            )
+        ] 
+    )
+
+    return dict(metadata = lista.first(), actividades = actividades) 
