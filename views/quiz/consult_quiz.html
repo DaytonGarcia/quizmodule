@@ -15,9 +15,7 @@ $(document).ready(
 	$('.btVerQuiz').click(function(){
 
 		var idquiz = $(this).attr("id");
-		var period = $('#pPeriod').text();
-		alert(period);
-		var parametros = "/"+idquiz+"?period";
+		var parametros = "/"+idquiz;
 		window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
 		//var result = submitLoad("quiz","test",parametros);
 		//alert(result);
@@ -26,7 +24,9 @@ $(document).ready(
 
     $('.btActive').click(function(){
 		var idquiz = $(this).attr("id");
-		var parametros = "/"+idquiz;
+		var period = $('#pPeriod').text();
+		var project = $('#pProject').text();
+		var parametros = "/"+idquiz+"?project="+project+"&period="+period;
 		window.location.href = "https://"+document.domain+"/quiz/programacion_test"+parametros;
 		//var result =  submitLoad("quiz","test",parametros);
 		//alert(result);
