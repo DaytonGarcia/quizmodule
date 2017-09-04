@@ -25,3 +25,17 @@
 <p><strong>Curso: </strong>  {{=metadata.project.name}}</p>
 <p><strong>Fecha de creacion: </strong>  {{=metadata.tb_metadata_quiz.fecha_creacion}}</p></p>
 </div>
+
+<div class="navbar" data-step=1 data-intro="Div para programacion">
+        <div class="navbar-inner">
+            <a style="cursor:pointer;"><center><h4>Creacion de programacion para la actividad tipo evaluacion</h4></center></a>
+        </div>
+</div>
+<div class="well" id="div_metainfo_quiz">
+    <select>
+            <option value="0">Seleccion una categoria</option>
+            {{for categoria in categorias:}}
+            <option value="{{=categoria.activity_category.id}}">{{=categoria.activity_category.categorie}}</option>
+            {{pass}}
+    </select>
+</div>

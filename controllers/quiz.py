@@ -227,7 +227,7 @@ def programacion_test():
 
     #OBTENGO LOS CODIGOS DE ACTIVIDADES QUE PERENECEN A UN QUIZ
 
-    actividades = db().select(
+    categorias = db().select(
         db.activity_category.id,
         db.activity_category.category,
         join=[
@@ -237,4 +237,4 @@ def programacion_test():
         ] 
     )
 
-    return dict(metadata = lista.first(), actividades = actividades) 
+    return dict(metadata = lista.first(), categorias = categorias) 
