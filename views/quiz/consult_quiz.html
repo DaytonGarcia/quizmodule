@@ -16,7 +16,6 @@ $(document).ready(
 
 		var idquiz = $(this).attr("id");
 		var parametros = "/"+idquiz;
-		alert(period);
 		window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
 		//var result = submitLoad("quiz","test",parametros);
 		//alert(result);
@@ -85,3 +84,4 @@ $(document).ready(
 	</tbody>
 	{{pass}}
 	</table>
+<p>{{=periodo}}</p>
