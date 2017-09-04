@@ -12,7 +12,7 @@ create table tb_metadata_quiz
 #Equivalencia entre actividades y quiz
 create table equivalencia_quiz_category(
 id int AUTO_INCREMENT not null primary key,
-categorie int not null,
+categorie int not null unique,
 description varchar(100),
 FOREIGN KEY (categorie)
       REFERENCES activity_category(id)

@@ -2004,6 +2004,11 @@ db.define_table('tb_quiz_actividad',
                 Field('fin', 'datetime', notnull = True, required=True),
                 Field('finalizado', 'integer', notnull = True, required=True)
                 )
+
+db.define_table('equivalencia_quiz_category',
+                Field('categorie', 'integer', notnull=True, required=True, unique=True),
+                Field('description', 'string', notnull = False, required=False)
+                )
 #-----------------FIN DE CONTROL DE QUIZES ---------------------------------------
 
 
