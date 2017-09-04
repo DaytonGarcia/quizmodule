@@ -237,4 +237,5 @@ def programacion_test():
         ] 
     )
 
+    print categorias
     return dict(metadata = lista.first(), categorias = categorias) 
