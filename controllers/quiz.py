@@ -232,7 +232,7 @@ def programacion_test():
         db.activity_category.category,
         join=[
             db.equivalencia_quiz_category.on(
-                db.equivalencia_quiz_category.categorie = db.activity_category.id
+                db.equivalencia_quiz_category.categorie == db.activity_category.id
             )
         ] 
     )
