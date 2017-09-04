@@ -237,5 +237,16 @@ def programacion_test():
         ] 
     )
 
+    period = cpfecys.current_year_period()
+    idperiodoc = request.vars['period']
+    idproject = request.vars['project']
+
+    #Si el periodo actual es igual al periodo recibido en la variable corresponde el quiz
+    actual = False
+    if(int(period)==int(idperiodoc)):
+        actual = True
+
+
+
     print categorias
     return dict(metadata = lista.first(), categorias = categorias) 
