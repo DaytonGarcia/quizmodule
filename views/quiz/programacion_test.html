@@ -38,7 +38,7 @@
                     <p><strong>Categoria de actividades:</strong></p>
             </td>
             <td>
-                    <select>
+                    <select id="cboCategoria">
                             <option value="0">Seleccion una categoria</option>
                             {{for categoria in categorias:}}
                             <option value="{{=categoria.id}}">{{=categoria.category}}</option>
@@ -48,8 +48,12 @@
             <td>
             </td>
             <td>
+                    <p><strong>Seleccione una actividad:</strong></p>
             </td>
             <td>
+                    <select id="cboActividad">
+                            <option value="0">Seleccion una actividad</option>
+                    </select>
             </td>
 
         </tr>
