@@ -1,7 +1,4 @@
 {{extend 'template.html'}}
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" media="screen"
- href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
 </head>
 <div class="row-fluid">
 	<center>
@@ -67,25 +64,9 @@
                     <p><strong>Horario de ejecucion:</strong></p>
             </td>
             <td width="20%">
-                    <input class="hour" id="inpHora" name="hora" placeholder="HH:MM" type="text" value="" style="width:64%;" autocomplete="off">
+                    <input id="inpHora" name="hora" placeholder="HH:MM" type="time" value="" style="width:64%;" autocomplete="off">
             </td>
         </tr>
     </table>
-    <div class="well">
-            <div id="datetimepicker3" class="input-append">
-              <input data-format="hh:mm:ss" type="text"></input>
-              <span class="add-on">
-                <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                </i>
-              </span>
-            </div>
-          </div>
-          <script type="text/javascript">
-            $(function() {
-              $('#datetimepicker3').datetimepicker({
-                pickDate: false
-              });
-            });
-          </script>
 
 </div>
