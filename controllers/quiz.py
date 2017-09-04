@@ -224,4 +224,7 @@ def programacion_test():
             db.project.on(
                 db.project.project_id == db.tb_metadata_quiz.curso)]
                 )
+
+    #OBTENGO LA LISTA DE ACTIVIDADES DE ESTE CURSO EN ESTE PERIODO
+    
     return dict(metadata = lista.first()) 
