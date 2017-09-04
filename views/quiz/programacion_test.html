@@ -32,12 +32,27 @@
         </div>
 </div>
 <div class="well" id="div_metainfo_quiz">
-<p><strong>Categoria de actividades:</strong>
-    <select>
-            <option value="0">Seleccion una categoria</option>
-            {{for categoria in categorias:}}
-            <option value="{{=categoria.id}}">{{=categoria.category}}</option>
-            {{pass}}
-    </select>
-</p>
+    <table>
+        <tr>
+            <td>
+                    <p><strong>Categoria de actividades:</strong></p>
+            </td>
+            <td>
+                    <select>
+                            <option value="0">Seleccion una categoria</option>
+                            {{for categoria in categorias:}}
+                            <option value="{{=categoria.id}}">{{=categoria.category}}</option>
+                            {{pass}}
+                    </select>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+
+        </tr>
+    </table>
+
 </div>
