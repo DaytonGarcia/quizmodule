@@ -35,7 +35,7 @@
     <select>
             <option value="0">Seleccion una categoria</option>
             {{for categoria in categorias:}}
-            <option value="{{=db.categoria.activity_category.id}}">{{=db.categoria.activity_category.categorie}}</option>
+            <option value="{{=categoria.activity_category.id}}">{{=categoria.activity_category.category}}</option>
             {{pass}}
     </select>
 </div>
