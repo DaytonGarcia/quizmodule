@@ -271,6 +271,7 @@ def getActivities():
     actividades = db(myquery).select(
         db.course_activity.id,
         db.course_activity.name,
+        db.course_activity.laboratory
         join=[
             db.course_activity_category.on(
             db.course_activity_category.id == db.course_activity.course_activity_category    
