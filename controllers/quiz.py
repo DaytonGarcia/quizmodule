@@ -269,7 +269,7 @@ def getActivities():
         db.course_activity.name,
         join=[
             db.course_activity_category.on(
-            db.course_activity_category.id = db.course_activity.course_activity_category    
+            db.course_activity_category.id == db.course_activity.course_activity_category    
             )
         ]
     )
