@@ -12,7 +12,10 @@ $(document).ready(
         if($('#cboCategoria').val() !=0)
         {
             var idCategoria = $('#cboCategoria').val();
-            var idCurso = 
+            var idCurso = $('#pProject').val();
+            var idPeriodo = $('#pPeriod').val();
+
+            alert("La categoria es "+idCategoria+" El curso es: " +idCurso+" el Periodo es: "+idPeriodo);
         }
 		//var parametros = "/"+idquiz;
 		//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
