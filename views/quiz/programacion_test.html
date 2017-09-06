@@ -11,7 +11,8 @@ $(document).ready(
         
         if($('#cboCategoria').val() !=0)
         {
-            alert($('#cboCategoria').val());
+            var idCategoria = $('#cboCategoria').val();
+            var idCurso = 
         }
 		//var parametros = "/"+idquiz;
 		//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
@@ -107,3 +108,5 @@ $(document).ready(
     </table>
 
 </div>
+<p id="pPeriod" hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
+<p id="pProject" hidden value="{{=project.id}}">{{=project.id}}</p>

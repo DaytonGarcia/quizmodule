@@ -240,6 +240,7 @@ def programacion_test():
     period = cpfecys.current_year_period()
     idperiodoc = request.vars['period']
     idproject = request.vars['project']
+    project = db(db.project.creador==idproject).select().first() 
 
     #Si el periodo actual es igual al periodo recibido en la variable corresponde el quiz
     actual = False
@@ -249,4 +250,4 @@ def programacion_test():
 
 
     print categorias
-    return dict(metadata = lista.first(), categorias = categorias) 
+    return dict(metadata = lista.first(), categorias = categorias, period = period, project =project) 
