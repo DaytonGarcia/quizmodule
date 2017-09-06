@@ -263,16 +263,12 @@ def getActivities():
     print categoria
 
     	
-    #myquery = (db.mytable.myfield != None) | (db.mytable.myfield > 'A')
+    myquery = (db.course_activity.assignation==curso) & (db.course_activity.laboratory=='T')
+    #db.course_activity.semester==period,
+    #    db.course_activity_category.category==categoria
 
 
-    actividades = db(
-        db.course_activity.assignation==curso,
-        db.course_activity.laboratory=='T',
-        db.course_activity.semester==period,
-        db.course_activity_category.category==categoria
-
-    ).select(
+    actividades = db(myquery).select(
         db.course_activity.id,
         db.course_activity.name,
         join=[
