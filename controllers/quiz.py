@@ -254,5 +254,24 @@ def programacion_test():
 
 @auth.requires_login()
 def getActivities():
+    periodo = request.vars['period']
+    curso = request.vars['project']
+    categoria = request.vars['categorie']
 
-    return "Hola si llegue :)"
+    actividades = db.(
+        db.course_activity.assignation==int(course),
+        db.course_activity.laboratory=='T',
+        db.course_activity.semester==int(period),
+        db.course_activity_category.category==int(categoria)
+
+    ).select(
+        db.course_activity.id,
+        db.course_activity.name,
+        join=[
+            db.course_activity_category.on(
+            db.course_activity_category.id = db.course_activity.course_activity_category    
+            )
+        ]
+    )
+
+    return actividades
