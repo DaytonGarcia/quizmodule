@@ -258,6 +258,10 @@ def getActivities():
     curso = request.vars['project']
     categoria = request.vars['categorie']
 
+    print periodo
+    print curso
+    print categoria
+
     actividades = db(
         db.course_activity.assignation==int(curso),
         db.course_activity.laboratory=='T',
