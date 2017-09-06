@@ -68,7 +68,7 @@ def consultar_quiz():
     period = cpfecys.current_year_period()
     idperiodoc = request.vars['period']
     idproject = request.vars['project']
-    project = db(db.project.creador==idproject).select().first()  
+    project = db(db.project.id==idproject).select().first()  
     idPregunta = 1
     return dict(ecys_var = ecys_var, periodo = period, project=project)
 
@@ -240,7 +240,7 @@ def programacion_test():
     period = cpfecys.current_year_period()
     idperiodoc = request.vars['period']
     idproject = request.vars['project']
-    project = db(db.project.creador==idproject).select().first() 
+    project = db(db.project.id==idproject).select().first() 
 
     #Si el periodo actual es igual al periodo recibido en la variable corresponde el quiz
     actual = False
