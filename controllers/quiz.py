@@ -251,3 +251,8 @@ def programacion_test():
 
     print categorias
     return dict(metadata = lista.first(), categorias = categorias, periodo = period, project =project) 
+
+@auth.requires_login()
+def getActivities():
+
+    return "Hola si llegue :)"
