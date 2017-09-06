@@ -7,7 +7,12 @@ $(document).ready(
 	
 	$('#cboCategoria').change(function(){
 
-		alert('Hola que tal');
+        
+        
+        if($('#cboCategoria').value !=0)
+        {
+            alert($('#cboCategoria').value);
+        }
 		//var parametros = "/"+idquiz;
 		//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
 		//var result = submitLoad("quiz","test",parametros);
