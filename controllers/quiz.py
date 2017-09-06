@@ -265,7 +265,7 @@ def getActivities():
     	
     myquery = (db.course_activity.assignation==curso) & (db.course_activity.semester==period)
     #db.course_activity.laboratory=='T'
-    #    db.course_activity_category.category==categoria
+    #db.course_activity_category.category==categoria
 
 
     actividades = db(myquery).select(
