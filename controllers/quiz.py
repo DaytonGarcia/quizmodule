@@ -262,11 +262,15 @@ def getActivities():
     print curso
     print categoria
 
+    	
+    #myquery = (db.mytable.myfield != None) | (db.mytable.myfield > 'A')
+
+
     actividades = db(
-        (db.course_activity.assignation)==curso and
-        (db.course_activity.laboratory)=='T' and
-        (db.course_activity.semester)==period and
-        (db.course_activity_category.category)==categoria
+        (db.course_activity.assignation==curso) and
+        (db.course_activity.laboratory=='T') and
+        (db.course_activity.semester==period) and
+        (db.course_activity_category.category==categoria)
 
     ).select(
         db.course_activity.id,
