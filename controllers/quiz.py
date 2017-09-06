@@ -279,4 +279,4 @@ def getActivities():
 
     print actividades
 
-    return actividades
+    return response.json(actividades)
