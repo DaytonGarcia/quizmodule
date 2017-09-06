@@ -263,7 +263,10 @@ def getActivities():
     print categoria
 
     actividades = db(
-        db.course_activity.assignation==curso 
+        db.course_activity.assignation==curso &=
+        db.course_activity.laboratory=='T' &=
+        db.course_activity.semester==period &=
+        db.course_activity_category.category==categoria
 
     ).select(
         db.course_activity.id,
