@@ -250,4 +250,4 @@ def programacion_test():
 
 
     print categorias
-    return dict(metadata = lista.first(), categorias = categorias, period = period, project =project) 
+    return dict(metadata = lista.first(), categorias = categorias, periodo = period, project =project) 
