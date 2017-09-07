@@ -5,31 +5,23 @@ $(document).ready(
       
       function(){
 
-        function isValidDate(dateString)
-        {
-            // revisar el patrón
-            if(!/^\d{4}\-\d{1,2}\-\d{1,2}$/.test(dateString))
-                return false;
-
-            // convertir los numeros a enteros
-            var parts = dateString.split("/");
-            var day = parseInt(parts[2], 10);
-            var month = parseInt(parts[1], 10);
-            var year = parseInt(parts[0], 10);
-
-            // Revisar los rangos de año y mes
-            if( (year < 1000) || (year > 3000) || (month == 0) || (month > 12) )
-                return false;
-
-            var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-            // Ajustar para los años bisiestos
-            if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-                monthLength[1] = 29;
-
-            // Revisar el rango del dia
-            return day > 0 && day <= monthLength[month - 1];
-        };
+        function isValidDate (value) {
+            var valid = false,
+                info,
+                real;
+            
+            // Validar formato
+            if (/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/.test(value)) {
+              
+              // Validar fecha
+              info = value.split(/\//);
+              real = (new Date(info[2], info[1] - 1, info[0])).toISOString().substr(0,10).split('-');
+              if (info[0] === real[2] && info[1] === real[1] && info[2] === real[0]) {
+                valid = true;
+              }
+            }
+            return valid;
+          }
 	
 	$('#cboCategoria').change(function(){
 
