@@ -67,6 +67,8 @@ $(document).ready(
 
     $('#btGrabar').click(function()
     {
+        alert( isValidDate($("#dateInit").val()) );
+
         if($('#cboCategoria option:selected').val()==0)
         {
             alert('Por favor seleccione una categoria');
@@ -76,10 +78,8 @@ $(document).ready(
         {
             alert('Por favor seleccione una actividad');
         }
-        else if (isValidDate($("#dateInit").val()==false))
-        {
-            alert('Fecha Invalida');
-        }
+        
+
     }
 
     );
