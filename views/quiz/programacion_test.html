@@ -17,7 +17,14 @@ $(document).ready(
 
             var parametros = "?project="+idCurso+"&period="+idPeriodo+"&categorie="+idCategoria;
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
-		    var result = submitLoad("quiz","getActivities",parametros);
+            var result = submitLoad("quiz","getActivities",parametros);
+            
+            $.each(result, function (i, item) {
+                $('#cboCategoria').append($('<option>', { 
+                    value: item.id,
+                    text : item.name 
+                }));
+            });
 		    alert(result);
         }
 		
