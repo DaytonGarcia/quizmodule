@@ -18,10 +18,10 @@ $(document).ready(
             var parametros = "?project="+idCurso+"&period="+idPeriodo+"&categorie="+idCategoria;
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
             var result = submitLoad("quiz","getActivities",parametros);
-            var obj = JSON.parse(result);
+            var data = JSON.parse(result);
             
-            $.each(obj, function(i, item) {
-                alert(item.name);
+            $.each(data, function(i, item) {
+                alert(data[i].name);
             });​
         }
 		
