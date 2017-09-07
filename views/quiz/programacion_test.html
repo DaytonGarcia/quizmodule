@@ -67,6 +67,7 @@ $(document).ready(
 
     $('#btGrabar').click(function()
     {
+        alert( $("#dateInit").text());
         alert( isValidDate($("#dateInit").text()) );
 
         if($('#cboCategoria option:selected').val()==0)
