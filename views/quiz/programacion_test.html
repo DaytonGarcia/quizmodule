@@ -21,8 +21,12 @@ $(document).ready(
             var data = JSON.parse(result);
             
             for (var i in data) {
+
+                $('#cboCategoria').append($('<option>', { 
+                    value: data[i]['id'],
+                    text : data[i]['name'] 
+                }));
                 
-                  alert(data[i]['name']);
                 
              }
         }
