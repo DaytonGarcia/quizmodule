@@ -19,9 +19,10 @@ $(document).ready(
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
             var result = submitLoad("quiz","getActivities",parametros);
             
-            for(var k in result) {
-                alert(result[k]);
-             }
+            for (i in result)
+            {
+            alert(result[i].name + "<br />");
+            }
         }
 		
     });
