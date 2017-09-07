@@ -20,9 +20,11 @@ $(document).ready(
             var result = submitLoad("quiz","getActivities",parametros);
             var data = JSON.parse(result);
             
-            $.each(data, function(i, item) {
-                alert(data[i].id);
-            });​
+            for (var i in data) {
+                for (var j in data[i]) {
+                  alert(data[i][j]);
+                }
+             }
         }
 		
     });
