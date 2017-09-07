@@ -19,9 +19,9 @@ $(document).ready(
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
             var result = submitLoad("quiz","getActivities",parametros);
             
-            result.array.forEach(function(element) {
-                alert(elemnt.id);
-            }, this);
+            for(var k in result) {
+                alert(result[k]);
+             }
         }
 		
     });
