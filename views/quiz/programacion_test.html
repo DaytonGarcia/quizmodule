@@ -18,8 +18,8 @@ $(document).ready(
             var parametros = "?project="+idCurso+"&period="+idPeriodo+"&categorie="+idCategoria;
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
             var result = submitLoad("quiz","getActivities",parametros);
-            var str = JSON.stringify(eval('('+result+')'));
-            alert(str[0]);
+            var obj = JSON.parse(result);
+            alert(obj[0]);
         }
 		
     });
