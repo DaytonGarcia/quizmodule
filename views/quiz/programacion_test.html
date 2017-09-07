@@ -19,7 +19,7 @@ $(document).ready(
 		    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
             var result = submitLoad("quiz","getActivities",parametros);
             var data = JSON.parse(result);
-            $('#cboActividad').remove();
+            //$('#cboActividad').remove();
             $('#cboActividad').append($('<option>', { 
                     value: 0,
                     text : 'Seleccione una actividad' 
