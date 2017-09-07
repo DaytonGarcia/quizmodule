@@ -41,7 +41,7 @@ $(document).ready(
 
     $('#btGrabar').click(function()
     {
-        if($('#cboActividad').val()==0)
+        if($('#cboActividad :selected').val()==0)
         {
             alert('Por favor seleccione una categoria');
         }
