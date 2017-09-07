@@ -41,7 +41,10 @@ $(document).ready(
 
     $('#btGrabar').click(function()
     {
-        alert('Voy a grabar');
+        if($('#cboActividad').val()==0)
+        {
+            alert('Por favor seleccione una categoria');
+        }
     }
 
     );
