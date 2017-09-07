@@ -12,7 +12,7 @@ $(document).ready(
             
             // Validar formato
             //if (/^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/.test(value)) {
-            if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+            if (/^\d{4}[\/]d{2}-\d{2}$/.test(value)) {
               
               // Validar fecha
               info = value.split(/\//);
@@ -23,6 +23,14 @@ $(document).ready(
             }
             return valid;
           }
+
+          function isValidDate2(dateString) {
+  var regEx = /^\d{4}-\d{2}-\d{2}$/;
+  if(!dateString.match(regEx)) return false;  // Invalid format
+  var d = new Date(dateString);
+  if(!d.getTime()) return false; // Invalid date (or this could be epoch)
+  return d.toISOString().slice(0,10) === dateString;
+}
 	
 	$('#cboCategoria').change(function(){
 
@@ -61,7 +69,7 @@ $(document).ready(
     $('#btGrabar').click(function()
     {
         alert( $("#dateInit").val());
-        alert( isValidDate($("#dateInit").val()) );
+        alert( isValidDate2($("#dateInit").val()) );
 
         if($('#cboCategoria option:selected').val()==0)
         {
