@@ -51,29 +51,34 @@ $(document).ready(
 
     $('#btGrabar').click(function()
     {
-
+        $("#lbMensajeError").attr("hidden","true");
         if($('#cboCategoria option:selected').val()==0)
         {
+            $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("Por favor seleccione una categoria");
         }
 
         else if($('#cboActividad option:selected').val()==0)
         {
+            $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("Por favor seleccione una actividad");
         }
 
         else if(isValidDate($("#dateInit").val())==false)
         {
+            $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("Fecha incorrecta");
         }
         
         else if($('#inpHora').val()=='')
         {
+            $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("La hora de incio del quiz es incorrecta");
         }
 
         else if($('#txtDuracion').val()=='')
         {
+            $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("La duracion del quiz es incorrecta");
         }
         
@@ -170,8 +175,7 @@ $(document).ready(
     </table>
 
 </div>
-<div class="alert alert-warning" role="alert" id="lbMensajeError">
-	This is a warning alert—check it out!
+<div class="alert alert-warning" role="alert" id="lbMensajeError" hidden>
   </div>
 <p id="pPeriod" hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
 <p id="pProject" hidden value="{{=project.id}}">{{=project.id}}</p>
