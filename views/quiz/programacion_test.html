@@ -54,27 +54,27 @@ $(document).ready(
 
         if($('#cboCategoria option:selected').val()==0)
         {
-            $("#lbMensajeErro").val('Por favor seleccione una categoria');
+            $("#lbMensajeError").val('Por favor seleccione una categoria');
         }
 
         else if($('#cboActividad option:selected').val()==0)
         {
-            $("#lbMensajeErro").val('Por favor seleccione una actividad');
+            $("#lbMensajeError").val('Por favor seleccione una actividad');
         }
 
         else if(isValidDate($("#dateInit").val())==false)
         {
-            $("#lbMensajeErro").val('Fecha incorrecta');
+            $("#lbMensajeError").val('Fecha incorrecta');
         }
         
         else if($('#inpHora').val()=='')
         {
-            $("#lbMensajeErro").val('La hora de incio del quiz es incorrecta');
+            $("#lbMensajeError").val('La hora de incio del quiz es incorrecta');
         }
 
         else if($('#txtDuracion').val()=='')
         {
-            $("#lbMensajeErro").val('La duracion del quiz es incorrecta');
+            $("#lbMensajeError").val('La duracion del quiz es incorrecta');
         }
         
 
