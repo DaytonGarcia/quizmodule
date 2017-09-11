@@ -81,6 +81,22 @@ $(document).ready(
             $("#lbMensajeError").removeAttr("hidden");
             $("#lbMensajeError").text("La duracion del quiz es incorrecta");
         }
+        else
+        {
+            try {
+                var idCategoria = parseInt($('#cboCategoria option:selected').val());
+                var idActividad = parseInt($('#cboActividad option:selected').val());
+                var duracion = parseInt($('#txtDuracion').val());
+                var fecha = isValidDate($("#dateInit").val());
+                var hora = isValidDate($("#dateInit").val());
+
+                alert("Bien hecho");
+                
+            } catch (error) {
+                $("#lbMensajeError").removeAttr("hidden");
+                $("#lbMensajeError").text("Ha ocurrido un error. Error: "+error);
+            }
+        }
         
 
     }
