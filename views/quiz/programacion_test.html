@@ -54,27 +54,27 @@ $(document).ready(
 
         if($('#cboCategoria option:selected').val()==0)
         {
-            alert('Por favor seleccione una categoria');
+            $("#lbMensajeErro").val('Por favor seleccione una categoria');
         }
 
         else if($('#cboActividad option:selected').val()==0)
         {
-            alert('Por favor seleccione una actividad');
+            $("#lbMensajeErro").val('Por favor seleccione una actividad');
         }
 
         else if(isValidDate($("#dateInit").val())==false)
         {
-            alert('Fecha incorrecta');
+            $("#lbMensajeErro").val('Fecha incorrecta');
         }
         
         else if($('#inpHora').val()=='')
         {
-            alert('La hora de incio del quiz es incorrecta');
+            $("#lbMensajeErro").val('La hora de incio del quiz es incorrecta');
         }
 
         else if($('#txtDuracion').val()=='')
         {
-            alert('La duracion del quiz es incorrecta');
+            $("#lbMensajeErro").val('La duracion del quiz es incorrecta');
         }
         
 
@@ -170,7 +170,7 @@ $(document).ready(
     </table>
 
 </div>
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning" role="alert" id="lbMensajeError">
 	This is a warning alert—check it out!
   </div>
 <p id="pPeriod" hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
