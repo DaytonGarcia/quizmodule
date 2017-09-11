@@ -279,3 +279,9 @@ def getActivities():
     print actividades
 
     return response.json(actividades)
+
+@auth.requires_login()
+def programar():
+    hola = 'hola'
+
+    return hola

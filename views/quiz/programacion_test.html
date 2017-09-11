@@ -90,7 +90,9 @@ $(document).ready(
                 var fecha = isValidDate($("#dateInit").val());
                 var hora = isValidDate($("#dateInit").val());
 
-                alert("Bien hecho" + duracion);
+                var hola = submitLoad("quiz","GuardarQuiz",parametros);
+
+                alert(hola);
                 
             } catch (error) {
                 $("#lbMensajeError").removeAttr("hidden");
