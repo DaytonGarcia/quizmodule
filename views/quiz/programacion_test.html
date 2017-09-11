@@ -59,22 +59,22 @@ $(document).ready(
 
         else if($('#cboActividad option:selected').val()==0)
         {
-            $("#lbMensajeError").val('Por favor seleccione una actividad');
+            $("#lbMensajeError").text("Por favor seleccione una actividad");
         }
 
         else if(isValidDate($("#dateInit").val())==false)
         {
-            $("#lbMensajeError").val('Fecha incorrecta');
+            $("#lbMensajeError").text("Fecha incorrecta");
         }
         
         else if($('#inpHora').val()=='')
         {
-            $("#lbMensajeError").val('La hora de incio del quiz es incorrecta');
+            $("#lbMensajeError").text("La hora de incio del quiz es incorrecta");
         }
 
         else if($('#txtDuracion').val()=='')
         {
-            $("#lbMensajeError").val('La duracion del quiz es incorrecta');
+            $("#lbMensajeError").text("La duracion del quiz es incorrecta");
         }
         
 
