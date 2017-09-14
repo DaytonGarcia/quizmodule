@@ -282,26 +282,30 @@ def getActivities():
 
 @auth.requires_login()
 def programar():
-    pId_actividad = request.vars['id_actividad']
-    pId_quiz = request.vars['id_quiz']
-    pFecha = request.vars['fecha']
-    pInicio = request.vars['inicio']
-    pDuracion = request.vars['duracion']
+    try:
+        pId_actividad = request.vars['id_actividad']
+        pId_quiz = request.vars['id_quiz']
+        pFecha = request.vars['fecha']
+        pInicio = request.vars['inicio']
+        pDuracion = request.vars['duracion']
 
-    print 'La actividad es: ' + pId_actividad
-    print 'El quiz es: ' + pId_quiz
-    print 'La fecha es: ' + pFecha
-    print 'La hora de incio es: ' + pInicio
-    print 'La duracion es: ' + pDuracion
+        print 'La actividad es: ' + pId_actividad
+        print 'El quiz es: ' + pId_quiz
+        print 'La fecha es: ' + pFecha
+        print 'La hora de incio es: ' + pInicio
+        print 'La duracion es: ' + pDuracion
 
-    db.tb_quiz_actividad.insert(
-        id_actividad = pId_actividad,
-        id_quiz = pId_quiz,
-        fecha = pFecha,
-        inicio= pInicio,
-        duracion= pDuracion,
-        finalizado= False
-        )
-    db.commit()
+        db.tb_quiz_actividad.insert(
+            id_actividad = pId_actividad,
+            id_quiz = pId_quiz,
+            fecha = pFecha,
+            inicio= pInicio,
+            duracion= pDuracion,
+            finalizado= False
+            )
+        db.commit()
 
-    return "Se ha programado el la activadad correctamente"
+        return "Se ha programado el la activadad correctamente"
+        break
+    except ValueError:
+        return "Ha ocurrido un error."
