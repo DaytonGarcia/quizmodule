@@ -89,7 +89,7 @@ $(document).ready(
                 var duracion = parseInt($('#txtDuracion').val());
                 var fecha = isValidDate($("#dateInit").val());
                 var hora = isValidDate($("#dateInit").val());
-                var id = parseInt($('#pId').val());
+                var id_quiz = parseInt($('#pId').val());
                 var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
                 var hola = submitLoad("quiz","programar",parametros);
 
