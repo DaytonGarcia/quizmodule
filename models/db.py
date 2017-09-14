@@ -2003,7 +2003,7 @@ db.define_table('tb_quiz_actividad',
                 Field('fecha', 'date', notnull = True, required=True),
                 Field('inicio', 'time', notnull = True, required=True),
                 Field('duracion', 'integer', notnull = True, required=True),
-                Field('finalizado', 'integer', notnull = True, required=True)
+                Field('finalizado', 'boolean', notnull = True, required=True)
                 )
 
 db.define_table('equivalencia_quiz_category',

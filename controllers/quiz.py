@@ -282,16 +282,26 @@ def getActivities():
 
 @auth.requires_login()
 def programar():
-    id_actividad = request.vars['id_actividad']
-    id_quiz = request.vars['id_quiz']
-    fecha = request.vars['fecha']
-    inicio = request.vars['inicio']
-    duracion = request.vars['duracion']
+    pId_actividad = request.vars['id_actividad']
+    pId_quiz = request.vars['id_quiz']
+    pFecha = request.vars['fecha']
+    pInicio = request.vars['inicio']
+    pDuracion = request.vars['duracion']
 
-    print 'La actividad es: ' + id_actividad
-    print 'El quiz es: ' + id_quiz
-    print 'La fecha es: ' + fecha
-    print 'La hora de incio es: ' + inicio
-    print 'La duracion es: ' + duracion
+    print 'La actividad es: ' + pId_actividad
+    print 'El quiz es: ' + pId_quiz
+    print 'La fecha es: ' + pFecha
+    print 'La hora de incio es: ' + pInicio
+    print 'La duracion es: ' + pDuracion
 
-    return "hola"
+    db.tb_quiz_actividad.insert(
+        id_actividad = pId_actividad,
+        id_quiz = pId_quiz,
+        fecha = pFecha,
+        inicio= pInicio,
+        duracion= pDuracion,
+        finalizado= False
+        )
+    db.commit()
+
+    return "Se ha programado el la activadad correctamente"
