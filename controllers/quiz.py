@@ -294,4 +294,4 @@ def programar():
     print 'La hora de incio es: ' + inicio
     print 'La duracion es: ' + duracion
 
-    return hola
+    return "hola"
