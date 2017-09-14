@@ -285,7 +285,7 @@ def programar():
     pId_actividad = request.vars['id_actividad']
     pId_quiz = request.vars['id_quiz']
     pFecha = request.vars['fecha']
-    pInicio = request.vars['inicio']+':00'
+    pInicio = request.vars['inicio']
     pDuracion = request.vars['duracion']
 
     print 'La actividad es: ' + pId_actividad
