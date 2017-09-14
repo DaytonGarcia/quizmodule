@@ -282,6 +282,8 @@ def getActivities():
 
 @auth.requires_login()
 def programar():
+
+    mensaje = ""
     try:
         pId_actividad = request.vars['id_actividad']
         pId_quiz = request.vars['id_quiz']
@@ -305,6 +307,7 @@ def programar():
             )
         db.commit()
 
-        return "Se ha programado el la activadad correctamente"
+        mensaje = "Se ha programado el la activadad correctamente"
     except ValueError:
-        return "Ha ocurrido un error."
+        mensaje = "Ha ocurrido un error."
+    return mensaje
