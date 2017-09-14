@@ -306,6 +306,5 @@ def programar():
         db.commit()
 
         return "Se ha programado el la activadad correctamente"
-        break
     except ValueError:
         return "Ha ocurrido un error."
