@@ -282,6 +282,16 @@ def getActivities():
 
 @auth.requires_login()
 def programar():
-    hola = 'hola'
+    id_actividad = request.vars['id_actividad']
+    id_quiz = request.vars['id_quiz']
+    fecha = request.vars['fecha']
+    inicio = request.vars['inicio']
+    duracion = request.vars['duracion']
+
+    print 'La actividad es: ' + id_actividad
+    print 'El quiz es: ' + id_quiz
+    print 'La fecha es: ' + fecha
+    print 'La hora de incio es: ' + inicio
+    print 'La duracion es: ' + duracion
 
     return hola

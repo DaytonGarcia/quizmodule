@@ -1998,10 +1998,11 @@ db.define_table('tb_metadata_quiz',
                 )
 
 db.define_table('tb_quiz_actividad',
-                Field('id_quiz', 'integer', notnull = True, required=True),
                 Field('id_actividad', 'integer', notnull = True, required=True),
-                Field('inicio', 'datetime', notnull = True, required=True),
-                Field('fin', 'datetime', notnull = True, required=True),
+                Field('id_quiz', 'integer', notnull = True, required=True),
+                Field('fecha', 'date', notnull = True, required=True),
+                Field('inicio', 'time', notnull = True, required=True),
+                Field('duracion', 'integer', notnull = True, required=True),
                 Field('finalizado', 'integer', notnull = True, required=True)
                 )
 
