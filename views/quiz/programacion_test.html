@@ -87,8 +87,8 @@ $(document).ready(
                 var idCategoria = parseInt($('#cboCategoria option:selected').val());
                 var idActividad = parseInt($('#cboActividad option:selected').val());
                 var duracion = parseInt($('#txtDuracion').val());
-                var fecha = isValidDate($("#dateInit").val());
-                var hora = isValidDate($("#dateInit").val());
+                var fecha =($("#dateInit").val());
+                var hora = ($("#dateInit").val());
                 var id_quiz = parseInt($('#pId').val());
                 var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
                 var hola = submitLoad("quiz","programar",parametros);
@@ -198,4 +198,4 @@ $(document).ready(
   </div>
 <p id="pPeriod" hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
 <p id="pProject" hidden value="{{=project.id}}">{{=project.id}}</p>
-<p id="pId" hidden value="{{ =metadata.tb_metadata_quiz.id_quiz }}">{{ =metadata.tb_metadata_quiz.id_quiz }}</p>
+<p id="pId" value="{{=metadata.tb_metadata_quiz.id_quiz}}">{{=metadata.tb_metadata_quiz.id_quiz}}</p>
