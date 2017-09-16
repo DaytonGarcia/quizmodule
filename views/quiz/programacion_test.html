@@ -91,7 +91,8 @@ $(document).ready(
                 var hora = ($("#inpHora").val());
                 var id_quiz = parseInt($('#pId').text());
                 var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
-                var hola = submitLoad("quiz","programar",parametros);
+                //var hola = submitLoad("quiz","programar",parametros);
+                window.location.href = "https://"+document.domain+"/quiz/test_programacion"+parametros;
 
                 alert(hola);
                 

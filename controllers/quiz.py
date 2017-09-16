@@ -284,7 +284,7 @@ def getActivities():
     return response.json(actividades)
 
 @auth.requires_login()
-def programar():
+def test_programacion():
 
     mensaje = ""
     try:
@@ -309,8 +309,30 @@ def programar():
             finalizado= False
             )
         db.commit()
+    except Exception, e:
+        mensaje = "Ha ocurrido un error. Erro: %s" %e
+        resultado = "Fallida"
+        error = "%s" %e
+        name = "Nombre del quiz"
+        activitie = "Nombre de la actividad"
+        categorie = "Nombre de la categoria"
+        fecha = pFecha
+        duracion = pDuracion
+        hora = pInicio
+        estado = "Error"
+        result = 0
 
+    else:
         mensaje = "Se ha programado el la activadad correctamente"
-    except ValueError:
-        mensaje = "Ha ocurrido un error."
-    return mensaje
+        resultado = "Exitosa"
+        error = None
+        name = "Nombre del quiz"
+        activitie = "Nombre de la actividad"
+        categorie = "Nombre de la categoria"
+        fecha = pFecha
+        duracion = pDuracion
+        hora = pInicio
+        estado = "Pendiente de inicio"
+        result = 1
+    finally:
+        return dict(mensaje = mensaje, resultado = resultado, error = error, result = result,  name=name, activitie=activitie,categorie=categorie, fecha=fecha, duracion=duracion, hora=hora, estado)
