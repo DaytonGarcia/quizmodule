@@ -310,30 +310,30 @@ def test_programacion():
             )
         db.commit()
     except Exception, e:
-        mensaje = "Ha ocurrido un error. Erro: %s" %e
-        resultado = "Fallida"
-        error = "%s" %e
-        name = "Nombre del quiz"
-        activitie = "Nombre de la actividad"
-        categorie = "Nombre de la categoria"
-        fecha = pFecha
-        duracion = pDuracion
-        hora = pInicio
-        estado = "Error"
-        result = 0
+        pmensaje = "Ha ocurrido un error. Erro: %s" %e
+        presultado = "Fallida"
+        perror = "%s" %e
+        pname = "Nombre del quiz"
+        pactivitie = "Nombre de la actividad"
+        pcategorie = "Nombre de la categoria"
+        pfecha = pFecha
+        pduracion = pDuracion
+        phora = pInicio
+        pestado = "Error"
+        presult = 0
 
     else:
-        mensaje = "Se ha programado el la activadad correctamente"
-        resultado = "Exitosa"
-        error = None
-        name = "Nombre del quiz"
-        activitie = "Nombre de la actividad"
-        categorie = "Nombre de la categoria"
-        fecha = pFecha
-        duracion = pDuracion
-        hora = pInicio
-        estado = "Pendiente de inicio"
-        result = 1
+        pmensaje = "Se ha programado el la activadad correctamente"
+        presultado = "Exitosa"
+        perror = None
+        pname = "Nombre del quiz"
+        pactivitie = "Nombre de la actividad"
+        pcategorie = "Nombre de la categoria"
+        pfecha = pFecha
+        pduracion = pDuracion
+        phora = pInicio
+        pestado = "Pendiente de inicio"
+        presult = 1
     finally:
-        done = done
-    return dict(mensaje = mensaje, resultado = resultado, error = error, result = result,  name=name, activitie=activitie,categorie=categorie, fecha=fecha, duracion=duracion, hora=hora, estado)
+        return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
+        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado)
