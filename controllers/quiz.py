@@ -200,7 +200,10 @@ def test():
             db.project.on(
                 db.project.project_id == db.tb_metadata_quiz.curso)]
                 )
-    return dict(quiz = datos, metadata = lista.first()) 
+
+    quiz = datos.replace('{[','{"PREGUNTAS" : [')
+
+    return dict(quiz = quiz, metadata = lista.first()) 
 
 @auth.requires_login()
 def programacion_test():

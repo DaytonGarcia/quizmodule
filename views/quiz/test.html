@@ -28,7 +28,8 @@
 
 <br>
 {{ import json  }}
-{{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}
+<!--{{quizJson = json.loads(quiz.replace('{[','{"PREGUNTAS" : [') )}}-->
+{{quizJson = json.loads(quiz)}}
 <div class="navbar" data-step=1 data-intro="Div detalle del quiz">
     <div class="navbar-inner">
         <a style="cursor:pointer;"><center><h4>Detalle de la evalucacion</h4></center></a>
