@@ -335,4 +335,5 @@ def test_programacion():
         estado = "Pendiente de inicio"
         result = 1
     finally:
-        return dict(mensaje = mensaje, resultado = resultado, error = error, result = result,  name=name, activitie=activitie,categorie=categorie, fecha=fecha, duracion=duracion, hora=hora, estado)
+        done = done
+    return dict(mensaje = mensaje, resultado = resultado, error = error, result = result,  name=name, activitie=activitie,categorie=categorie, fecha=fecha, duracion=duracion, hora=hora, estado)
