@@ -310,6 +310,7 @@ def test_programacion():
             )
         db.commit()
     except Exception, e:
+        curso = "Nombre del curso"
         pmensaje = "Ha ocurrido un error. Erro: %s" %e
         presultado = "Fallida"
         perror = "%s" %e
@@ -323,6 +324,7 @@ def test_programacion():
         presult = 0
 
     else:
+        curso = "Nombre del curso"
         pmensaje = "Se ha programado el la activadad correctamente"
         presultado = "Exitosa"
         perror = None
@@ -334,6 +336,7 @@ def test_programacion():
         phora = pInicio
         pestado = "Pendiente de inicio"
         presult = 1
+        
     finally:
         return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
-        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado)
+        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
