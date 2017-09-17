@@ -310,21 +310,27 @@ def test_programacion():
             )
         db.commit()
 
-        metadata = db.executesql("""select B.name as curso, A.name as actividad, D.category as categoria 
-                         from        course_activity A
-                         inner join  project B on B.id = A.assignation
-                         inner join  course_activity_category C on A.course_activity_category = C.id
-                         inner join  activity_category D on D.id = C.category
-                         where A.id =%d""", int(pId_actividad))
+        metadata = db.executesql("""select 
+		                                B.name as curso, 
+		                                A.name as actividad, 
+                                        D.category as categoria, 
+                                        F.nombre as quiz 
+                                from course_activity A
+                                inner join  project B on B.id = A.assignation
+                                inner join  course_activity_category C on A.course_activity_category = C.id
+                                inner join  activity_category D on D.id = C.category
+                                inner join  tb_quiz_actividad E on E.id_actividad = A.id
+                                inner join  tb_metadata_quiz F on F.id_quiz = E.id_quiz
+                                where A.id =%d""", int(pId_actividad))
 
     except Exception, e:
         curso = metadata[0][0]
         pmensaje = "Ha ocurrido un error. Erro: %s" %e
         presultado = "Fallida"
         perror = "%s" %e
-        pname = "Nombre del quiz"
-        pactivitie = "Nombre de la actividad"
-        pcategorie = "Nombre de la categoria"
+        pname = metadata[0][3]
+        pactivitie = metadata[0][1]
+        pcategorie = metadata[0][2]
         pfecha = pFecha
         pduracion = pDuracion
         phora = pInicio
@@ -336,9 +342,9 @@ def test_programacion():
         pmensaje = "Se ha programado el la activadad correctamente"
         presultado = "Exitosa"
         perror = None
-        pname = metadata[0][1]
-        pactivitie = "Nombre de la actividad"
-        pcategorie = "Nombre de la categoria"
+        pname = metadata[0][3]
+        pactivitie = metadata[0][1]
+        pcategorie = metadata[0][2]
         pfecha = pFecha
         pduracion = pDuracion
         phora = pInicio
