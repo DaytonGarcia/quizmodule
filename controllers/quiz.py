@@ -318,7 +318,7 @@ def test_programacion():
                          where A.id =%d""", int(pId_actividad))
 
     except Exception, e:
-        curso = metadata[0:0]
+        curso = metadata[0][0]
         pmensaje = "Ha ocurrido un error. Erro: %s" %e
         presultado = "Fallida"
         perror = "%s" %e
@@ -336,7 +336,7 @@ def test_programacion():
         pmensaje = "Se ha programado el la activadad correctamente"
         presultado = "Exitosa"
         perror = None
-        pname = "Nombre del quiz"
+        pname = metadata[0][1]
         pactivitie = "Nombre de la actividad"
         pcategorie = "Nombre de la categoria"
         pfecha = pFecha
