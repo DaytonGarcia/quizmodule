@@ -332,7 +332,7 @@ def test_programacion():
         presult = 0
 
     else:
-        curso = metadata[0:0]
+        curso = metadata[1]
         pmensaje = "Se ha programado el la activadad correctamente"
         presultado = "Exitosa"
         perror = None
