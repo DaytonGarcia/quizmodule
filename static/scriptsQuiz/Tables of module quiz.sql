@@ -76,3 +76,20 @@ inner join equivalencia_quiz_category B on B.categorie = A.id;
 
 select * from period_year;
 select * from period;
+
+create table tb_quiz_actividad(
+id 					int 		auto_increment 		primary key,
+id_actividad 		int 		not null			unique,
+id_quiz 			int			not null,
+fecha				date		not null,
+inicio 				time		not null,
+duracion 			int			not NULL,
+finalizado			boolean 	not null
+)
+
+
+Alter table tb_quiz_actividad
+ADD COLUMN private boolean null;
+
+Alter table tb_quiz_actividad
+ADD COLUMN keyword varchar(256) null;
