@@ -91,10 +91,7 @@ $(document).ready(
                 var hora = ($("#inpHora").val());
                 var id_quiz = parseInt($('#pId').text());
                 var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
-                //var hola = submitLoad("quiz","programar",parametros);
                 window.location.href = "https://"+document.domain+"/quiz/test_programacion"+parametros;
-
-                alert(hola);
                 
             } catch (error) {
                 $("#lbMensajeError").removeAttr("hidden");
@@ -189,9 +186,26 @@ $(document).ready(
             <td width="20%">
             </td>
             <td width="30%">
+                <label class="checkbox-inline"><input type="checkbox" value="">Proteger</label>
+                <input id="txtPassword" placeholder="Clave de Seguridad" type="text" style="width:64%;">
+            </td>
+        </tr>
+
+        <tr>
+            <td width="20%">
+                
+            </td>
+            <td width="30%"> 
+                
+            </td>
+            <td width="20%">
+            </td>
+            <td width="30%">
                     <button id="btGrabar" type="button" class="btn btn-success">Grabar Programacion</button>
             </td>
         </tr>
+
+        
     </table>
 
 </div>
@@ -199,4 +213,4 @@ $(document).ready(
   </div>
 <p id="pPeriod" hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
 <p id="pProject" hidden value="{{=project.id}}">{{=project.id}}</p>
-<p id="pId" value="{{=metadata.tb_metadata_quiz.id_quiz}}">{{=metadata.tb_metadata_quiz.id_quiz}}</p>
+<p id="pId" hidden value="{{=metadata.tb_metadata_quiz.id_quiz}}">{{=metadata.tb_metadata_quiz.id_quiz}}</p>
