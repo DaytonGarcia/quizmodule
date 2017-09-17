@@ -315,7 +315,7 @@ def test_programacion():
                          inner join  project B on B.id = A.assignation
                          inner join  course_activity_category C on A.course_activity_category = C.id
                          inner join  activity_category D on D.id = C.category
-                         where A.id =%i""",pId_actividad)
+                         where A.id =%d""",pId_actividad)
 
     except Exception, e:
         curso = "Nombre del curso"
