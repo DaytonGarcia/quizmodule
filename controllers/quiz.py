@@ -309,6 +309,14 @@ def test_programacion():
             finalizado= False
             )
         db.commit()
+
+        print db.executesql("""select B.name as curso, A.name as actividad, D.category as categoria 
+                         from        course_activity A
+                         inner join  project B on B.id = A.assignation
+                         inner join  course_activity_category C on A.course_activity_category = C.id
+                         inner join  activity_category D on D.id = C.category
+                         where A.id =%i""",pId_actividad)
+
     except Exception, e:
         curso = "Nombre del curso"
         pmensaje = "Ha ocurrido un error. Erro: %s" %e
