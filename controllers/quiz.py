@@ -310,7 +310,7 @@ def test_programacion():
             )
         db.commit()
 
-        print db.executesql("""select B.name as curso, A.name as actividad, D.category as categoria 
+        metadata = db.executesql("""select B.name as curso, A.name as actividad, D.category as categoria 
                          from        course_activity A
                          inner join  project B on B.id = A.assignation
                          inner join  course_activity_category C on A.course_activity_category = C.id
@@ -318,7 +318,7 @@ def test_programacion():
                          where A.id =%d""", int(pId_actividad))
 
     except Exception, e:
-        curso = "Nombre del curso"
+        curso = metadata[0:0]
         pmensaje = "Ha ocurrido un error. Erro: %s" %e
         presultado = "Fallida"
         perror = "%s" %e
@@ -332,7 +332,7 @@ def test_programacion():
         presult = 0
 
     else:
-        curso = "Nombre del curso"
+        curso = metadata[0:0]
         pmensaje = "Se ha programado el la activadad correctamente"
         presultado = "Exitosa"
         perror = None
