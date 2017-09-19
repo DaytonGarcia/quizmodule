@@ -288,6 +288,11 @@ def getActivities():
 
     return response.json(actividades)
 
+def GetNow():
+    ahora = datetime.now()  # Obtiene fecha y hora actual
+    print("Fecha y Hora:", ahora)  # Muestra fecha y hora
+    return ahora 
+    
 @auth.requires_login()
 def test_programacion():
 
@@ -359,9 +364,3 @@ def test_programacion():
     finally:
         return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
         name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
-    return none
-    
-def GetNow():
-    ahora = datetime.now()  # Obtiene fecha y hora actual
-    print("Fecha y Hora:", ahora)  # Muestra fecha y hora
-    return ahora 
