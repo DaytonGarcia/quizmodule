@@ -289,10 +289,10 @@ def getActivities():
     return response.json(actividades)
 
 def GetNow():
-    ahora = datetime.now()  # Obtiene fecha y hora actual
+    ahora = "Lunes" # Obtiene fecha y hora actual
     print("Fecha y Hora:", ahora)  # Muestra fecha y hora
     return ahora 
-    
+
 @auth.requires_login()
 def test_programacion():
 
