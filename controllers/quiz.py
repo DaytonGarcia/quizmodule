@@ -359,3 +359,9 @@ def test_programacion():
     finally:
         return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
         name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
+
+def GetNow():
+    ahora = datetime.now()  # Obtiene fecha y hora actual
+    print("Fecha y Hora:", ahora)  # Muestra fecha y hora
+    return ahora 
+    
