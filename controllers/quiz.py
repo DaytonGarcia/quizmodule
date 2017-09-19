@@ -283,7 +283,7 @@ def getActivities():
             )
         ]
     )
-
+    print "Las actividades son: "
     print actividades
 
     return response.json(actividades)
