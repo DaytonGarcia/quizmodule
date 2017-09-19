@@ -84,6 +84,14 @@ $(document).ready(
         else
         {
             try {
+                if ($("#chProtegido").checked)
+                {
+                    alert("Debo Protegerlo :)");
+                }
+                else
+                {
+                    alert("No debo protegerlo");
+                }
                 var idCategoria = parseInt($('#cboCategoria option:selected').val());
                 var idActividad = parseInt($('#cboActividad option:selected').val());
                 var duracion = parseInt($('#txtDuracion').val());
@@ -187,7 +195,7 @@ $(document).ready(
                 <input id="txtDuracion" placeholder="mins" type="text" style="width:64%;">
             </td>
             <td width="20%">
-                <label class="checkbox-inline"><input type="checkbox" value=""> -- Proteger --</label>
+                <label class="checkbox-inline"><input type="checkbox" value="" id="chProtegido"> -- Proteger --</label>
             </td>
             <td width="30%">
                 <input id="txtPassword" placeholder="Clave de Seguridad" type="text" style="width:64%;">
