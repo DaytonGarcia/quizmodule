@@ -249,7 +249,7 @@ def programacion_test():
     actual = False
     if(int(period)==int(idperiodoc)):
         actual = True
-
+ 
 
 
     print categorias
@@ -266,7 +266,7 @@ def getActivities():
     print categoria
 
     	
-    myquery = (db.course_activity.assignation==curso) & (db.course_activity.semester==period) & (db.course_activity_category.category==categoria) & (db.course_activity.laboratory==True)
+    myquery = (db.course_activity.assignation==curso) & (db.course_activity.semester==period) & (db.course_activity_category.category==categoria) & (db.course_activity.laboratory==True) & (db.tb_quiz_actividad.id is None)
 
 
     actividades = db(myquery).select(
@@ -274,7 +274,12 @@ def getActivities():
         db.course_activity.name,
         join=[
             db.course_activity_category.on(
-            db.course_activity_category.id == db.course_activity.course_activity_category    
+                db.course_activity_category.id == db.course_activity.course_activity_category    
+            )
+        ],
+        left=[
+            db.tb_quiz_actividad.on(
+                db.tb_quiz_actividad.id_actividad ==  db.course_activity.id 
             )
         ]
     )
