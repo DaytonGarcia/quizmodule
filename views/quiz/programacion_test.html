@@ -90,6 +90,9 @@ $(document).ready(
                 var fecha =($("#dateInit").val());
                 var hora = ($("#inpHora").val());
                 var id_quiz = parseInt($('#pId').text());
+                //Voy a obtener la fecha y la hora
+                var Hoy = submitLoad("quiz","GetNow","");
+                alert (Hoy);
                 var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
                 window.location.href = "https://"+document.domain+"/quiz/test_programacion"+parametros;
                 
