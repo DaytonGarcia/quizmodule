@@ -316,7 +316,8 @@ def test_programacion():
             fecha = pFecha,
             inicio= pInicio,
             duracion= pDuracion,
-            finalizado= False
+            finalizado= False,
+            private = False
             )
         db.commit()
 
@@ -364,3 +365,84 @@ def test_programacion():
     finally:
         return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
         name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
+
+@auth.requires_login()
+def test_programacion_protegida():
+
+    mensaje = ""
+    try:
+        pId_actividad = request.vars['id_actividad']
+        pId_quiz = request.vars['id_quiz']
+        pFecha = request.vars['fecha']
+        pInicio = request.vars['inicio']
+        pDuracion = request.vars['duracion']
+        pClave = request.vars['clave']
+
+        print 'La actividad es: ' + pId_actividad
+        print 'El quiz es: ' + pId_quiz
+        print 'La fecha es: ' + pFecha
+        print 'La hora de incio es: ' + pInicio
+        print 'La duracion es: ' + pDuracion
+        print 'La clave es: ' + pClave
+
+        db.tb_quiz_actividad.insert(
+            id_actividad = pId_actividad,
+            id_quiz = pId_quiz,
+            fecha = pFecha,
+            inicio= pInicio,
+            duracion= pDuracion,
+            finalizado= False,
+            private= True,
+            keywird= pClave
+            )
+        db.commit()
+
+        metadata = db.executesql("""select 
+		                                B.name as curso, 
+		                                A.name as actividad, 
+                                        D.category as categoria, 
+                                        F.nombre as quiz,
+                                        E.keyword as clave 
+                                from course_activity A
+                                inner join  project B on B.id = A.assignation
+                                inner join  course_activity_category C on A.course_activity_category = C.id
+                                inner join  activity_category D on D.id = C.category
+                                inner join  tb_quiz_actividad E on E.id_actividad = A.id
+                                inner join  tb_metadata_quiz F on F.id_quiz = E.id_quiz
+                                where A.id =%d""", int(pId_actividad))
+
+    except Exception, e:
+        curso = metadata[0][0]
+        pmensaje = "Ha ocurrido un error. Erro: %s" %e
+        presultado = "Fallida"
+        perror = "%s" %e
+        pname = metadata[0][3]
+        pactivitie = metadata[0][1]
+        pcategorie = metadata[0][2]
+        pkeyword = metadata[0][4]
+        pfecha = pFecha
+        pduracion = pDuracion
+        phora = pInicio
+        pestado = "Error"
+        presult = 0
+
+    else:
+        curso = metadata[0][0]
+        pmensaje = "Se ha programado el la activadad correctamente"
+        presultado = "Exitosa"
+        perror = None
+        pname = metadata[0][3]
+        pactivitie = metadata[0][1]
+        pcategorie = metadata[0][2]
+        pkeyword = metadata[0][4]
+        pfecha = pFecha
+        pduracion = pDuracion
+        phora = pInicio
+        pestado = "Pendiente de inicio"
+        presult = 1
+        
+    finally:
+        return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
+        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, 
+        hora = phora, estado = pestado, curso= curso,
+        keyword = pkeyword)
