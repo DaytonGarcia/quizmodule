@@ -368,7 +368,7 @@ def test_programacion():
 
 @auth.requires_login()
 def test_programacion_protegida():
-
+    print "Si llego"
     mensaje = ""
     try:
         pId_actividad = request.vars['id_actividad']
