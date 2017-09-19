@@ -363,8 +363,10 @@ def test_programacion():
         presult = 1
         
     finally:
-        return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
-        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
+        print "Done"
+
+    return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
+    name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
 
 @auth.requires_login()
 def test_programacion_protegida():
@@ -442,7 +444,8 @@ def test_programacion_protegida():
         presult = 1
         
     finally:
-        return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
-        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, 
-        hora = phora, estado = pestado, curso= curso,
-        keyword = pkeyword)
+        print "Done"
+    return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
+    name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, 
+    hora = phora, estado = pestado, curso= curso,
+    keyword = pkeyword)
