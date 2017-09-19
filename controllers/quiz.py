@@ -364,9 +364,9 @@ def test_programacion():
         
     finally:
         print "Done"
-
-    return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
-    name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
+        return dict(mensaje = pmensaje, resultado = presultado, error = perror, result = presult,  
+        name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, hora = phora, estado = pestado, curso= curso)
+    return
 
 @auth.requires_login()
 def test_programacion_protegida():
