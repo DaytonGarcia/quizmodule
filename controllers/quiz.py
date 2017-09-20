@@ -289,7 +289,8 @@ def getActivities():
     return response.json(actividades)
 
 def GetNow():
-    ahora = request.cstnow # Obtiene fecha y hora actual
+    import datetime
+    ahora = datetime.datetime.now() # Obtiene fecha y hora actual
     print("Fecha y Hora:", ahora)  # Muestra fecha y hora
     return ahora 
 
