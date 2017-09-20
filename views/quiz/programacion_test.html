@@ -105,8 +105,8 @@ $(document).ready(
                         var fecha_hora = fecha +" "+hora;
                         alert("Desde el server obtengo: "+Hoy);
                         alert("El quiz se programo para: "+fecha_hora);
-                        var FechaServer = Date(Hoy);
-                        var FechaProgra = Date(fecha_hora);
+                        var FechaServer = new Date(Hoy).valueOf();
+                        var FechaProgra = new Date(fecha_hora).valueOf();
 
                         alert(FechaServer);
                         alert(FechaProgra);
@@ -127,8 +127,8 @@ $(document).ready(
                     var fecha_hora = fecha +" "+hora;
                     alert("Desde el server obtengo: "+Hoy);
                     alert("El quiz se programo para: "+fecha_hora);
-                    var FechaServer = Date(Hoy);
-                    var FechaProgra = Date(fecha_hora);
+                    var FechaServer = new Date(Hoy).valueOf();
+                    var FechaProgra = new Date(fecha_hora).valueOf();
 
                     alert(FechaServer);
                     alert(FechaProgra);
