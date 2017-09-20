@@ -108,10 +108,16 @@ $(document).ready(
                         var FechaServer = new Date(Hoy).valueOf();
                         var FechaProgra = new Date(fecha_hora).valueOf();
 
-                        alert(FechaServer);
-                        alert(FechaProgra);
-                        var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion+"&clave="+pass;
-                        window.location.href = "https://"+document.domain+"/quiz/test_programacion_protegida"+parametros;
+                        if (FechaServer < FechaProgra)
+                        {
+                            var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion+"&clave="+pass;
+                            window.location.href = "https://"+document.domain+"/quiz/test_programacion_protegida"+parametros;
+                        }
+                        else
+                        {
+                            $("#lbMensajeError").removeAttr("hidden");
+                            $("#lbMensajeError").text("La fecha y hora de programacion no puede ser anterior a la fecha y hora actual.");
+                        }
                     }
                 }
                 else
@@ -130,10 +136,15 @@ $(document).ready(
                     var FechaServer = new Date(Hoy).valueOf();
                     var FechaProgra = new Date(fecha_hora).valueOf();
 
-                    alert(FechaServer);
-                    alert(FechaProgra);
-                    var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
-                    window.location.href = "https://"+document.domain+"/quiz/test_programacion"+parametros;
+                    if(FechaProgra > FechaServer) {
+                        var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
+                        window.location.href = "https://"+document.domain+"/quiz/test_programacion"+parametros;
+                     } 
+                     else
+                    {
+                        $("#lbMensajeError").removeAttr("hidden");
+                        $("#lbMensajeError").text("La fecha y hora de programacion no puede ser anterior a la fecha y hora actual.");
+                    }
                 }
 
                 
