@@ -1996,11 +1996,6 @@ db.define_table('tb_metadata_quiz',
                 Field('creador', 'integer', notnull = True, required=True),
                 Field('curso', 'string', notnull = True, required=True)
                 )
-import copy
-db._adapter.types = copy.copy(db._adapter.types)
-db._adapter.types['boolean']='TINYINT(1)'
-db._adapter.TRUE = 1
-db._adapter.FALSE = 0
 
 db.define_table('tb_quiz_actividad',
                 Field('id_actividad', 'integer', notnull = True, required=True),
@@ -2009,7 +2004,7 @@ db.define_table('tb_quiz_actividad',
                 Field('inicio', 'time', notnull = True, required=True),
                 Field('duracion', 'integer', notnull = True, required=True),
                 Field('finalizado', 'boolean', notnull = True, required=True),
-                Field('private', 'boolean', notnull = True, required=True),
+                Field('private', 'integer', notnull = True, required=True),
                 Field('keyword', 'string', notnull = True, required=False)
                 )
 
