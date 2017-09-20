@@ -2004,7 +2004,7 @@ db.define_table('tb_quiz_actividad',
                 Field('inicio', 'time', notnull = True, required=True),
                 Field('duracion', 'integer', notnull = True, required=True),
                 Field('finalizado', 'boolean', notnull = True, required=True),
-                Field('private', 'boolean', notnull = True, required=False),
+                Field('private', 'boolean', notnull = True, required=True),
                 Field('keyword', 'string', notnull = True, required=False)
                 )
 

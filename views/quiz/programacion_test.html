@@ -103,8 +103,6 @@ $(document).ready(
                         //Voy a obtener la fecha y la hora
                         var Hoy = submitLoad("quiz","GetNow","");
                         var fecha_hora = fecha +" "+hora;
-                        alert("Desde el server obtengo: "+Hoy);
-                        alert("El quiz se programo para: "+fecha_hora);
                         var FechaServer = new Date(Hoy).valueOf();
                         var FechaProgra = new Date(fecha_hora).valueOf();
 
@@ -131,8 +129,6 @@ $(document).ready(
                     //Voy a obtener la fecha y la hora
                     var Hoy = submitLoad("quiz","GetNow","");
                     var fecha_hora = fecha +" "+hora;
-                    alert("Desde el server obtengo: "+Hoy);
-                    alert("El quiz se programo para: "+fecha_hora);
                     var FechaServer = new Date(Hoy).valueOf();
                     var FechaProgra = new Date(fecha_hora).valueOf();
 
