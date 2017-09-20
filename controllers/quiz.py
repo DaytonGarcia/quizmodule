@@ -395,7 +395,7 @@ def test_programacion_protegida():
             inicio= pInicio,
             duracion= pDuracion,
             finalizado= False,
-            private=  True if private == 'on' else False,
+            private=  True,
             keyword= pClave
             )
         db.commit()
