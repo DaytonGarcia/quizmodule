@@ -130,7 +130,54 @@ def reportes():
     periodo = request.vars['period']
     project = request.vars['project']
     #project = db(db.project.id==idproject).select().first()  
-    programaciones = db.executesql(""" 
+
+     myquery = (db.project.id==project) & (db.course_activity.semester==period)
+
+
+    programaciones = db(myquery).select(
+        db.tb_quiz_actividad.id,
+		db.tb_quiz_actividad.id_actividad,
+		db.tb_quiz_actividad.id_quiz,
+		db.tb_quiz_actividad.fecha,
+		db.tb_quiz_actividad.inicio,
+		db.tb_quiz_actividad.duracion,
+		db.tb_quiz_actividad.finalizado,
+		db.tb_quiz_actividad.private,
+		db.tb_quiz_actividad.keyword,
+		db.tb_metadata_quiz.nombre as nombre_quiz,
+		db.tb_metadata_quiz.fecha_creacion as creacion_quiz,
+		db.tb_metadata_quiz.creador as id_creador,
+		db.tb_metadata_quiz.id as id_project,
+		db.tb_metadata_quiz.curso as id_curso, 
+		db.project.name as nombre_curso,
+		db.auth_user.id as id_programador,
+		CONCAT(auth_user.first_name, ' ', auth_user.last_name) as nombre_programador,
+		db.course_activity_category.category as id_categoria,
+		db.activity_category.description as nombre_categoria,
+		db.course_activity.name as actividad_nombre,
+		db.course_activity.semester as semestre
+        join=[
+            db.tb_metadata_quiz.on(
+                db.tb_metadata_quiz.id_quiz == db.tb_quiz_actividad.id_quiz    
+            ),
+            db.project.on(
+                db.project.project_id == db.tb_metadata_quiz.curso    
+            ),
+            db.auth_user.on(
+                db.auth_user.id == db.tb_metadata_quiz.creador    
+            ),
+            db.course_activity.on(
+                db.course_activity.id == db.tb_quiz_actividad.id_actividad    
+            ),
+            db.course_activity_category.on(
+                db.course_activity_category.id == db.course_activity.course_activity_category    
+            ),
+            db.activity_category.on(
+                db.activity_category.id == db.course_activity_category.category    
+            )
+        ]
+    )
+    """"programaciones = db.executesql( 
                                         select 	A.id,
                                         A.id_actividad,
                                         A.id_quiz,
@@ -161,8 +208,8 @@ def reportes():
                                 inner join activity_category G on G.id = F.category
                                 where 	C.id = %d
                             
-    """,
-     1)
+    ,
+     1)""""
 
     print programaciones
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
