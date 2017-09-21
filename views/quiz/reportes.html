@@ -51,12 +51,8 @@ $(document).ready(
 		<td><center>{{=programacion.tb_metadata_quiz.nombre}}</center></td>
 		<td><center>{{=programacion.tb_quiz_actividad.fecha}}<center></td>
 		<td><center>{{=programacion.tb_quiz_actividad.duracion}}</center></td>
-		<td><center>{{if programacion.tb_quiz_actividad.finalizado == 1:}} FINALIZADO 
-					{{else :}}
-				PENDIENTE
-				{{pass}}
-				</center></td>
-		<td><center>Inactivo</center></td>
+		<td><center>{{=programacion.tb_quiz_actividad.finalizado}}</center></td>
+		<td><center>{{=programacion.tb_quiz_actividad.private}}</center></td>
 		<td>
 		<center>
 			<button id="btReporte" type="button" class="btn btn-info">ir a reporte</button>
