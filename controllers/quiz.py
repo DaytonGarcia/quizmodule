@@ -156,7 +156,7 @@ def reportes():
 		db.course_activity_category.category,
 		db.activity_category.description,
 		db.course_activity.name,
-		db.course_activity.semester
+		db.course_activity.semester,
         join=[
             db.tb_metadata_quiz.on(
                 db.tb_metadata_quiz.id_quiz == db.tb_quiz_actividad.id_quiz    
