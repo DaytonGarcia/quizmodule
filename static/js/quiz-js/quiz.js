@@ -334,7 +334,7 @@ $(document).ready(
     });
 
     $("#btnContinuar").click(function(){
-        if($("#txtTitulo").text()=="")
+        if($("#txtTitulo").val()=="")
             {
                 alert("Debe ingresar un nombre para la prueba");
             }
