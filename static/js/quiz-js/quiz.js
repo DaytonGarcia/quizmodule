@@ -334,6 +334,14 @@ $(document).ready(
     });
 
     $("#btnContinuar").click(function(){
-        GruardarQuiz();
+        if($("#txtTitulo").text()=="")
+            {
+                Alert("Debe ingresar un nombre para la prueba");
+            }
+        else
+            {
+                GruardarQuiz();
+            }
+        
     });
 });
