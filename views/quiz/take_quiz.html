@@ -23,7 +23,6 @@ $(document).ready(
         </h2>
 	</center>
 </div>
-{{if course == '1':}}
 <div class="navbar" data-step=1 data-intro="Div para agregar preguntas">
 
 			<div class="navbar-inner">
@@ -44,30 +43,21 @@ $(document).ready(
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-		<td><center>192</center></td>
-		<td><center>64</center></td>
-		<td><center>0970N<center></td>
-		<td><center>Activo</center></td>
-		<td><center>Activo</center></td>
-		<td><center>Activo</center></td>
-		<td>
-		<center>
-			<button id="btTomar" type="button" class="btn btn-info">Tomar Evaluacion</button>
-		</center>
-		</td>
-		</tr>
+		{{for programacion in programaciones:}}
+			<tr>
+			<td><center>{{=programacion.course_activity.name}}</center></td>
+			<td><center>{{=programacion.tb_metadata_quiz.nombre}}</center></td>
+			<td><center>{{=programacion.tb_quiz_actividad.fecha}}<center></td>
+			<td><center>Hora</center></td>
+			<td><center>{{=programacion.tb_quiz_actividad.duracion}} Minutos</center></td>
+			<td><center>Activo</center></td>
+			<td>
+			<center>
+				<button id="btTomar" type="button" class="btn btn-info">Tomar Evaluacion</button>
+			</center>
+			</td>
+			</tr>
+		{{pass}}
 	</tbody>
 	</table>
 </div>
-{{else:}}
-<div class="navbar" data-step=1 data-intro="Div para agregar preguntas">
-
-			<div class="navbar-inner">
-				<a style="cursor:pointer;"><center><h4>Listado de Evaluaciones Disponibles</h4></center></a>
-			</div>
-</div>
-<div class="well" id="div_seleccionar_tipo_pregunta">
-
-</div>
-{{pass}}
