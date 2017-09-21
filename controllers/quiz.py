@@ -144,18 +144,19 @@ def reportes():
 		db.tb_quiz_actividad.finalizado,
 		db.tb_quiz_actividad.private,
 		db.tb_quiz_actividad.keyword,
-		db.tb_metadata_quiz.nombre as nombre_quiz,
-		db.tb_metadata_quiz.fecha_creacion as creacion_quiz,
-		db.tb_metadata_quiz.creador as id_creador,
-		db.tb_metadata_quiz.id as id_project,
-		db.tb_metadata_quiz.curso as id_curso, 
-		db.project.name as nombre_curso,
-		db.auth_user.id as id_programador,
-		CONCAT(auth_user.first_name, ' ', auth_user.last_name) as nombre_programador,
-		db.course_activity_category.category as id_categoria,
-		db.activity_category.description as nombre_categoria,
-		db.course_activity.name as actividad_nombre,
-		db.course_activity.semester as semestre
+		db.tb_metadata_quiz.nombre,
+		db.tb_metadata_quiz.fecha_creacion,
+		db.tb_metadata_quiz.creador,
+		db.tb_metadata_quiz.id,
+		db.tb_metadata_quiz.curso, 
+		db.project.name,
+		db.auth_user.id,
+		db.auth_user.first_name, 
+        db.auth_user.last_name,
+		db.course_activity_category.category,
+		db.activity_category.description,
+		db.course_activity.name,
+		db.course_activity.semester
         join=[
             db.tb_metadata_quiz.on(
                 db.tb_metadata_quiz.id_quiz == db.tb_quiz_actividad.id_quiz    
