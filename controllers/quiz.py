@@ -161,7 +161,7 @@ def reportes():
                                 inner join activity_category G on G.id = F.category
                                 where 	C.id = %d
                                 and 	E.semester = %d
-    """, int(period), int(project))
+    """, 1, 8)
 
     print programaciones
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
