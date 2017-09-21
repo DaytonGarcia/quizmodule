@@ -51,7 +51,11 @@ $(document).ready(
 		<td><center>{{=programacion.tb_metadata_quiz.nombre}}</center></td>
 		<td><center>{{=programacion.tb_quiz_actividad.fecha}}<center></td>
 		<td><center>{{=programacion.tb_quiz_actividad.duracion}} Minutos</center></td>
-		<td><center>{{=programacion.tb_quiz_actividad.finalizado}}</center></td>
+		{{if programacion.tb_quiz_actividad.duracion == 1: }}
+			<td><center>FINALIZADO</center></td>
+		{{else:}}
+			<td><center>PENDIENTE</center></td>
+		{{pass}}
 		<td><center>{{=programacion.tb_quiz_actividad.private}}</center></td>
 		<td>
 		<center>
