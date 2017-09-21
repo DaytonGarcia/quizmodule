@@ -131,7 +131,7 @@ def reportes():
     project = request.vars['project']
     #project = db(db.project.id==idproject).select().first()  
 
-     myquery = (db.project.id==project) & (db.course_activity.semester==period)
+    myquery = (db.project.id==project) & (db.course_activity.semester==period)
 
 
     programaciones = db(myquery).select(
