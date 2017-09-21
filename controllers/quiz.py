@@ -121,7 +121,56 @@ def take_quiz():
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
     project = request.vars['project']
-    return dict(periodo = period, course=project, period=periodo)
+
+    myquery = (db.project.id==project) & (db.course_activity.semester==period)
+
+
+    programaciones = db(myquery).select(
+        db.tb_quiz_actividad.id,
+		db.tb_quiz_actividad.id_actividad,
+		db.tb_quiz_actividad.id_quiz,
+		db.tb_quiz_actividad.fecha,
+		db.tb_quiz_actividad.inicio,
+		db.tb_quiz_actividad.duracion,
+		db.tb_quiz_actividad.finalizado,
+		db.tb_quiz_actividad.private,
+		db.tb_quiz_actividad.keyword,
+		db.tb_metadata_quiz.nombre,
+		db.tb_metadata_quiz.fecha_creacion,
+		db.tb_metadata_quiz.creador,
+		db.tb_metadata_quiz.id,
+		db.tb_metadata_quiz.curso, 
+		db.project.name,
+		db.auth_user.id,
+		db.auth_user.first_name, 
+        db.auth_user.last_name,
+		db.course_activity_category.category,
+		db.activity_category.description,
+		db.course_activity.name,
+		db.course_activity.semester,
+        join=[
+            db.tb_metadata_quiz.on(
+                db.tb_metadata_quiz.id_quiz == db.tb_quiz_actividad.id_quiz    
+            ),
+            db.project.on(
+                db.project.project_id == db.tb_metadata_quiz.curso    
+            ),
+            db.auth_user.on(
+                db.auth_user.id == db.tb_metadata_quiz.creador    
+            ),
+            db.course_activity.on(
+                db.course_activity.id == db.tb_quiz_actividad.id_actividad    
+            ),
+            db.course_activity_category.on(
+                db.course_activity_category.id == db.course_activity.course_activity_category    
+            ),
+            db.activity_category.on(
+                db.activity_category.id == db.course_activity_category.category    
+            )
+        ]
+    )
+
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
 def reportes():
