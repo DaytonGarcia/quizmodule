@@ -40,6 +40,7 @@ $(document).ready(
 		<th><center>FECHA DE PROGRAMACION</center></th>
 		<th><center>DURACION</center></th>
 		<th><center>ESTADO</center></th>
+		<th><center>PRIVACIDAD</center></th>
 		<th><center>REPORTE</center></th>
 		</tr>
 	</thead>
@@ -48,8 +49,13 @@ $(document).ready(
 		<tr>
 		<td><center>{{=programacion.course_activity.name}}</center></td>
 		<td><center>{{=programacion.tb_metadata_quiz.nombre}}</center></td>
-		<td><center>0970N<center></td>
-		<td><center>Inactivo</center></td>
+		<td><center>{{=programacion.tb_quiz_actividad.fecha}}<center></td>
+		<td><center>{{=programacion.tb_quiz_actividad.duracion}}</center></td>
+		<td><center>{{if programacion.tb_quiz_actividad.finalizado == 1:}} FINALIZADO 
+					{{else :}}
+				PENDIENTE
+				{{pass}}
+				</center></td>
 		<td><center>Inactivo</center></td>
 		<td>
 		<center>
