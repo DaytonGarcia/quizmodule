@@ -56,7 +56,12 @@ $(document).ready(
 		{{else:}}
 			<td><center>PENDIENTE</center></td>
 		{{pass}}
-		<td><center>{{=programacion.tb_quiz_actividad.private}}</center></td>
+
+		{{if programacion.tb_quiz_actividad.private == 1: }}
+			<td><center>PRIVADO</center></td>
+		{{else:}}
+			<td><center>PUBLICO</center></td>
+		{{pass}}
 		<td>
 		<center>
 			<button id="btReporte" type="button" class="btn btn-info">ir a reporte</button>
