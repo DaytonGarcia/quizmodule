@@ -2012,6 +2012,35 @@ db.define_table('equivalencia_quiz_category',
                 Field('categorie', 'integer', notnull=True, required=True, unique=True),
                 Field('description', 'string', notnull = False, required=False)
                 )
+#--------Defino vista como tabla para facilitar la consulta -------------------
+db.define_table('vw_quiz_actividad',
+                Field('id'),
+                Field('id_actividad'),
+                Field('id_quiz'),
+                Field('fecha'),
+                Field('inicio'),
+                Field('duracion'),
+                Field('finalizado'),
+                Field('private'),
+                Field('keyword'),
+                Field('nombre_quiz'),
+                Field('creacion_quiz'),
+                Field('id_creador'),
+                Field('id_project'),
+                Field('id_curso'),
+                Field('nombre_curso'),
+                Field('id_programador'),
+                Field('nombre_programador'),
+                Field('id_categoria'),
+                Field('nombre_categoria'),
+                Field('actividad_nombre'),
+                Field('semestre'),
+                Field('hora_actual'),
+                Field('fecha_inicio'),
+                Field('fecha_fin'),
+                Field('Estado_actual'),
+                migrate=False
+                )
 #-----------------FIN DE CONTROL DE QUIZES ---------------------------------------
 
 
