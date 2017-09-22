@@ -205,8 +205,8 @@ def take_quiz():
         inner join course_activity E on E.id = A.id_actividad
         inner join course_activity_category F on F.id = E.course_activity_category
         inner join activity_category G on G.id = F.category
-        where 	C.id = %d
-        and 	E.semester = %d
+        where 	C.id = '{0}'
+        and 	E.semester = '{1}'
             """, [int(project),int(period)])
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
