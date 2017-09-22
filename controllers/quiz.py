@@ -207,7 +207,7 @@ def take_quiz():
         inner join activity_category G on G.id = F.category
         where 	C.id = '{0}'
         and 	E.semester = '{1}'
-            """, [int(project),int(period)])
+            """.format(str(project), str(period)))
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
