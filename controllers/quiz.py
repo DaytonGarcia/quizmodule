@@ -124,7 +124,7 @@ def take_quiz():
 
     ##inicia codigo viejo
     ## termina codigo viejo
-    myquery = (db.id_project==project) & (db.semestre==period)
+    myquery = (db.vw_quiz_actividad.id_project==project) & (db.vw_quiz_actividad.semestre==period)
     
     programaciones = db().select(db.vw_quiz_actividad.ALL)
     print programaciones
