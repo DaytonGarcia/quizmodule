@@ -4,12 +4,15 @@ $(document).ready(
       
       function(){
 
-	$("#btTomar").click(function(){
-        window.location.href = "http://"+document.domain+":8000/cpfecys/quiz/viewer_quiz";
-    });
+		$('.btnTakeQuiz').click(function(){
+
+			var id_programacion = $(this).attr("id");
+			var parametros = "/"+idquiz;
+			//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+			alert("La programacion es la id: "+id_programacion);
+
+    	});
 });
-
-
 </script>
 </head>
 <div class="row-fluid">
@@ -55,7 +58,7 @@ $(document).ready(
 			<td>
 			<center>
 				{{if programacion.Estado_actual == 'Inactivo' :}}
-				<button name="btTomar" type="button" class="btn btn-success" id={{=programacion.id}}>Tomar Evaluacion</button>
+				<button name="btTomar" type="button" class="btn btn-success btnTakeQuiz" id={{=programacion.id}}>Tomar Evaluacion</button>
 				{{else:}}
 				<button name="btTomar" type="button" class="btn btn-info" disabled id={{=programacion.id}}>Tomar Evaluacion</button>
 				{{pass}}
