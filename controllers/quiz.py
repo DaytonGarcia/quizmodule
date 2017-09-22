@@ -209,7 +209,8 @@ def take_quiz():
         and 	E.semester = {1}
             """.format(int(project), int(period)))
 
-    resultado = db().select(db.vw_quiz_actividad.ALL)
+    myquery2 = (db.vw_quiz_actividad.id_project==project) & (db.vw_quiz_actividad.semestre==period)
+    resultado = db(myquery2).select(db.vw_quiz_actividad.ALL)
     print resultado
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
 
