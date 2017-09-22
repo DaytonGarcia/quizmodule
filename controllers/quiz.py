@@ -208,7 +208,7 @@ def take_quiz():
         where 	C.id = {0}
         and 	E.semester = {1}
             """.format(int(project), int(period)))
-    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
 
 @auth.requires_login()
 def reportes():
@@ -267,7 +267,7 @@ def reportes():
     )
 
     print programaciones
-    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
 def view_reports():
