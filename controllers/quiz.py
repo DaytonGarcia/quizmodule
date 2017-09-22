@@ -122,97 +122,12 @@ def take_quiz():
     periodo = request.vars['period']
     project = request.vars['project']
 
-    myquery = (db.project.id==project) & (db.course_activity.semester==period)
-
-
-    programaciones = db(myquery).select(
-        db.tb_quiz_actividad.id,
-		db.tb_quiz_actividad.id_actividad,
-		db.tb_quiz_actividad.id_quiz,
-		db.tb_quiz_actividad.fecha,
-		db.tb_quiz_actividad.inicio,
-		db.tb_quiz_actividad.duracion,
-		db.tb_quiz_actividad.finalizado,
-		db.tb_quiz_actividad.private,
-		db.tb_quiz_actividad.keyword,
-		db.tb_metadata_quiz.nombre,
-		db.tb_metadata_quiz.fecha_creacion,
-		db.tb_metadata_quiz.creador,
-		db.tb_metadata_quiz.id,
-		db.tb_metadata_quiz.curso, 
-		db.project.name,
-		db.auth_user.id,
-		db.auth_user.first_name, 
-        db.auth_user.last_name,
-		db.course_activity_category.category,
-		db.activity_category.description,
-		db.course_activity.name,
-		db.course_activity.semester,
-        join=[
-            db.tb_metadata_quiz.on(
-                db.tb_metadata_quiz.id_quiz == db.tb_quiz_actividad.id_quiz    
-            ),
-            db.project.on(
-                db.project.project_id == db.tb_metadata_quiz.curso    
-            ),
-            db.auth_user.on(
-                db.auth_user.id == db.tb_metadata_quiz.creador    
-            ),
-            db.course_activity.on(
-                db.course_activity.id == db.tb_quiz_actividad.id_actividad    
-            ),
-            db.course_activity_category.on(
-                db.course_activity_category.id == db.course_activity.course_activity_category    
-            ),
-            db.activity_category.on(
-                db.activity_category.id == db.course_activity_category.category    
-            )
-        ]
-    )
-
-    vector = db.executesql("""
-            select 	A.id,
-                A.id_actividad,
-                A.id_quiz,
-                A.fecha,
-                A.inicio,
-                A.duracion,
-                A.finalizado,
-                A.private,
-                A.keyword,
-                B.nombre as nombre_quiz,
-                B.fecha_creacion as creacion_quiz,
-                B.creador as id_creador,
-                C.id as id_project,
-                B.curso as id_curso, 
-                C.name as nombre_curso,
-                D.id as id_programador,
-                CONCAT(D.first_name, ' ', D.last_name) as nombre_programador,
-                F.category as id_categoria,
-                G.description as nombre_categoria,
-                E.name as actividad_nombre,
-                E.semester as semestre,
-                LOCALTIME() as hora_actual,
-                CONCAT(A.fecha, ' ', A.inicio) as fecha_inicio,
-                CONCAT(A.fecha, ' ', ADDTIME(A.inicio, CONCAT("00:",duracion,":00"))) as fecha_fin,
-                CASE 	WHEN (LOCALTIME() < CONCAT(A.fecha, ' ', A.inicio) ) 					THEN 'Pendiente' 
-                        WHEN (LOCALTIME()> CONCAT(A.fecha, ' ', A.inicio) and LOCALTIME()<CONCAT(A.fecha, ' ', ADDTIME(A.inicio, CONCAT("00:",duracion,":00")))) THEN 'Activo' 
-                        ELSE 'Inactivo' END as Estado_actual
-        from tb_quiz_actividad A
-        inner join tb_metadata_quiz B on B.id_quiz = A.id_quiz
-        inner join project C on C.project_id = B.curso
-        inner join auth_user D on D.id = B.creador
-        inner join course_activity E on E.id = A.id_actividad
-        inner join course_activity_category F on F.id = E.course_activity_category
-        inner join activity_category G on G.id = F.category
-        where 	C.id = {0}
-        and 	E.semester = {1}
-            """.format(int(project), int(period)))
-
-    myquery2 = (db.vw_quiz_actividad.id_project==project) & (db.vw_quiz_actividad.semestre==period)
-    resultado = db(myquery2).select(db.vw_quiz_actividad.ALL)
-    print resultado
-    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
+    ##inicia codigo viejo
+    ## termina codigo viejo
+    myquery = (db.vw_quiz_actividad.id_project==project) & (db.vw_quiz_actividad.semestre==period)
+    programaciones = db(myquery2).select(db.vw_quiz_actividad.ALL)
+    print programaciones
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
 def reportes():

@@ -43,15 +43,15 @@ $(document).ready(
 		</tr>
 	</thead>
 	<tbody>
-		{{for programacion in vector:}}
+		{{for programacion in programaciones:}}
 			<tr>
 
-			<td><center>{{=programacion[19]}}</center></td>
-			<td><center>{{=programacion[9]}}</center></td>
-			<td><center>{{=programacion[3]}}<center></td>
-			<td><center>{{=programacion[4]}}</center></td>
-			<td><center>{{=programacion[5]}} Minutos</center></td>
-			<td><center>Activo</center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.actividad_nombre}}</center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.nombre_quiz}}</center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.fecha}}<center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.inicio}}</center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.duracion}} Minutos</center></td>
+			<td><center>{{=programacion.vw_quiz_actividad.Estado_actual}}</center></td>
 			<td>
 			<center>
 				<button id="btTomar" type="button" class="btn btn-info">Tomar Evaluacion</button>
