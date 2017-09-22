@@ -267,7 +267,7 @@ def reportes():
     )
 
     print programaciones
-    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
 
 @auth.requires_login()
 def view_reports():
