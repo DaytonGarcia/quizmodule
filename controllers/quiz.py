@@ -170,6 +170,45 @@ def take_quiz():
         ]
     )
 
+    vector = db.executesql("""
+            select 	A.id,
+                A.id_actividad,
+                A.id_quiz,
+                A.fecha,
+                A.inicio,
+                A.duracion,
+                A.finalizado,
+                A.private,
+                A.keyword,
+                B.nombre as nombre_quiz,
+                B.fecha_creacion as creacion_quiz,
+                B.creador as id_creador,
+                C.id as id_project,
+                B.curso as id_curso, 
+                C.name as nombre_curso,
+                D.id as id_programador,
+                CONCAT(D.first_name, ' ', D.last_name) as nombre_programador,
+                F.category as id_categoria,
+                G.description as nombre_categoria,
+                E.name as actividad_nombre,
+                E.semester as semestre,
+                LOCALTIME() as hora_actual,
+                CONCAT(A.fecha, ' ', A.inicio) as fecha_inicio,
+                CONCAT(A.fecha, ' ', ADDTIME(A.inicio, CONCAT("00:",duracion,":00"))) as fecha_fin,
+                CASE 	WHEN (LOCALTIME() < CONCAT(A.fecha, ' ', A.inicio) ) 					THEN 'Pendiente' 
+                        WHEN (LOCALTIME()> CONCAT(A.fecha, ' ', A.inicio) and LOCALTIME()<CONCAT(A.fecha, ' ', ADDTIME(A.inicio, CONCAT("00:",duracion,":00")))) THEN 'Activo' 
+                        ELSE 'Inactivo' END as Estado_actual
+        from tb_quiz_actividad A
+        inner join tb_metadata_quiz B on B.id_quiz = A.id_quiz
+        inner join project C on C.project_id = B.curso
+        inner join auth_user D on D.id = B.creador
+        inner join course_activity E on E.id = A.id_actividad
+        inner join course_activity_category F on F.id = E.course_activity_category
+        inner join activity_category G on G.id = F.category
+        where 	C.id = %d
+        and 	E.semester = %d
+            """, [1,8])
+    print vector
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
