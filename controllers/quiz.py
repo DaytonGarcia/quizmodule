@@ -209,7 +209,8 @@ def take_quiz():
         and 	E.semester = {1}
             """.format(int(project), int(period)))
 
-        resultado = db().select(*.vw_quiz_actividad)
+    resultado = db().select(*.vw_quiz_actividad)
+    print resultado
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, vector=vector)
 
 @auth.requires_login()
