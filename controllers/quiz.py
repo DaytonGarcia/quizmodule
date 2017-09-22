@@ -207,8 +207,7 @@ def take_quiz():
         inner join activity_category G on G.id = F.category
         where 	C.id = %d
         and 	E.semester = %d
-            """, [1,8])
-    print vector.length
+            """, [int(project),int(period)])
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
