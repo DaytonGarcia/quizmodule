@@ -54,7 +54,11 @@ $(document).ready(
 			<td><center>{{=programacion.Estado_actual}}</center></td>
 			<td>
 			<center>
+				{{if programacion.Estado_actual == 'Inactivo' :}}
 				<button id="btTomar" type="button" class="btn btn-info">Tomar Evaluacion</button>
+				{{else:}}
+				<button id="btTomar" type="button" class="btn btn-info" disabled>Tomar Evaluacion</button>
+				{{pass}}
 			</center>
 			</td>
 			</tr>
