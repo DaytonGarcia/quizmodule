@@ -208,7 +208,7 @@ def take_quiz():
         where 	C.id = %d
         and 	E.semester = %d
             """, [1,8])
-    print vector
+    print vector.length
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
