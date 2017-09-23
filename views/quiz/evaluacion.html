@@ -62,12 +62,8 @@
                     
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio">Verdadero</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="optradio">Falso</label>
-                    </div>
+                    <label class="radio-inline label label-success" ><input type="radio" name="optradio">Falso</label>
+                    <label class="radio-inline label label-danger"><input type="radio" name="optradio">Verdadero</label>
         
                     {{else:}}
                     <p><strong>Tipo: </strong> Repuesta Corta</p>
