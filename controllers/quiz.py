@@ -204,6 +204,7 @@ def evaluacion():
             pass
         pass
 
+        print "template de respuestas:"
         print template_respuestas
 
     pass
