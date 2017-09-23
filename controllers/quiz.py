@@ -134,7 +134,6 @@ def take_quiz():
 def evaluacion():
     import cpfecys
     import redis
-    import json
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
 
     period = cpfecys.current_year_period()
@@ -185,7 +184,7 @@ def evaluacion():
     datos = r.hget(cadenaRedis,'preguntas')
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
-        JsonQUiz = json.loads(datos.replace('{[','{"PREGUNTAS" : ['))
+        JsonQUiz = datos.replace('{[','{"PREGUNTAS" : [')
         print 'El quiz:'
         print JsonQUiz
     pass

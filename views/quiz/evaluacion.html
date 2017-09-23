@@ -23,12 +23,13 @@
 <p><strong>Actividad: </strong> {{=programacion.actividad_nombre}}  </p>
 <p><strong>Tema de evaluacion: </strong> {{=programacion.nombre_quiz}}</p>
 <p><strong>Duracion: </strong> {{=programacion.duracion}} minutos</p>
-<p><strong>Cantidad de Preguntas: </strong> {{=JsonQUiz.length}} </p>
+{{ import json  }}
+{{JsonPreguntas=json.loads(JsonQuiz)}}
+<p><strong>Cantidad de Preguntas: </strong> {{=JsonPreguntas["PREGUNTAS"].length}} </p>
 <p><strong>Carnet: </strong> {{=auth.user.username}}</p>
 </div>
 
 <br>
-{{ import json  }}
 <div class="navbar" data-step=1 data-intro="Div detalle del quiz">
     <div class="navbar-inner">
         <a style="cursor:pointer;"><center><h4>Detalle de la evalucacion</h4></center></a>
