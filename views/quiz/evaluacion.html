@@ -37,7 +37,7 @@
 </div>
 <div class="well" id="div_metainfo_quiz">
     <ol>
-    {{for (i=0; i<=len(JsonPreguntas["PREGUNTAS"]); i++) :}}
+    {{for preguntas in (JsonPreguntas["PREGUNTAS"]):}}
     <li id="{{ =i}}">
         voy por la pregunta {{=i}}
     </li>
