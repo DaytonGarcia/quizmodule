@@ -47,12 +47,6 @@
                     <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
                     <p><strong>Respuestas: </strong></p>
                             <table WIDTH=50%>
-                                    <thead>
-                                            <tr>
-                                                <td>Respuesta</td>
-                                                <td>Correcta</td>
-                                            </tr>
-                                            </thead>
                         {{ for respuesta in pregunta["respuesta"] :}}
                                 <tr WIDTH=100%>     
                                     <td WIDTH=50%>{{ =respuesta["value"]}}<td>
