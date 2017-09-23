@@ -121,7 +121,7 @@ def take_quiz():
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
     project = request.vars['project']
-    projecto = db(db.project.id==idproject).select().first()
+    projecto = db(db.project.id==project).select().first()
     ##inicia codigo viejo
     ## termina codigo viejo
     myquery = (db.vw_quiz_actividad.id_project==int(project)) & (db.vw_quiz_actividad.semestre==int(period))
