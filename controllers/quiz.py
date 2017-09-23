@@ -121,13 +121,31 @@ def take_quiz():
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
     project = request.vars['project']
-
+    projecto = db(db.project.id==idproject).select().first()
     ##inicia codigo viejo
     ## termina codigo viejo
     myquery = (db.vw_quiz_actividad.id_project==int(project)) & (db.vw_quiz_actividad.semestre==int(period))
     
     programaciones = db(myquery).select(db.vw_quiz_actividad.ALL)
     print programaciones
+    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones, project=projecto)
+
+@auth.requires_login()
+def evaluacion():
+    import cpfecys
+    period = cpfecys.current_year_period()
+    periodo = request.vars['period']
+    project = request.vars['project']
+    id_programacion = request.vars['programacion']
+
+    error = False
+    msjError = ""
+    privado = False
+    activo = True
+
+    JsonQUiz = ""
+
+
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
 @auth.requires_login()
