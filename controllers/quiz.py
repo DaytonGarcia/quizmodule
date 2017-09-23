@@ -206,11 +206,12 @@ def evaluacion():
         pass
 
         template_str = json.dumps(template_respuestas)
-        print "template de respuestas string:"
-        print template_str
 
     pass
 
+    session.respuestas = template_str
+    print "template de respuestas session:"
+    print session.respuestas
 
 
     return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQuiz=JsonQuiz, metadata=metadata)
