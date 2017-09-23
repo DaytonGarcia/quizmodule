@@ -12,10 +12,13 @@
                 if(actual > 1)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
-                    alert(pregunta_actual);
                     actual =  (parseInt(actual) - parseInt(1));
+                    var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
+
+                    $().hide(pregunta_actual);
+                    $().show(pregunta_nueva);
                 }
 
 
