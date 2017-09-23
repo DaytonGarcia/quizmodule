@@ -11,6 +11,8 @@
 
                 if(actual > 1)
                 {
+                    var pregunta_actual ="#Pregunta_"+actual;
+                    alert(pregunta_actual);
                     actual =  (parseInt(actual) - parseInt(1));
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
@@ -152,8 +154,8 @@
     {{pass}}
     <hr>
 </ol>
-<p id="pCantidad"  value="{{=len(JsonPreguntas["PREGUNTAS"])}}">{{=len(JsonPreguntas["PREGUNTAS"])}}</p>
-<p id="pActual"  value="=1">1</p>
+<p id="pCantidad"  value="{{=len(JsonPreguntas["PREGUNTAS"])}}" hidden>{{=len(JsonPreguntas["PREGUNTAS"])}}</p>
+<p id="pActual"  value="=1" hidden>1</p>
         <center>
         <button name="btnAnterior" type="button" class="btn btn-success" id="btnAnterior">ANTERIOR</button>
         <button name="btnSiguiente" type="button" class="btn btn-info" id="btnSiguiente">SIGUIENTE</button>
