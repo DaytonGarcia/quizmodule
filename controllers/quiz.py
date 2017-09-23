@@ -177,10 +177,14 @@ def evaluacion():
 
     print "La metadata es:"
     print metadata
+
+    cadenaRedis = 'uid:'+str(metadata.creador)+':curso:'+str(metadata.curso)+':quiz:'+str(programacion.id_quiz)
+    print "La cadena conexion es:"
+    print cadenaRedis
+    datos = r.hget(cadenaRedis,'preguntas')
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
-        JsonQUiz = "Aqui va el valor del quiz"
-        
+        JsonQUiz = "Aqui va el valor del quiz"  
     pass
 
 
