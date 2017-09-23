@@ -38,13 +38,37 @@
 <div class="well" id="div_metainfo_quiz">
     <ol>
     {{i=0}}
-    {{for preguntas in (JsonPreguntas["PREGUNTAS"]):}}
+    {{for pregunta in (JsonPreguntas["PREGUNTAS"]):}}
         {{i=i+1}}
-    <li id="{{ =i}}">
-        voy por la pregunta  {{=i}}
-    </li>
+        <li id={{=i}}>
+                <div>
+                    <h4>{{      = pregunta["value"]}}</h4>
+                    {{if (pregunta["tipo"]=="multiple") : }}
+                    <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
+                    <p><strong>Respuestas: </strong></p>
+                    <ol>
+                        {{ for respuesta in pregunta["respuesta"] :}}
+                        <li>
+                            {{ =respuesta["value"]}}
+                            {{ if (respuesta["correcta"]=="true") : }}
+                            <span class="label label-success">Correcta</span>
+                            {{pass}}
+                        </li>
+                        {{pass}}
+                    </ol>
+                    
+                    {{elif (pregunta["tipo"]=="veracidad") : }}
+                    <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
+                    <p><strong>Respuesta Correcta: </strong> {{      = pregunta["respuesta"]}}</p>
+        
+                    {{else:}}
+                    <p><strong>Tipo: </strong> Repuesta Corta</p>
+                    <p><strong>Respuesta Correcta: </strong> {{      = pregunta["respuesta"]}}</p>
+                    {{pass}}
+                <div>
+            </li>
+            <hr>
     {{pass}}
-    <hr>
 </ol>
         <center>
         <button name="btnAnterior" type="button" class="btn btn-success" id="btnAnterior">ANTERIOR</button>
