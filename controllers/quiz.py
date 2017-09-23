@@ -147,7 +147,7 @@ def evaluacion():
 
     JsonQUiz = ""
 
-    programacion = db().select(db.vw_quiz_actividad.ALL).first()
+    programacion = db().select(db.vw_quiz_actividad.ALL)
     print "La programacion es:"
     print programacion
     if( int(period.id) != int(periodo)):
