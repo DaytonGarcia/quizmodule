@@ -40,6 +40,7 @@
     {{i=0}}
     {{for pregunta in (JsonPreguntas["PREGUNTAS"]):}}
         {{i=i+1}}
+        {{if (i==1) :}}
         <li id="Pregunta_{{=i}}">
                 <div>
                     <h4>{{      = pregunta["value"]}}</h4>
@@ -72,6 +73,40 @@
                 <div>
             </li>
             <hr>
+        {{else:}}
+        <li id="Pregunta_{{=i}}" hidden>
+                <div>
+                    <h4>{{      = pregunta["value"]}}</h4>
+                    {{if (pregunta["tipo"]=="multiple") : }}
+                    <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
+                    <p><strong>Respuestas: </strong></p>
+                            <table WIDTH=50%>
+                                {{j=0}}
+                        {{ for respuesta in pregunta["respuesta"] :}}
+                        {{j=j+1}}
+                                <tr WIDTH=100%>     
+                                    <td WIDTH=50%>{{ =respuesta["value"]}}<td>
+                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Respuesta_{{=j}}"><td>
+                                </tr>
+                        {{pass}}
+                    </table>
+                    
+                    {{elif (pregunta["tipo"]=="veracidad") : }}
+                    <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
+                    <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        
+                    {{else:}}
+                    <p><strong>Tipo: </strong> Repuesta Corta</p>
+                    <div class="col-xs-2">
+                            <label for="ex1">Ingrese su respusta:</label>
+                            <input class="form-control" id="respuesta__{{=i}}" type="text" placeholder="Respuesta">
+                    </div>
+                    {{pass}}
+                <div>
+            </li>
+            <hr>
+        {{pass}}
     {{pass}}
 </ol>
         <center>
