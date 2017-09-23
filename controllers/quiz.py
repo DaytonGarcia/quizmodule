@@ -133,6 +133,9 @@ def take_quiz():
 @auth.requires_login()
 def evaluacion():
     import cpfecys
+    import redis
+    r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
+
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
     projecto = request.vars['project']
@@ -153,6 +156,31 @@ def evaluacion():
     if( int(period.id) != int(periodo)):
         error = True
         msjError = "El periodo actual no corresponde al periodo de la evaluacion"
+    pass
+
+    ##Verifico si es privado
+    if (programacion.privete == 1):
+        privado = True
+    pass
+
+    ##Verifico si aun sigue estando activo
+    if (programacion.Estado_actual == 'activo'):
+        activo = True
+    else:
+        activo = False
+    pass
+
+    ##Obtengo la metadata del quiz
+    metadata = db(db.tb_metadata_quiz.id_quiz==programacion.id_quiz).select(
+        db.tb_metadata_quiz.creador, 
+        db.tb_metadata_quiz.curso).first()
+
+    print "La metadata es:"
+    print metadata
+    ##Si el quiz esta activo recupero el detalle
+    if (activo == True):
+        JsonQUiz = "Aqui va el valor del quiz"
+        
     pass
 
 
