@@ -185,7 +185,7 @@ def evaluacion():
 
 
 
-    return dict(period=period, project=project,programacion = id_programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQUiz=JsonQUiz)
+    return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQUiz=JsonQUiz, metadata=metadata)
 
 @auth.requires_login()
 def reportes():
