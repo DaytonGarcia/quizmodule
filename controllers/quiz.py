@@ -183,6 +183,7 @@ def evaluacion():
     print cadenaRedis
     datos = r.hget(cadenaRedis,'preguntas')
     template_respuestas = ""
+    template_str = ""
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
         JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
@@ -204,8 +205,9 @@ def evaluacion():
             pass
         pass
 
+        template_str = str(template_respuestas)
         print "template de respuestas:"
-        print template_respuestas
+        print template_str
 
     pass
 
