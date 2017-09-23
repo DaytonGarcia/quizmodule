@@ -148,7 +148,7 @@ def evaluacion():
     privado = False
     activo = True
 
-    JsonQUiz = ""
+    JsonQuiz = ""
 
     programacion = db(db.vw_quiz_actividad.id==int(id_programacion)).select(db.vw_quiz_actividad.ALL).first()
     print "La programacion es:"
@@ -186,12 +186,12 @@ def evaluacion():
     if (activo == True):
         JsonQUiz = datos.replace('{[','{"PREGUNTAS" : [')
         print 'El quiz:'
-        print JsonQUiz
+        print JsonQuiz
     pass
 
 
 
-    return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQUiz=JsonQUiz, metadata=metadata)
+    return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQuiz=JsonQuiz, metadata=metadata)
 
 @auth.requires_login()
 def reportes():
