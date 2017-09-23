@@ -182,11 +182,29 @@ def evaluacion():
     print "La cadena conexion es:"
     print cadenaRedis
     datos = r.hget(cadenaRedis,'preguntas')
+    template_respuestas = ""
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
         JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
         print 'El quiz:'
         print JsonQuiz
+
+        template_respuestas = JsonQuiz
+
+        for pregunta in template_respuestas["PREGUNTAS"]:
+            if(pregunta.tipo =="multiple"):
+                for respuesta in pregunta["respuesta"]:
+                    respuesta.correcta ="false"
+                pass
+            else if (pregunta.tipo = "veracidad"):
+                pregunta.respuesta = ""
+            else:
+                pregunta.respuesta = ""
+            pass
+        pass
+
+        print template_respuestas
+
     pass
 
 
