@@ -164,7 +164,7 @@ def evaluacion():
     pass
 
     ##Verifico si aun sigue estando activo
-    if (programacion.Estado_actual == 'activo'):
+    if (programacion.Estado_actual == 'Inactivo'):
         activo = True
     else:
         activo = False
