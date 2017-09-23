@@ -208,8 +208,8 @@ def evaluacion():
         template_str = json.dumps(template_respuestas)
 
     pass
-
-    session.respuestas = template_str
+    if not session.respuestas:
+        session.respuestas = template_str
     print "template de respuestas session:"
     print session.respuestas
 
