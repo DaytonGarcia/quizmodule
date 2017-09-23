@@ -159,7 +159,7 @@ def evaluacion():
     pass
 
     ##Verifico si es privado
-    if (programacion.privete == 1):
+    if (programacion.private == 1):
         privado = True
     pass
 
