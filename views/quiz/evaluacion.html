@@ -85,7 +85,7 @@
     {{for pregunta in (JsonPreguntas["PREGUNTAS"]):}}
         {{i=i+1}}
         {{if (i==1) :}}
-        <li id="Pregunta_{{=i}}">
+        <li id="Pregunta_{{=i}}" value="{{=i}}">
                 <div>
                     <h4>{{      = pregunta["value"]}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
@@ -117,7 +117,7 @@
                 <div>
             </li>
         {{else:}}
-        <li id="Pregunta_{{=i}}" hidden >
+        <li id="Pregunta_{{=i}}" hidden value="{{=i}}">
                 <div>
                     <h4>{{      = pregunta["value"]}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
