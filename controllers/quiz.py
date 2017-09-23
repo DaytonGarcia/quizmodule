@@ -91,6 +91,8 @@ def GuardarQuiz():
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     ide = request.vars['id']
     preguntas = request.vars['jsonquiz']
+    print "El json de preguntas es: "
+    print preguntas
     curso = request.vars['project']
     uid = request.vars['uid']
     title = request.vars['title']
@@ -592,3 +594,17 @@ def test_programacion_protegida():
         name = pname, activitie = pactivitie, categorie = pcategorie, fecha = pfecha, duracion = pduracion, 
         hora = phora, estado = pestado, curso= curso,
         keyword = pkeyword)
+
+@auth.requires_login()
+def guardar_respuestas():
+    periodo = request.vars['period']
+    curso = request.vars['project']
+    categoria = request.vars['categorie']
+    id_programacion = request.vars['programacion']
+    id_pregunta = request.vars['id_pregunta']
+    detalleRespuesta = request.vars['detalle']
+
+    activo = True
+
+    return dict(activo=activo)
+
