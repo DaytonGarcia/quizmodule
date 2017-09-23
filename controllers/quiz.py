@@ -206,7 +206,7 @@ def evaluacion():
         pass
 
         template_str = str(template_respuestas)
-        print "template de respuestas:"
+        print "template de respuestas string:"
         print template_str
 
     pass
