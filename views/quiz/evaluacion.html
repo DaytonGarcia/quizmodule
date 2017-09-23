@@ -47,17 +47,19 @@
                     <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
                     <p><strong>Respuestas: </strong></p>
                     <ol>
+                            <table WIDTH=50%>
                         {{ for respuesta in pregunta["respuesta"] :}}
                         <li>
                             
-                            <table WIDTH=50%>
+                            
                                 <tr WIDTH=100%>     
                                     <td WIDTH=50%>{{ =respuesta["value"]}}<td>
-                            <td WIDTH=50%><input type="checkbox" class={{=i}}><td>
+                                    <td WIDTH=50%><input type="checkbox" class={{=i}}><td>
                                 </tr>
-                            </table>
+                            
                         </li>
                         {{pass}}
+                    </table>
                     </ol>
                     
                     {{elif (pregunta["tipo"]=="veracidad") : }}
