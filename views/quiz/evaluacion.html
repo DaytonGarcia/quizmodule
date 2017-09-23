@@ -21,7 +21,7 @@
                     $(pregunta_nueva).show();
                 }
 
-                $("#btnTerminar").show();
+                $("#btnTerminar").hide();
     
             });
 
@@ -43,7 +43,7 @@
                 }
                 else
                 {
-                    $("#btnTerminar").hide();
+                    $("#btnTerminar").show();
                 }
     
             });
@@ -172,7 +172,7 @@
                 <td></td>     
             </tr> 
             <tr> 
-                <td  style="right:inherit"><button name="btnTerminar" type="button" class="btn btn-danger" id="btnTerminar" hidden>Terminar</button></td> 
+                <td  style="right:inherit"><button name="btnTerminar" type="button" class="btn btn-danger" id="btnTerminar" style="display: none;">Terminar</button></td> 
             </tr> 
         </table>
 </div>
