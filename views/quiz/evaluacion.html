@@ -49,10 +49,13 @@
                     <ol>
                         {{ for respuesta in pregunta["respuesta"] :}}
                         <li>
-                            {{ =respuesta["value"]}}
-                            {{ if (respuesta["correcta"]=="true") : }}
-                            <input type="checkbox" class={{=i}}>
-                            {{pass}}
+                            
+                            <table WIDTH=50%>
+                                <tr WIDTH=100%>     
+                                    <td WIDTH=50%>{{ =respuesta["value"]}}<td>
+                            <td WIDTH=50%><input type="checkbox" class={{=i}}><td>
+                                </tr>
+                            </table>
                         </li>
                         {{pass}}
                     </ol>
