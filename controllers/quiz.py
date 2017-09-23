@@ -137,7 +137,6 @@ def evaluacion():
     periodo = request.vars['period']
     projecto = request.vars['project']
     project = db(db.project.id==projecto).select().first()
-    id_programacion = request.vars['programacion']
     x = tuple(request.args)
     y = str(''.join(x))
     id_programacion = int(y)
@@ -147,6 +146,10 @@ def evaluacion():
     activo = True
 
     JsonQUiz = ""
+
+    programacion = db().select(db.vw_quiz_actividad.ALL).first()
+    print "La programacion es:"
+    print programacion
     if( int(period.id) != int(periodo)):
         error = True
         msjError = "El periodo actual no corresponde al periodo de la evaluacion"
