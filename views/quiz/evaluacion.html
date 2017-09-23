@@ -11,7 +11,7 @@
 
                 if(actual > 1)
                 {
-                    actual =  (actual -1);
+                    actual =  (parseInt(actual) - parseInt(1));
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
                 }
@@ -29,7 +29,7 @@
 
                 if(actual < limite)
                 {
-                    actual =  (actual + 1);
+                    actual =  (parseInt(actual) + parseInt(1));
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
                 }
