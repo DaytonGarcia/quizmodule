@@ -97,7 +97,7 @@
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
                     <p><strong>Respuestas: </strong></p>
-                            <table WIDTH=50%>
+                            <table WIDTH=50% id="tbRespuestas_{{=i}}">
                                 {{j=0}}
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}

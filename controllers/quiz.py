@@ -209,7 +209,7 @@ def evaluacion():
 
     pass
     if not session.respuestas:
-        session.respuestas = template_str
+        session.respuestas = template_respuestas
     print "template de respuestas session:"
     print session.respuestas
 
