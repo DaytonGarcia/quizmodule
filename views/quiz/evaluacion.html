@@ -86,7 +86,8 @@
 
                         var valorRespuesta = $("#Pregunta_"+id+"_Respuesta_"+i).text();
                         respuestas.value = valorRespuesta;
-                        var valorCorrecta = $("#Pregunta_"+id+"_Correcta_"+i).checked;
+                        var valorCorrecta = $("#Pregunta_"+id+"_Correcta_"+i).is(":checked");
+                        alert(valorCorrecta);
                         respuestas.correcta = valorCorrecta;
                         arrayRespuestas.push(respuestas);
                     }
