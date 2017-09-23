@@ -8,8 +8,6 @@
     
                 var actual = $('#pActual').text();
                 var limite = $('#pCantidad').text();
-                var idTipoActual = "#Tipo_"+actual;
-                var tipo_actual = $(idTipoActual).text();
                 
                 if(actual > 1)
                 {
@@ -32,8 +30,7 @@
     
                 var actual = $('#pActual').text();
                 var limite = $('#pCantidad').text();
-                var idTipoActual = "#Tipo_"+actual;
-                var tipo_actual = $(idTipoActual).text();
+                
                 
                 if(actual < limite)
                 {
@@ -61,7 +58,28 @@
 
             function BuildingJson(id)
             {
-                alert("Voy a armar el json de "+id);
+                var idTipoActual = "#Tipo_"+id;
+                var tipo_actual = $(idTipoActual).text();
+                var tipo = "multiple";
+                if (tipo_actual == 2)
+                {
+                    var tipo = "veracidad";
+                }
+                else if (tipo_actual == 3)
+                {
+                    var tipo = "directa";
+                }
+                var idPregunta = $("#Id_"+id).text();
+                var valor = $("#Valor_"+id).text();
+
+                var miRespuesta = new Object();
+                miRespuesta.id_pregunta = idPregunta;
+                miRespuesta.value = valor;
+                miRespuesta.tipo = tipo;
+                
+                var respuestaString = JSON.stringify(miRespuesta);
+
+                alert(respuestaString);
             }
     });
     </script>
