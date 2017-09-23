@@ -76,6 +76,32 @@
                 miRespuesta.id_pregunta = idPregunta;
                 miRespuesta.value = valor;
                 miRespuesta.tipo = tipo;
+
+                if(tipo_actual==1)
+                {
+                    miRespuesta.respuesta ="Esta mierda es larga vos";
+                }
+                else if(tipo_actual==2)
+                {
+                    
+                    if($("#FPregunta_"+id).checked)
+                    {
+                        miRespuesta.respuesta = "false";
+                    }
+                    else if ($("#VPregunta_"+id).checked)
+                    {
+                        miRespuesta.respuesta = "true";
+                    }
+                    else
+                    {
+                        miRespuesta.respuesta = null;
+                    }
+                    
+                }
+                else
+                {
+                    miRespuesta.respuesta = $("#respuesta__"+id).text();
+                }
                 
                 var respuestaString = JSON.stringify(miRespuesta);
 
@@ -148,8 +174,8 @@
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
-                    <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}" id="FPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}" id="VPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         
                     {{else:}}
                     <p id="Tipo_{{=i}}" hidden value=3>3</p>
