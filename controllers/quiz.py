@@ -205,7 +205,7 @@ def evaluacion():
             pass
         pass
 
-        template_str = json.dumps(template_respuestas)
+    #   template_str = json.dumps(template_respuestas)
 
     pass
     if not session.respuestas:
