@@ -17,8 +17,8 @@
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
 
-                    $().hide(pregunta_actual);
-                    $().show(pregunta_nueva);
+                    $(pregunta_actual).hide();
+                    $(pregunta_nueva).show();
                 }
 
 
@@ -34,9 +34,14 @@
 
                 if(actual < limite)
                 {
+                    var pregunta_actual ="#Pregunta_"+actual;
                     actual =  (parseInt(actual) + parseInt(1));
+                    var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
                     $('#pActual').val(actual);
+
+                    $(pregunta_actual).hide();
+                    $(pregunta_nueva).show();
                 }
 
 
