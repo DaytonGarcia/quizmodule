@@ -12,7 +12,6 @@
                 if(actual > 1)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
-                    BuildingJson(actual);
                     actual =  (parseInt(actual) - parseInt(1));
                     var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
@@ -79,7 +78,20 @@
 
                 if(tipo_actual==1)
                 {
-                    miRespuesta.respuesta ="Esta mierda es larga vos";
+                    var arrayRespuestas = new Array();
+                    var indice = parseInt($("#Cantidad_"=id).text());
+                    for (var i = 1; i <= indice; i++)
+                    {
+                        var respuestas = new Object();
+
+                        var valorRespuesta = $("#Pregunta_"+id+"_Respuesta_"+i).text();
+                        respuestas.value = valorRespuesta;
+                        var valorCorrecta = $("#Pregunta_"+id+"_Correcta_"+i).checked;
+                        respuestas.correcta = valorCorrecta;
+                        arrayRespuestas.push(respuestas);
+                    }
+                    
+                    miRespuesta.respuesta = arrayRespuestas;
                 }
                 else if(tipo_actual==2)
                 {
@@ -164,8 +176,8 @@
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
                                 <tr WIDTH=100%>     
-                                    <td WIDTH=50%>{{ =respuesta["value"]}}<td>
-                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Respuesta_{{=j}}"><td>
+                                    <td WIDTH=50% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
+                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
                         {{pass}}
                     </table>
@@ -202,8 +214,8 @@
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
                                 <tr WIDTH=100%>     
-                                    <td WIDTH=50%>{{ =respuesta["value"]}}<td>
-                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Respuesta_{{=j}}"><td>
+                                    <td WIDTH=50% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
+                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
                         {{pass}}
                     </table>
