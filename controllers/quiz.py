@@ -184,7 +184,7 @@ def evaluacion():
     datos = r.hget(cadenaRedis,'preguntas')
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
-        JsonQUiz = datos.replace('{[','{"PREGUNTAS" : [')
+        JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
         print 'El quiz:'
         print JsonQuiz
     pass
