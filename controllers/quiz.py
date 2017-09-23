@@ -189,7 +189,8 @@ def evaluacion():
         print 'El quiz:'
         print JsonQuiz
 
-        template_respuestas = JsonQuiz
+        import json
+        template_respuestas=json.loads(JsonQuiz)
 
         for pregunta in template_respuestas["PREGUNTAS"]:
             if(pregunta.tipo =="multiple"):
