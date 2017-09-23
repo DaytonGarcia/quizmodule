@@ -103,7 +103,7 @@
         {{if (i==1) :}}
         <li id="Pregunta_{{=i}}" value="{{=i}}">
                 <div>
-                    <h4>{{      = pregunta["value"]}}</h4>
+                    <h4 id="Valor_{{=i}}">{{= pregunta["value"]}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p id="Tipo_{{=i}}" hidden value=1>1</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
@@ -141,7 +141,7 @@
         {{else:}}
         <li id="Pregunta_{{=i}}" hidden value="{{=i}}">
                 <div>
-                    <h4>{{      = pregunta["value"]}}</h4>
+                    <h4 id="Valor_{{=i}}">{{= pregunta["value"]}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p id="Tipo_{{=i}}" hidden value=1>1</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
@@ -156,14 +156,15 @@
                                     <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Respuesta_{{=j}}"><td>
                                 </tr>
                         {{pass}}
+                        <p id="Cantidad_{{=i}}" value="{{=j}}">{{=j}}</p>
                     </table>
                     
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
-                    <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}" id="FPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}" id="VPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         
                     {{else:}}
                     <p id="Tipo_{{=i}}" hidden value=3>3</p>
