@@ -7,7 +7,33 @@
             $('#btnAnterior').click(function(){
     
                 var actual = $('#pActual').text();
-                var limite = $('#pActual').text();
+                var limite = $('#pCantidad').text();
+
+                if(actual > 1)
+                {
+                    actual =  actual -1;
+                    $('#pActual').text(actual);
+                    $('#pActual').val(actual);
+                }
+
+
+                alert("La pregunta actual es: "+actual);
+                alert("La pregunta ultima es: "+limite);
+    
+            });
+
+            $('#btnSiguiente').click(function(){
+    
+                var actual = $('#pActual').text();
+                var limite = $('#pCantidad').text();
+
+                if(actual < limite)
+                {
+                    actual =  actual + 1;
+                    $('#pActual').text(actual);
+                    $('#pActual').val(actual);
+                }
+
 
                 alert("La pregunta actual es: "+actual);
                 alert("La pregunta ultima es: "+limite);
