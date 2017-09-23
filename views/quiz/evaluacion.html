@@ -62,10 +62,12 @@
                     
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Falso</button>
-                            <button type="button" class="btn btn-secondary">Verdadero</button>
-                          </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio">Verdadero</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio">Falso</label>
+                    </div>
         
                     {{else:}}
                     <p><strong>Tipo: </strong> Repuesta Corta</p>
