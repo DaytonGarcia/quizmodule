@@ -199,9 +199,9 @@ def evaluacion():
                     respuesta["correcta"] ="false"
                 pass
             elif (pregunta["tipo"]=="veracidad"):
-                pregunta["respuesta"] = ""
+                pregunta["respuesta"] = None
             else:
-                pregunta["respuesta"] = ""
+                pregunta["respuesta"] = None
             pass
         pass
 
