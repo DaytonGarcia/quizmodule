@@ -193,14 +193,14 @@ def evaluacion():
         template_respuestas=json.loads(JsonQuiz)
 
         for pregunta in template_respuestas["PREGUNTAS"]:
-            if(pregunta.tipo =="multiple"):
+            if(pregunta["tipo"] =="multiple"):
                 for respuesta in pregunta["respuesta"]:
-                    respuesta.correcta ="false"
+                    respuesta["correcta"] ="false"
                 pass
-            elif (pregunta.tipo=="veracidad"):
-                pregunta.respuesta = ""
+            elif (pregunta["tipo"]=="veracidad"):
+                pregunta["respuesta"] = ""
             else:
-                pregunta.respuesta = ""
+                pregunta["respuesta"] = ""
             pass
         pass
 
