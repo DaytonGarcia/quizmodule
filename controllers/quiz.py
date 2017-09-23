@@ -135,18 +135,26 @@ def evaluacion():
     import cpfecys
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
-    project = request.vars['project']
+    projecto = request.vars['project']
+    project = db(db.project.id==projecto).select().first()
     id_programacion = request.vars['programacion']
-
+    x = tuple(request.args)
+    y = str(''.join(x))
+    id_programacion = int(y)
     error = False
     msjError = ""
     privado = False
     activo = True
 
     JsonQUiz = ""
+    if( int(period.id) != int(periodo)):
+        error = True
+        msjError = "El periodo actual no corresponde al periodo de la evaluacion"
+    pass
 
 
-    return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
+
+    return dict(period=period, project=project,programacion = id_programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQUiz=JsonQUiz)
 
 @auth.requires_login()
 def reportes():

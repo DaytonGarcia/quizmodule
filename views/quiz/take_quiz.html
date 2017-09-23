@@ -7,8 +7,10 @@ $(document).ready(
 		$('.btnTakeQuiz').click(function(){
 
 			var id_programacion = $(this).attr("id");
-			var parametros = "/"+id_programacion;
-			//window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+			var period = $('#pPeriod').text();
+			var project = $('#pProject').text();
+			var parametros = "/"+id_programacion+"?project="+project+"&period="+period;
+			window.location.href = "https://"+document.domain+"/quiz/evaluacion"+parametros;
 			alert("La programacion es la id: "+id_programacion);
 
     	});
@@ -69,5 +71,5 @@ $(document).ready(
 	</tbody>
 	</table>
 </div>
-<p id="pPeriod"  value="{{=periodo.id}}">{{=periodo.id}}</p>
-<p id="pProject"  value="{{=project.id}}">{{=project.id}}</p>
+<p id="pPeriod"  hidden value="{{=periodo.id}}">{{=periodo.id}}</p>
+<p id="pProject"  hidden value="{{=project.id}}">{{=project.id}}</p>

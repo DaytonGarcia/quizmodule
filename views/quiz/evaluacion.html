@@ -1,0 +1,41 @@
+{{extend 'template.html'}}
+</head>
+<div class="row-fluid">
+	<center>
+	    <h2>Evaluacion:
+	    	{{if (auth.has_membership('Super-Administrator') == False )and (auth.has_membership('Ecys-Administrator') == False) :}}
+	    	<a onclick="javascript:introJs().setOptions({ 'skipLabel': '{{=T('Skip')}}', 'nextLabel': '{{=T('Next')}}', 'prevLabel': '{{=T('Previous')}}', 'doneLabel': '{{=T('Exit')}}' }).start();" href='javascript:void(0);' class="btn btn-primary" >
+			  <span class="icon-white icon-question-sign"></span>
+			</a>
+			{{pass}}
+			<br>
+        </h2>
+	</center>
+</div>
+<br>
+<div class="navbar" data-step=1 data-intro="Div para informacion del quiz">
+    <div class="navbar-inner">
+        <a style="cursor:pointer;"><center><h4>Informacion general de la evaluacion</h4></center></a>
+    </div>
+</div>
+<div class="well" id="div_metainfo_quiz">
+<p><strong>Creador:</strong> </p> 
+<p><strong>Curso: </strong>  </p>
+<p><strong>Fecha de creacion: </strong>  </p>
+</div>
+
+<br>
+{{ import json  }}
+<div class="navbar" data-step=1 data-intro="Div detalle del quiz">
+    <div class="navbar-inner">
+        <a style="cursor:pointer;"><center><h4>Detalle de la evalucacion</h4></center></a>
+    </div>
+</div>
+<div class="well" id="div_metainfo_quiz">
+    <ol>
+    <li>
+            JSONQUIZ
+    </li>
+    <hr>
+    <ol>
+</div>
