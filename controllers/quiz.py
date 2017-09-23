@@ -205,7 +205,7 @@ def evaluacion():
             pass
         pass
 
-        template_str = str(template_respuestas)
+        template_str = json.dumps(template_respuestas)
         print "template de respuestas string:"
         print template_str
 
