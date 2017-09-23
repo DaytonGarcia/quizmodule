@@ -8,10 +8,13 @@
     
                 var actual = $('#pActual').text();
                 var limite = $('#pCantidad').text();
-
+                var idTipoActual = "#Tipo_"+actual;
+                var tipo_actual = $(idTipoActual).text();
+                alert("El tipo actual es: "+tipo_actual);
                 if(actual > 1)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
+                    
                     actual =  (parseInt(actual) - parseInt(1));
                     var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
@@ -29,6 +32,9 @@
     
                 var actual = $('#pActual').text();
                 var limite = $('#pCantidad').text();
+                var idTipoActual = "#Tipo_"+actual;
+                var tipo_actual = $(idTipoActual).text();
+                alert("El tipo actual es: "+tipo_actual);
 
                 if(actual < limite)
                 {
