@@ -1,4 +1,20 @@
 {{extend 'template.html'}}
+<script type="text/javascript">
+    $(document).ready(
+          
+          function(){
+    
+            $('#btnAnterior').click(function(){
+    
+                var actual = $('#pActual').text();
+                var limite = $('#pActual').text();
+
+                alert("La pregunta actual es: "+actual);
+                alert("La pregunta ultima es: "+limite);
+    
+            });
+    });
+    </script>
 </head>
 <div class="row-fluid">
 	<center>
