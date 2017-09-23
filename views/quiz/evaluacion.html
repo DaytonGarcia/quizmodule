@@ -10,11 +10,11 @@
                 var limite = $('#pCantidad').text();
                 var idTipoActual = "#Tipo_"+actual;
                 var tipo_actual = $(idTipoActual).text();
-                alert(sessionStorage.getItem("respuestas"));
+                
                 if(actual > 1)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
-                    
+                    BuildingJson(actual);
                     actual =  (parseInt(actual) - parseInt(1));
                     var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
@@ -34,10 +34,11 @@
                 var limite = $('#pCantidad').text();
                 var idTipoActual = "#Tipo_"+actual;
                 var tipo_actual = $(idTipoActual).text();
-                alert(sessionStorage.getItem("respuestas"));
+                
                 if(actual < limite)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
+                    BuildingJson(actual);
                     actual =  (parseInt(actual) + parseInt(1));
                     var pregunta_nueva ="#Pregunta_"+actual;
                     $('#pActual').text(actual);
@@ -57,6 +58,11 @@
                 }
     
             });
+
+            function BuildingJson(id)
+            {
+                alert("Voy a armar el json de "+id);
+            }
     });
     </script>
 </head>
