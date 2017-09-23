@@ -46,18 +46,12 @@
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
                     <p><strong>Respuestas: </strong></p>
-                    <ol>
                             <table WIDTH=50%>
                         {{ for respuesta in pregunta["respuesta"] :}}
-                        <li>
-                            
-                            
                                 <tr WIDTH=100%>     
                                     <td WIDTH=50%>{{ =respuesta["value"]}}<td>
                                     <td WIDTH=50%><input type="checkbox" class={{=i}}><td>
                                 </tr>
-                            
-                        </li>
                         {{pass}}
                     </table>
                     </ol>
