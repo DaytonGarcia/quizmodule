@@ -10,7 +10,7 @@
                 var limite = $('#pCantidad').text();
                 var idTipoActual = "#Tipo_"+actual;
                 var tipo_actual = $(idTipoActual).text();
-                alert("El tipo actual es: "+tipo_actual);
+
                 if(actual > 1)
                 {
                     var pregunta_actual ="#Pregunta_"+actual;
@@ -34,7 +34,6 @@
                 var limite = $('#pCantidad').text();
                 var idTipoActual = "#Tipo_"+actual;
                 var tipo_actual = $(idTipoActual).text();
-                alert("El tipo actual es: "+tipo_actual);
 
                 if(actual < limite)
                 {
@@ -46,6 +45,11 @@
 
                     $(pregunta_actual).hide();
                     $(pregunta_nueva).show();
+
+                    if(actual == limite)
+                    {
+                        $("#btnTerminar").show();
+                    }
                 }
                 else
                 {
