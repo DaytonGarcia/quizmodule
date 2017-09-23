@@ -195,8 +195,7 @@ def evaluacion():
             if(pregunta.tipo =="multiple"):
                 for respuesta in pregunta["respuesta"]:
                     respuesta.correcta ="false"
-                pass
-            else if (pregunta.tipo == "veracidad"):
+            else if (pregunta.tipo=="veracidad"):
                 pregunta.respuesta = ""
             else:
                 pregunta.respuesta = ""
