@@ -32,3 +32,22 @@ function LlamarControlador(controlador,funcion,params)
  return(retorno);
   
 }
+
+function SendPost(controlador,funcion,params)
+{
+  var retorno ="";
+  pageload="https://"+document.domain+"/"+controlador+"/"+funcion;
+  $.ajax({
+    type: "POST",
+    url: pageload,
+    data: params,
+    dataType: 'json', 
+    async: false,
+  	success: function(result)
+  	{
+      //jsonResult = JSON.parse(result);
+      retorno=(result); 
+   }});
+ return(retorno);
+  
+}

@@ -42,7 +42,9 @@ function GruardarQuiz()
         title = document.getElementById("txtTitulo").value;
         JsonQuiz += ']}';
         var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
-        submitLoad("quiz","GuardarQuiz",parametros);
+        alert(parametros);
+        //submitLoad("quiz","GuardarQuiz",parametros);
+        SendPost("quiz","GuardarQuiz",parametros);
         
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
