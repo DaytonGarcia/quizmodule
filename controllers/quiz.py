@@ -110,6 +110,28 @@ def GuardarQuiz():
     db.commit()
     return a
 
+@auth.requires_login()
+def GuardarQuizPost():
+    import redis
+    r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
+    JsonRecive = request.post_vars
+    print "El json de preguntas es: "
+    print JsonRecive
+
+    a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas)
+    r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0)
+    r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0)
+    r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"perdidos",0)
+    r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"state",0)
+    db.tb_metadata_quiz.insert(
+        id_quiz = ide, 
+        nombre= title, 
+        fecha_creacion = datetime.datetime.now(), 
+        creador=uid, 
+        curso=curso)
+    db.commit()
+    return a
+
 
 def GetQuiz():
     import redis
