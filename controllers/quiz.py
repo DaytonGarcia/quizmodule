@@ -117,7 +117,9 @@ def GuardarQuizPost():
         
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     JsonRecive = json.loads(request.post_vars)
+    print JsonRecive
     ide = JsonRecive["Correlativo"]
+    print ide
     preguntas = json.loads(JsonRecive["jsonquiz"])
     uid = JsonRecive["uid"]
     curso = JsonRecive["project"]
