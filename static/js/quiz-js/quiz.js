@@ -45,7 +45,7 @@ function GruardarQuiz()
         //JsonQuiz += ']';
         var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
         //var parametros = '{"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"}';
-        var parametros = "?id="+JsonCorretaltivo.value+"&uid="+userid+"&project="+projectid+"&title="+title;
+        //var parametros = "?id="+JsonCorretaltivo.value+"&uid="+userid+"&project="+projectid+"&title="+title;
         var datas = JsonQuiz;
         alert(parametros);
         submitLoad("quiz","GuardarQuiz",parametros);
