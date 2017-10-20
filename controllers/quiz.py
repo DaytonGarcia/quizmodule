@@ -114,21 +114,24 @@ def GuardarQuiz():
 def GuardarQuizPost():
     import redis
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
+    
     preguntas = request.post_vars
     ide = request.vars['id']
-    print "El json de preguntas es: "
-    print preguntas
     curso = request.vars['project']
     uid = request.vars['uid']
     title = request.vars['title']
+
     print "El json de preguntas es: "
     print preguntas
-
+    
     print "El ide  es: "
     print ide
 
     print "El curso es: "
     print curso
+
+    print "El title es: "
+    print title
 
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0)
