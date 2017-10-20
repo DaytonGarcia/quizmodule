@@ -41,8 +41,7 @@ function SendPost(controlador,funcion,params,datas)
     type: "POST",
     url: pageload,
     data: datas,
-    contentType: 'text/plain',
-    //dataType: 'json', 
+    dataType: 'json', 
     //async: false,
   	success: function(result)
   	{
