@@ -44,10 +44,12 @@ function GruardarQuiz()
         //JsonQuiz += ']}';
         JsonQuiz += ']';
         //var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
-        var parametros = '"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"';
+        //var parametros = '"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"';
+        var parametros = "?id="+JsonCorretaltivo.value+"&uid="+userid+"&project="+projectid+"&title="+title;
+        var datas = JsonQuiz;
         alert(parametros);
         //submitLoad("quiz","GuardarQuiz",parametros);
-        SendPost("quiz","GuardarQuizPost",parametros);
+        SendPost("quiz","GuardarQuizPost",parametros,datas);
         
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
