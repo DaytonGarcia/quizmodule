@@ -113,8 +113,9 @@ def GuardarQuiz():
 @auth.requires_login()
 def GuardarQuizPost():
     import redis
+    print "uno"
     import json
-        
+    print "Dos"
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     JsonRecive = json.loads(request.post_vars)
     print JsonRecive
