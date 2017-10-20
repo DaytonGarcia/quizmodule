@@ -42,7 +42,7 @@ function SendPost(controlador,funcion,params)
     url: pageload,
     data: JSON.stringify(params),
     dataType: 'json', 
-    async: false,
+    //async: false,
   	success: function(result)
   	{
       //jsonResult = JSON.parse(result);
