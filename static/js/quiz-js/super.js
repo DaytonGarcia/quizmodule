@@ -33,14 +33,14 @@ function LlamarControlador(controlador,funcion,params)
   
 }
 
-function SendPost(controlador,funcion,params)
+function SendPost(controlador,funcion,params,datas)
 {
   var retorno ="";
-  pageload="https://"+document.domain+"/"+controlador+"/"+funcion+"?hola=holayadios";
+  pageload="https://"+document.domain+"/"+controlador+"/"+funcion+params;
   $.ajax({
     type: "POST",
     url: pageload,
-    data: JSON.stringify(params),
+    data: datas,
     dataType: 'json', 
     //async: false,
   	success: function(result)
