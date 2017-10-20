@@ -48,7 +48,7 @@ function GruardarQuiz()
         var datas = JsonQuiz;
         alert(parametros);
         //submitLoad("quiz","GuardarQuiz",parametros);
-        SendPost("quiz","GuardarQuizPost",parametros,datas);
+        SendPost("quiz","GuardarQuizPost",parametros);
         
         alert("Se ha guardado el cuestionario con id: "+JsonCorretaltivo.value);
         var par = "?period="+periodo_id+"&project="+idproject;
