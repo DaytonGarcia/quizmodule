@@ -36,7 +36,7 @@ function LlamarControlador(controlador,funcion,params)
 function SendPost(controlador,funcion,params)
 {
   var retorno ="";
-  pageload="https://"+document.domain+"/"+controlador+"/"+funcion;
+  pageload="https://"+document.domain+"/"+controlador+"/"+funcion+"?hola=hola";
   $.ajax({
     type: "POST",
     url: pageload,
