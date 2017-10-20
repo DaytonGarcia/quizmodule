@@ -115,8 +115,13 @@ def GuardarQuizPost():
     import redis
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     JsonRecive = request.post_vars
+    ide = JsonRecive["Correlativo"]
+    preguntas = JsonRecive["jsonquiz"]
+    uid = JsonRecive["uid"]
+    curso = JsonRecive["project"]
+    title = JsonRecive["title"]
     print "El json de preguntas es: "
-    print JsonRecive
+    print preguntas
 
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0)
@@ -299,39 +304,6 @@ def reportes():
     print programaciones
     return dict(periodo = period, course=project, period=periodo, programaciones=programaciones)
 
-@auth.requires_login()
-def view_reports():
-    import cpfecys
-    period = cpfecys.current_year_period()
-    periodo = '3'
-    project = '93'
-    #project = db(db.project.id==idproject).select().first()  
-    return dict(periodo = period, course=project, period=periodo)
-
-@auth.requires_login()
-def viewer_quiz():
-    import cpfecys
-    period = cpfecys.current_year_period()
-    periodo = '3'
-    project = '93'
-    #project = db(db.project.id==idproject).select().first()  
-    return dict(periodo = period, course=project, period=periodo)
-
-def viewer_quiz2():
-    import cpfecys
-    period = cpfecys.current_year_period()
-    periodo = '3'
-    project = '93'
-    #project = db(db.project.id==idproject).select().first()  
-    return dict(periodo = period, course=project, period=periodo)
-
-def viewer_quiz3():
-    import cpfecys
-    period = cpfecys.current_year_period()
-    periodo = '3'
-    project = '93'
-    #project = db(db.project.id==idproject).select().first()  
-    return dict(periodo = period, course=project, period=periodo)
 
 @auth.requires_login()
 def test():
