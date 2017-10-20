@@ -44,7 +44,7 @@ function GruardarQuiz()
         //JsonQuiz += ']}';
         JsonQuiz += ']';
         //var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
-        var parametros = '{"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"}';
+        var parametros = '"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"';
         alert(parametros);
         //submitLoad("quiz","GuardarQuiz",parametros);
         SendPost("quiz","GuardarQuizPost",parametros);
