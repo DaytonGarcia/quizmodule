@@ -20,7 +20,8 @@ function GruardarQuiz()
         var corr_quiz = submitLoad("quiz","obtenerQuiz",""); 
         JsonCorretaltivo = JSON.parse(corr_quiz);
         //var JsonQuiz = '{"id":"'+JsonCorretaltivo.value+'", "curso": "curso","seccion": "A", "propietario":"auxiliar/catedratico", "preguntas":[ ';
-        var JsonQuiz = '{[';
+        //var JsonQuiz = '{[';
+        var JsonQuiz = '[';
         
         for (var i = 0; i < preguntas.length; i++) {
 
@@ -40,9 +41,10 @@ function GruardarQuiz()
         periodo_id = document.getElementById("period_id").name;
         idproject = document.getElementById("id_project").name;
         title = document.getElementById("txtTitulo").value;
-        JsonQuiz += ']}';
+        //JsonQuiz += ']}';
+        JsonQuiz += ']';
         //var parametros = "?id="+JsonCorretaltivo.value+"&jsonquiz="+JsonQuiz+"&uid="+userid+"&project="+projectid+"&title="+title;
-        var parametros = '{"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":'+projectid+',"title": "'+title+'"}';
+        var parametros = '{"Correlativo":'+JsonCorretaltivo.value+', "jsonquiz":'+JsonQuiz+',"uid":'+userid+',"project":"'+projectid+'","title": "'+title+'"}';
         alert(parametros);
         //submitLoad("quiz","GuardarQuiz",parametros);
         SendPost("quiz","GuardarQuizPost",parametros);
