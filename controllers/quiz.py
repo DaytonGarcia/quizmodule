@@ -113,20 +113,14 @@ def GuardarQuiz():
 @auth.requires_login()
 def GuardarQuizPost():
     import redis
-    print "uno"
-    import json
-    print "Dos"
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
-    JsonRecive = request.post_vars
-    hola = request.vars['hola']
-    print hola
-    print JsonRecive
-    ide = JsonRecive["Correlativo"]
-    print ide
-    preguntas = json.loads(JsonRecive["jsonquiz"])
-    uid = JsonRecive["uid"]
-    curso = JsonRecive["project"]
-    title = JsonRecive["title"]
+    preguntas = request.post_vars
+    ide = request.vars['id']
+    print "El json de preguntas es: "
+    print preguntas
+    curso = request.vars['project']
+    uid = request.vars['uid']
+    title = request.vars['title']
     print "El json de preguntas es: "
     print preguntas
 
