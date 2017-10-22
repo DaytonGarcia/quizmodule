@@ -173,7 +173,7 @@
         {{if (i==1) :}}
         <li id="Pregunta_{{=i}}" value="{{=i}}">
                 <div>
-                    <h4 id="Valor_{{=i}}">{{= pregunta["value"].encode("utf-8")}}</h4>
+                    <h4 id="Valor_{{=i}}">{{= unicode(pregunta["value"].encode("utf-8"))}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p id="Tipo_{{=i}}" hidden value=1>1</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=(pregunta["id_pregunta"])}}</p>
