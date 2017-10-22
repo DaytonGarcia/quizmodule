@@ -102,11 +102,11 @@ $(document).ready(
                         var id_quiz = parseInt($('#pId').text());
                         //Voy a obtener la fecha y la hora
                         var Hoy = submitLoad("quiz","GetNow","");
-                        alert(Hoy);
+                
                         var fecha_hora = fecha +" "+hora;
                         var FechaServer = new Date(Hoy).valueOf();
                         var FechaProgra = new Date(fecha_hora).valueOf();
-                        alert(FechaProgra);
+              
                         if (FechaServer < FechaProgra)
                         {
                             var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion+"&clave="+pass;
@@ -132,8 +132,6 @@ $(document).ready(
                     var fecha_hora = fecha +" "+hora;
                     var FechaServer = new Date(Hoy).valueOf();
                     var FechaProgra = new Date(fecha_hora).valueOf();
-                    alert(Hoy);
-                    alert(fecha_hora);
 
                     if(FechaProgra > FechaServer) {
                         var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion;
