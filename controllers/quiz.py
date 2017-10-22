@@ -225,6 +225,8 @@ def evaluacion():
     print "La cadena conexion es:"
     print cadenaRedis
     datos = r.hget(cadenaRedis,'preguntas')
+    datos = datos.replace('\n','')
+    print 'El quiz es: ' + datos
     template_respuestas = ""
     template_str = ""
     ##Si el quiz esta activo recupero el detalle
