@@ -102,6 +102,7 @@ $(document).ready(
                         var id_quiz = parseInt($('#pId').text());
                         //Voy a obtener la fecha y la hora
                         var Hoy = submitLoad("quiz","GetNow","");
+                        alert(Hoy);
                         var fecha_hora = fecha +" "+hora;
                         var FechaServer = new Date(Hoy).valueOf();
                         var FechaProgra = new Date(fecha_hora).valueOf();
