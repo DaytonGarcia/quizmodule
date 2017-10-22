@@ -183,9 +183,34 @@
                                 {{j=0}}
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
-                                <tr WIDTH=100%>     
-                                    <td WIDTH=50% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
-                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
+                                <tr WIDTH=100%>
+                                    <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">
+                                        {{ if (j==1): }}
+                                        A
+                                        {{else if(j==2) :}}
+                                        B 
+                                        {{else if(j==3) :}}
+                                        C 
+                                        {{else if(j==4) :}}
+                                        B 
+                                        {{else if(j==5) :}}
+                                        D 
+                                        {{else if(j==6) :}}
+                                        E 
+                                        {{else if(j==7) :}}
+                                        F 
+                                        {{else if(j==8) :}}
+                                        G 
+                                        {{else if(j==9) :}}
+                                        H 
+                                        {{else if(j==10) :}}
+                                        I 
+                                        {{else :}}
+                                        J 
+                                        {{pass}}
+                                        <td>     
+                                    <td WIDTH=80% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
+                                    <td WIDTH=10%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
                         {{pass}}
                     </table>
