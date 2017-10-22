@@ -177,7 +177,7 @@ def take_quiz():
 def evaluacion():
     import cpfecys
     import redis
-    r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0,decode_responses=True)
+    r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
 
     period = cpfecys.current_year_period()
     periodo = request.vars['period']
