@@ -192,14 +192,14 @@
                     <p id="Cantidad_{{=i}}" hidden value="{{=j}}">{{=j}}</p>
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
-                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
+                    <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
                     <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}" id="FPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}" id="VPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         
                     {{else:}}
                     <p id="Tipo_{{=i}}" hidden value=3>3</p>
-                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
+                    <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo: </strong> Repuesta Corta</p>
                     <div class="col-xs-2">
                             <label for="ex1">Ingrese su respusta:</label>
@@ -230,7 +230,7 @@
                     <p id="Cantidad_{{=i}}" hidden value="{{=j}}">{{=j}}</p>
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
-                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
+                    <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo: </strong> Pregunta de falso/verdadero</p>
                     <label class="radio-inline label label-warning" ><input type="radio" name="optradio_{{=i}}" id="FPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FALSO</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     <label class="radio-inline label label-success" ><input type="radio" name="optradio_{{=i}}" id="VPregunta_{{=i}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VERDADERO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -238,7 +238,7 @@
                     {{else:}}
                     <p id="Tipo_{{=i}}" hidden value=3>3</p>
                     <p><strong>Tipo: </strong> Repuesta Corta</p>
-                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
+                    <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <div class="col-xs-2">
                             <label for="ex1">Ingrese su respusta:</label>
                             <input class="form-control" id="respuesta__{{=i}}" type="text" placeholder="Respuesta">
