@@ -184,35 +184,35 @@
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
                         {{cor = 'A'}}
-                        {{ if (j==1): }}
-                        {{cor = 'A'}}
-                        {{else if(j==2) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==3) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==4) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==5) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==6) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==7) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==8) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==9) :}}
-                        {{cor = 'A'}}
-                        {{else if(j==10) :}}
-                        {{cor = 'A'}}
-                        {{else :}}
-                        {{cor = 'A'}}
-                        {{pass}}
-                                <tr WIDTH=100%>
+                            {{ if (j==1): }}
+                                {{cor = 'A'}}
+                            {{else if(j==2) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==3) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==4) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==5) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==6) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==7) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==8) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==9) :}}
+                                {{cor = 'A'}}
+                            {{else if(j==10) :}}
+                                {{cor = 'A'}}
+                            {{else :}}
+                                {{cor = 'A'}}
+                            {{pass}}
+                                    <tr WIDTH=100%>
                                     <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{=cor}}<td>
                                     <td WIDTH=80% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
                                     <td WIDTH=10%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
-                        
+                        {{pass}}
                     </table>
                     <p id="Cantidad_{{=i}}" hidden value="{{=j}}">{{=j}}</p>
                     {{elif (pregunta["tipo"]=="veracidad") : }}
