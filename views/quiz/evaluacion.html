@@ -189,7 +189,7 @@
                                 </tr>
                         {{pass}}
                     </table>
-                    <p id="Cantidad_{{=i}}" value="{{=j}}">{{=j}}</p>
+                    <p id="Cantidad_{{=i}}" hidden value="{{=j}}">{{=j}}</p>
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
@@ -227,7 +227,7 @@
                                 </tr>
                         {{pass}}
                     </table>
-                    <p id="Cantidad_{{=i}}" value="{{=j}}">{{=j}}</p>
+                    <p id="Cantidad_{{=i}}" hidden value="{{=j}}">{{=j}}</p>
                     {{elif (pregunta["tipo"]=="veracidad") : }}
                     <p id="Tipo_{{=i}}" hidden value=2>2</p>
                     <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
