@@ -106,7 +106,7 @@ $(document).ready(
                         var fecha_hora = fecha +" "+hora;
                         var FechaServer = new Date(Hoy).valueOf();
                         var FechaProgra = new Date(fecha_hora).valueOf();
-
+                        alert(FechaProgra);
                         if (FechaServer < FechaProgra)
                         {
                             var parametros = "?id_actividad="+idActividad+"&id_quiz="+id_quiz+"&fecha="+fecha+"&inicio="+hora+"&duracion="+duracion+"&clave="+pass;
