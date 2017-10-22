@@ -176,7 +176,7 @@
                     <h4 id="Valor_{{=i}}">{{= pregunta["value"]}}</h4>
                     {{if (pregunta["tipo"]=="multiple") : }}
                     <p id="Tipo_{{=i}}" hidden value=1>1</p>
-                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
+                    <p id="Id_{{=i}}" value='{{=pregunta["id_pregunta"]}}'>{{=unicode(pregunta["id_pregunta"], "utf-8")}}</p>
                     <p><strong>Tipo:</strong> Pregunta de Opcion Multiple</p>
                     <p><strong>Respuestas: </strong></p>
                             <table WIDTH=50% id="tbRespuestas_{{=i}}">
