@@ -179,7 +179,7 @@
                     <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=(pregunta["id_pregunta"])}}</p>
                     <p><strong>Tipo:</strong> Pregunta De Opción Múltiple</p>
                     <p><strong>Respuestas: </strong></p>
-                            <table WIDTH=50% id="tbRespuestas_{{=i}}">
+                            <table WIDTH=70% id="tbRespuestas_{{=i}}">
                                 {{j=0}}
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
@@ -218,13 +218,14 @@
                     <p id="Id_{{=i}}" hidden value='{{=pregunta["id_pregunta"]}}'>{{=pregunta["id_pregunta"]}}</p>
                     <p><strong>Tipo:</strong> Pregunta De Opción Múltiple</p>
                     <p><strong>Respuestas: </strong></p>
-                            <table WIDTH=50%>
+                            <table WIDTH=70%>
                                 {{j=0}}
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
-                                <tr WIDTH=100%>     
-                                    <td WIDTH=50% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
-                                    <td WIDTH=50%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
+                                <tr WIDTH=100%>
+                                    <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{ =chr(64+j)}}<td>      
+                                    <td WIDTH=80% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
+                                    <td WIDTH=10%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
                         {{pass}}
                     </table>
