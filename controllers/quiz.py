@@ -118,7 +118,7 @@ def GuardarQuizPost():
     
     print 'Se recibe: '
     print (request.post_vars)
-    preguntas = json.dumps(request.post_vars)
+    preguntas = json.dumps(request.post_vars,ensure_ascii=False).encode('utf8')
     print 'Se convierte a: '
     print preguntas
     preguntas = preguntas.replace('{\"','')
