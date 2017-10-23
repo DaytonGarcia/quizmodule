@@ -232,8 +232,8 @@ def evaluacion():
     template_str = ""
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
-        JsonQuiz = datos.replace('"{[','{"PREGUNTAS" : [')
-        print 'El quiz:'
+        JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
+        print 'El quiz json:'
         print JsonQuiz
 
         import json
