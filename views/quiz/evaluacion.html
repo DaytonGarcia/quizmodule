@@ -186,8 +186,14 @@
                                 {{cor = 'A'}}
                                 {{if (j==1):}}
                                     {{cor = 'A'}}
-                                {{else:}}
+                                {{elseif (j==2):}}
                                     {{cor = 'B'}}
+                                {{elseif (j==3):}}
+                                    {{cor = 'C'}}
+                                {{elseif (j==4):}}
+                                    {{cor = 'D'}}
+                                {{else:}}
+                                    {{cor = 'E'}}
                                 {{pass}}
                                 <tr WIDTH=100%>
                                     <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{ =cor}}<td>     
