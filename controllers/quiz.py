@@ -226,12 +226,13 @@ def evaluacion():
     print cadenaRedis
     datos = r.hget(cadenaRedis,'preguntas')
     datos = datos.replace('\n','')
+    datos = datos.replace('}]}"','}]}')
     print 'El quiz es: ' + datos
     template_respuestas = ""
     template_str = ""
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
-        JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
+        JsonQuiz = datos.replace('"{[','{"PREGUNTAS" : [')
         print 'El quiz:'
         print JsonQuiz
 
