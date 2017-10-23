@@ -121,9 +121,9 @@ def GuardarQuizPost():
     preguntas = json.dumps(request.post_vars)
     print 'Se convierte a: '
     print preguntas
-    preguntas = preguntas.replace('{\"','')
+    preguntas = preguntas.replace('{\\\"','')
     preguntas = preguntas.replace('": ""}','')
-    preguntas = preguntas.replace('\\','')
+    #preguntas = preguntas.replace('\\','')
     ide = request.vars['id']
     curso = request.vars['project']
     uid = request.vars['uid']
