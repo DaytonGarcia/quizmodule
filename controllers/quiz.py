@@ -239,7 +239,7 @@ def evaluacion():
     ##Si el quiz esta activo recupero el detalle
     if (activo == True):
         import json
-        JsonQuiz = unicode(JsonQuiz, 'latin-1')
+        JsonQuiz = unicode(JsonQuiz, 'utf-8')
         template_respuestas=json.loads(JsonQuiz)
 
         for pregunta in template_respuestas["PREGUNTAS"]:
