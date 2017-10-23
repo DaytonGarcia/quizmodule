@@ -184,7 +184,7 @@
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
                                 <tr WIDTH=100%>
-                                    <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{ =chr(64)}}<td>     
+                                    <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{ =chr(64+j)}}<td>     
                                     <td WIDTH=80% id="Pregunta_{{=i}}_Respuesta_{{=j}}">{{ =respuesta["value"]}}<td>
                                     <td WIDTH=10%><input type="checkbox" class={{=i}} id="Pregunta_{{=i}}_Correcta_{{=j}}"><td>
                                 </tr>
