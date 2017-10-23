@@ -184,16 +184,13 @@
                         {{ for respuesta in pregunta["respuesta"] :}}
                         {{j=j+1}}
                                 {{cor = 'A'}}
-                                {{if (j==1):}}
-                                    {{cor = 'A'}}
-                                {{elseif (j==2):}}
-                                    {{cor = 'B'}}
-                                {{elseif (j==3):}}
-                                    {{cor = 'C'}}
-                                {{elseif (j==4):}}
-                                    {{cor = 'D'}}
-                                {{else:}}
-                                    {{cor = 'E'}}
+                                {{if (j==1):
+                                    cor = 'A'
+                                elseif j==2:
+                                    cor ='B'
+                                else:
+                                    cor = 'C'
+                                }}
                                 {{pass}}
                                 <tr WIDTH=100%>
                                     <td WIDTH=10% id="CorrelativoPregunta_{{=i}}_Respuesta_{{=j}}">{{ =cor}}<td>     
