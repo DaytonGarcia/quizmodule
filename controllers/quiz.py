@@ -116,7 +116,9 @@ def GuardarQuizPost():
     import json 
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     
+    print 'Se recibe: '+request.post_vars
     preguntas = json.dumps(request.post_vars)
+    print 'Se convierte a: '+preguntas
     preguntas = preguntas.replace('{\"','')
     preguntas = preguntas.replace('": ""}','')
     preguntas = preguntas.replace('\\','')
