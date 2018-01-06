@@ -279,3 +279,23 @@ inner join activity_category G on G.id = F.category
 			<td><center>{{=programacion[5]}} Minutos</center></td>
 			<td><center>Activo</center></td>
 			<td>
+
+Create table tb_template_respuestas_quiz
+(
+	id				int 		auto_increment 		primary key,
+	id_quiz 		int			not null,
+    id_pregunta		int 		not null,
+	respuesta 		varchar(500) not null,
+	id_tipo			int			not null
+)
+
+
+create table tb_detalle_respuestas_carnet
+(
+	id 				int 		auto_increment			primary key,
+	id_actividad 	int			not null,
+	id_estudiante	int 		not null,
+	id_pregunta 	int 		not null,
+	respuesta		varchar(500) not null,
+	es_correcta 	int
+)

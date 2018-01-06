@@ -115,12 +115,7 @@ def GuardarQuizPost():
     import redis
     import json 
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
-    
-    print 'Se recibe: '
-    print (request.post_vars)
     preguntas = json.dumps(request.post_vars)
-    print 'Se convierte a: '
-    print preguntas
     preguntas = preguntas.replace('{\"','')
     preguntas = preguntas.replace('\\"','"')
     preguntas = preguntas.replace('": ""}','')
@@ -129,19 +124,6 @@ def GuardarQuizPost():
     curso = request.vars['project']
     uid = request.vars['uid']
     title = request.vars['title']
-
-    print "El json de preguntas es: "
-    print (preguntas)
-    
-    print "El ide  es: "
-    print ide
-
-    print "El curso es: "
-    print curso
-
-    print "El title es: "
-    print title
-
     a = r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"preguntas",preguntas)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ejecuciones",0)
     r.hset("uid:"+uid+":curso:"+curso+":quiz:"+ide,"ganados",0)
@@ -154,6 +136,13 @@ def GuardarQuizPost():
         creador=uid, 
         curso=curso)
     db.commit()
+
+###Desde aca lo nuevo
+    for pregunta in preguntas:
+    # now song is a dictionary
+    for id, tipo in song.iteritems():
+        print id, tipo # example usage
+        
     return a
 
 
