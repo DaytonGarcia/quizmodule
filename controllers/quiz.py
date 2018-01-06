@@ -138,6 +138,9 @@ def GuardarQuizPost():
     db.commit()
 
 ###Desde aca lo nuevo
+    datos = preguntas
+    datos = datos.replace('\n','')
+    datos = datos.replace('}]}"','}]}')
     JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
     JsonQuiz = unicode(JsonQuiz, 'utf-8')
     template_respuestas=json.loads(JsonQuiz)
