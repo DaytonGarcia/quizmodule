@@ -140,7 +140,7 @@ def GuardarQuizPost():
 
 ###Desde aca lo nuevo
     for pregunta in preguntasJson:
-        print pregunta
+        print 'la pregunta es: ' + pregunta
     
     print 'Sali de ahi'
 
