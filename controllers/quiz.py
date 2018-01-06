@@ -116,7 +116,6 @@ def GuardarQuizPost():
     import json 
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     preguntas = json.dumps(request.post_vars)
-    preguntasJson = json.dumps(request.post_vars)
     preguntas = preguntas.replace('{\"','')
     preguntas = preguntas.replace('\\"','"')
     preguntas = preguntas.replace('": ""}','')
@@ -139,9 +138,13 @@ def GuardarQuizPost():
     db.commit()
 
 ###Desde aca lo nuevo
-    for pregunta in preguntasJson:
-        print 'la pregunta es: ' + pregunta
-    
+    JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
+    JsonQuiz = unicode(JsonQuiz, 'utf-8')
+    template_respuestas=json.loads(JsonQuiz)
+
+    for pregunta in template_respuestas["PREGUNTAS"]:
+        print pregunta
+    pass
     print 'Sali de ahi'
 
     return a
