@@ -140,9 +140,9 @@ def GuardarQuizPost():
 ###Desde aca lo nuevo
     for pregunta in preguntas:
     # now song is a dictionary
-    for id, tipo in song.iteritems():
-        print id, tipo # example usage
-        
+        for id, tipo in song.iteritems():
+            print id, tipo # example usage
+
     return a
 
 

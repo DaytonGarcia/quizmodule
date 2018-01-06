@@ -21,6 +21,7 @@ FOREIGN KEY (categorie)
 #Usuarios de pruebas
 select * from auth_user where username = '11769'
 select * from auth_user where username = '200915754'
+200915649 Tutor Redes
 
 #Password Conocido
 #pbkdf2(1000,20,sha512)$851658f698b517fd$094c6882a47b8952e4d25b6cd37e41ac8664b8cf
