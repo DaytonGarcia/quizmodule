@@ -116,6 +116,7 @@ def GuardarQuizPost():
     import json 
     r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     preguntas = json.dumps(request.post_vars)
+    preguntasJson = json.dumps(request.post_vars)
     preguntas = preguntas.replace('{\"','')
     preguntas = preguntas.replace('\\"','"')
     preguntas = preguntas.replace('": ""}','')
@@ -138,7 +139,7 @@ def GuardarQuizPost():
     db.commit()
 
 ###Desde aca lo nuevo
-    for pregunta in preguntas:
+    for pregunta in preguntasJson:
         print pregunta
     
     print 'Sali de ahi'
