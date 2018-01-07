@@ -155,7 +155,9 @@ def GuardarQuizPost():
             print sql
             db.executesql(sql)
         else:
-            print pregunta
+            for respuesta in pregunta["respuesta"]:
+                print respuesta
+            pass
         pass
     pass
     print 'Sali de ahi'
