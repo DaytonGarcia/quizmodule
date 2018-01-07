@@ -156,7 +156,11 @@ def GuardarQuizPost():
             db.executesql(sql)
         else:
             for respuesta in pregunta["respuesta"]:
-                print respuesta
+                if (respuesta["correcta"]=="true"):
+                    print respuesta
+                else:
+                    print "esta no xq es falsa"
+                pass
             pass
         pass
     pass
