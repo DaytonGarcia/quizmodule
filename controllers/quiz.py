@@ -154,6 +154,8 @@ def GuardarQuizPost():
             sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+pregunta["respuesta"]+"', "+str(3)+");"
             print sql
             db.executesql(sql)
+        else:
+            print pregunta
         pass
     pass
     print 'Sali de ahi'
