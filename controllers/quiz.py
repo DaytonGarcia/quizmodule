@@ -147,9 +147,9 @@ def GuardarQuizPost():
 
     for pregunta in template_respuestas["PREGUNTAS"]:
         if (pregunta["tipo"]=="veracidad"):
-            sql = "call spi_insert_respuestas_quiz ("+str(ide)+", "+ pregunta["id_pregunta"]+", "+pregunta["respuesta"]+", "+str(2)+");"
+            sql = "call spi_insert_respuestas_quiz("+str(ide)+", "+ pregunta["id_pregunta"]+", "+pregunta["respuesta"]+", "+str(2)+");"
             print sql
-            #db.executesql(sql)
+            db.executesql(sql)
         pass
     pass
     print 'Sali de ahi'
