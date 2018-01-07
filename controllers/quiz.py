@@ -138,14 +138,15 @@ def GuardarQuizPost():
     db.commit()
 
 ###Desde aca lo nuevo
-    datos = preguntas
-    datos = datos.replace('\n','')
-    datos = datos.replace('}]}"','}]}')
-    JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
-    JsonQuiz = unicode(JsonQuiz, 'utf-8')
-    template_respuestas=json.loads(JsonQuiz)
-
+    import sys
     try:
+        datos = preguntas
+        datos = datos.replace('\n','')
+        datos = datos.replace('}]}"','}]}')
+        JsonQuiz = datos.replace('{[','{"PREGUNTAS" : [')
+        JsonQuiz = unicode(JsonQuiz, 'utf-8')
+        template_respuestas=json.loads(JsonQuiz)
+    
         for pregunta in template_respuestas["PREGUNTAS"]:
             ##Tipos de preguntas 1: Multiple, 2: Falso/Verdadero, 3: Directa
             if (pregunta["tipo"]=="veracidad"):
