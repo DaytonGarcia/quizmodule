@@ -145,26 +145,32 @@ def GuardarQuizPost():
     JsonQuiz = unicode(JsonQuiz, 'utf-8')
     template_respuestas=json.loads(JsonQuiz)
 
-    for pregunta in template_respuestas["PREGUNTAS"]:
-        ##Tipos de preguntas 1: Multiple, 2: Falso/Verdadero, 3: Directa
-        if (pregunta["tipo"]=="veracidad"):
-            sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+pregunta["respuesta"]+"', "+str(2)+");"
-            print sql
-            db.executesql(sql)
-        elif (pregunta["tipo"]=="directa"):
-            sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+pregunta["respuesta"]+"', "+str(3)+");"
-            print sql
-            db.executesql(sql)
-        else:
-            for respuesta in pregunta["respuesta"]:
-                if (respuesta["correcta"]=="true"):
-                    sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+respuesta["value"]+"', "+str(1)+");"
-                    print sql
-                    db.executesql(sql)
+    try:
+        for pregunta in template_respuestas["PREGUNTAS"]:
+            ##Tipos de preguntas 1: Multiple, 2: Falso/Verdadero, 3: Directa
+            if (pregunta["tipo"]=="veracidad"):
+                sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+pregunta["respuesta"]+"', "+str(2)+");"
+                print sql
+                db.executesql(sql)
+            elif (pregunta["tipo"]=="directa"):
+                sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+pregunta["respuesta"]+"', "+str(3)+");"
+                print sql
+                db.executesql(sql)
+            else:
+                for respuesta in pregunta["respuesta"]:
+                    if (respuesta["correcta"]=="true"):
+                        sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+respuesta["value"]+"', "+str(1)+");"
+                        print sql
+                        db.executesql(sql)
+                    pass
                 pass
             pass
         pass
-    pass
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        raise
+
+
     return a
 
 
