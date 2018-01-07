@@ -300,3 +300,21 @@ create table tb_detalle_respuestas_carnet
 	respuesta		varchar(500) not null,
 	es_correcta 	int
 )
+
+
+DELIMITER //
+CREATE PROCEDURE spi_insert_respuestas_quiz
+(
+IN id_quiz int,
+IN id_pregunta varchar(100),
+IN respuesta varchar(500),
+IN id_tipo int
+)
+BEGIN
+  DECLARE subcadena varchar(20);
+  DECLARE pregunta int;
+  SET @subacadena = SUBSTRING(id_pregunta, 10);
+  SET @pregunta = CAST(@subacadena AS UNSIGNED);
+  insert into tb_template_respuestas_quiz (id_quiz,id_pregunta,respuesta,id_tipo) values (id_quiz,@pregunta ,respuesta,id_tipo);
+END //
+DELIMITER ;
