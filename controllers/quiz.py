@@ -146,7 +146,7 @@ def GuardarQuizPost():
     template_respuestas=json.loads(JsonQuiz)
 
     for pregunta in template_respuestas["PREGUNTAS"]:
-        if (pregunta["tipo"]=="veracidad" or pregunta["tipo"]=="directa"):
+        if (pregunta["tipo"]=="veracidad"):
             sql = "call spi_insert_respuestas_quiz ("+ide+", "+ pregunta["id_pregunta"]+", "+pregunta["respuesta"]+", "+2+");"
             print sql
             #db.executesql(sql)
