@@ -162,7 +162,7 @@ def GuardarQuizPost():
                     if (respuesta["correcta"]=="true"):
                         #json.dumps
                         var_respuesta = json.dumps(respuesta["value"])
-                        #print var_respuesta
+                        print var_respuesta
                         sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+svar_respuesta+"', "+str(1)+");"
                         print sql
                         #db.executesql(sql)
