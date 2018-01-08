@@ -160,7 +160,7 @@ def GuardarQuizPost():
             else:
                 for respuesta in pregunta["respuesta"]:
                     if (respuesta["correcta"]=="true"):
-                        sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+respuesta["value"]+"', "+str(1)+");"
+                        sql = "call spi_insert_respuestas_quiz("+str(ide)+", '"+ pregunta["id_pregunta"]+"', '"+srt(respuesta["value"].decode('utf-8'))+"', "+str(1)+");"
                         print sql
                         db.executesql(sql)
                     pass
