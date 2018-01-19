@@ -469,7 +469,8 @@ def getActivities():
         ]
     )
     print "Las actividades son: "
-    print actividades
+    import json
+    print json.dumps(actividades)
 
     return response.json(actividades)
 
