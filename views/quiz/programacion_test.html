@@ -48,6 +48,25 @@ $(document).ready(
 		
     });
 
+    $('#cboCategoria').change(function(){
+
+        
+        
+if($('#cboActividad').val() !=0)
+{
+    var idActividad = $('#cboActividad').val();
+    var idCurso = $('#pProject').text();
+    var idPeriodo = $('#pPeriod').text();
+
+    var parametros = "?project="+idCurso+"&period="+idPeriodo+"&activity="+idActividad;
+    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+    var result = submitLoad("quiz","getDateActivity",parametros);
+    var data = JSON.parse(result);
+    
+}
+
+});
+
 
     $('#btGrabar').click(function()
     {
@@ -219,7 +238,7 @@ $(document).ready(
                     <p><strong>Fecha de ejecucion:</strong></p>
             </td>
             <td width="30%">
-                    <input class="date" id="dateInit" name="log-date" placeholder="YYYY-MM-DD" type="text" value="" style="width:64%;" autocomplete="off">
+                    <input class="date" id="dateInit" name="log-date" placeholder="YYYY-MM-DD" type="text" value="" style="width:64%;" autocomplete="off" readonly>
             </td>
             <td width="20%">
                     <p><strong>Horario de ejecucion:</strong></p>
