@@ -487,21 +487,7 @@ def getDateActivity():
     myquery = (db.course_activity.assignation==curso) & (db.course_activity.semester==period) & (db.course_activity_category.id==actividad)
 
 
-    datos = db(myquery).select(
-        db.course_activity.id,
-        db.course_activity.name,
-        db.course_activity.date_start,
-        join=[
-            db.course_activity_category.on(
-                db.course_activity_category.id == db.course_activity.course_activity_category    
-            )
-        ],
-        left=[
-            db.tb_quiz_actividad.on(
-                db.tb_quiz_actividad.id_actividad ==  db.course_activity.id 
-            )
-        ]
-    )
+    datos = db.course_activity[actividad]
     print "Los datos de la actividad son: "
     
     import json
