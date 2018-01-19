@@ -58,7 +58,7 @@ $(document).ready(
 			<td><center>{{=programacion.Estado_actual}}</center></td>
 			<td>
 			<center>
-				{{if programacion.Estado_actual == 'Activo' :}}
+				{{if programacion.Estado_actual == 'Pendiente' :}}
 				<button name="btTomar" type="button" class="btn btn-success btnTakeQuiz" id={{=programacion.id}}>Tomar Evaluacion</button>
 				{{else:}}
 				<button name="btTomar" type="button" class="btn btn-info" disabled id={{=programacion.id}}>Tomar Evaluacion</button>
