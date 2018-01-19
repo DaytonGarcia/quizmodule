@@ -48,27 +48,24 @@ $(document).ready(
 		
     });
 
-    $('#cboCategoria').change(function(){
+    $('#cboActividad').change(function(){      
+        if($('#cboActividad').val() !=0)
+        {
+            var idActividad = $('#cboActividad').val();
+            var idCurso = $('#pProject').text();
+            var idPeriodo = $('#pPeriod').text();
 
-        
-        
-if($('#cboActividad').val() !=0)
-{
-    var idActividad = $('#cboActividad').val();
-    var idCurso = $('#pProject').text();
-    var idPeriodo = $('#pPeriod').text();
+            var parametros = "?project="+idCurso+"&period="+idPeriodo+"&activity="+idActividad;
+            //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+            alert("data1");
+            var result = submitLoad("quiz","getDateActivity",parametros);
+            alert("data2");
+            var data = JSON.parse(result);
+            alert("data");
+            
+        }
 
-    var parametros = "?project="+idCurso+"&period="+idPeriodo+"&activity="+idActividad;
-    //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
-    alert("data1");
-    var result = submitLoad("quiz","getDateActivity",parametros);
-    alert("data2");
-    var data = JSON.parse(result);
-    alert("data");
-    
-}
-
-});
+        });
 
 
     $('#btGrabar').click(function()
