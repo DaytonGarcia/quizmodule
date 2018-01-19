@@ -470,7 +470,8 @@ def getActivities():
     )
     print "Las actividades son: "
     import json
-    print json.dumps(actividades)
+    parsed = json.loads(actividades)
+    print json.dumps(parsed)
 
     return response.json(actividades)
 
