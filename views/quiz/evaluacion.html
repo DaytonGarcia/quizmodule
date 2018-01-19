@@ -130,6 +130,7 @@
     });
     </script>
 </head>
+{{if (session.bloqueado == False):}}
 <div class="row-fluid">
 	<center>
 	    <h2>Evaluación:
@@ -269,4 +270,8 @@
                 <td  style="right:inherit"><button name="btnTerminar" type="button" class="btn btn-danger" id="btnTerminar" style="display: none;">Terminar</button></td> 
             </tr> 
         </table>
+</div>
+{{else:}}
+<div>
+    Hola
 </div>
