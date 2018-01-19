@@ -233,14 +233,11 @@ def evaluacion():
     pass
 
     ##Verifico si aun sigue estando activo
-    print programacion.Estado_actual
     if (programacion.Estado_actual == 'Inactivo'):
         activo = True
     else:
         activo = False
     pass
-
-    print activo
 
     ##Obtengo la metadata del quiz
     metadata = db(db.tb_metadata_quiz.id_quiz==programacion.id_quiz).select(
@@ -291,8 +288,13 @@ def evaluacion():
     print "template de respuestas session:"
     print session.respuestas
 
+    if (privado == True):
+        session.bloqueado = True
+    else
+        session.bloqueado = False
+    pass
 
-    return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQuiz=JsonQuiz, metadata=metadata)
+    return dict(period=period, project=project,programacion = programacion, error=error, msjError=msjError, privado = privado, activo=activo, JsonQuiz=JsonQuiz, metadata=metadata, bloqueado=session.bloqueado)
 
 @auth.requires_login()
 def reportes():
