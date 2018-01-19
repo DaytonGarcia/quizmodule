@@ -154,8 +154,6 @@
 <p><strong>Tema De Evaluación: </strong> {{=programacion.nombre_quiz}}</p>
 <p><strong>Duración: </strong> {{=programacion.duracion}} minutos</p>
 {{ import json  }}
-{{print 'El puto quiz es: '}}
-{{print JsonQuiz}}
 {{JsonPreguntas=json.loads(JsonQuiz)}}
 <p><strong>Cantidad De Preguntas: </strong> {{=len(JsonPreguntas["PREGUNTAS"])}} </p>
 <p><strong>Carnet: </strong> {{=auth.user.username}}</p>
