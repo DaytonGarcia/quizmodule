@@ -469,9 +469,7 @@ def getActivities():
         ]
     )
     print "Las actividades son: "
-    import json
-    parsed = json.loads(actividades)
-    print json.dumps(parsed)
+    print actividades
 
     return response.json(actividades)
 
@@ -505,7 +503,10 @@ def getDateActivity():
         ]
     )
     print "Los datos de la actividad son: "
-    print datos
+    
+    import json
+    parsed = json.loads(datos)
+    print json.dumps(parsed)
 
     return "Hola"
     #return response.json(datos)
