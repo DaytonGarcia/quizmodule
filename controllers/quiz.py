@@ -505,7 +505,8 @@ def getDateActivity():
     print "Los datos de la actividad son: "
     print datos
 
-    return response.json(datos)
+    return "Hola"
+    #return response.json(datos)
 
 def GetNow():
     import datetime
