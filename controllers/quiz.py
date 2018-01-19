@@ -489,10 +489,7 @@ def getDateActivity():
 
     datos = db.course_activity[actividad]
     print "Los datos de la actividad son: "
-    
-    import json
-    parsed = json.loads(datos)
-    print json.dumps(parsed)
+    print datos
 
     return "Hola"
     #return response.json(datos)
