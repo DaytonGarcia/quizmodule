@@ -240,6 +240,8 @@ def evaluacion():
         activo = False
     pass
 
+    print activo
+
     ##Obtengo la metadata del quiz
     metadata = db(db.tb_metadata_quiz.id_quiz==programacion.id_quiz).select(
         db.tb_metadata_quiz.creador, 
