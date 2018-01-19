@@ -489,10 +489,10 @@ def getDateActivity():
 
     datos = db.course_activity[actividad]
     print "Los datos de la actividad son: "
-    print datos
+    print datos[0].date_start
 
-    return "Hola"
-    #return response.json(datos)
+    #return "Hola"
+    return response.json(datos[0].date_start)
 
 def GetNow():
     import datetime
