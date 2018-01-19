@@ -290,7 +290,7 @@ def evaluacion():
 
     if (privado == True):
         session.bloqueado = True
-    else
+    else:
         session.bloqueado = False
     pass
 
