@@ -60,9 +60,11 @@ if($('#cboActividad').val() !=0)
 
     var parametros = "?project="+idCurso+"&period="+idPeriodo+"&activity="+idActividad;
     //window.location.href = "https://"+document.domain+"/quiz/test"+parametros;
+    alert("data1");
     var result = submitLoad("quiz","getDateActivity",parametros);
+    alert("data2");
     var data = JSON.parse(result);
-    alert(data);
+    alert("data");
     
 }
 
